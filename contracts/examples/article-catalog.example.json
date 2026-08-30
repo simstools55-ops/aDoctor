@@ -1,0 +1,37 @@
+{
+  "format": "SIMS_DOCTOR_ARTICLE_CATALOG_V1",
+  "contract_version": "1.0",
+  "schema_version": "1.0.0",
+  "source_system": "SIMS_BLOG_MANAGER",
+  "target_system": "SIMS_DOCTOR",
+  "message_id": "MSG-EX-0001",
+  "generated_at": "2026-08-03T09:00:00+09:00",
+  "timezone": "Asia/Tokyo",
+  "site": {
+    "site_id": "example",
+    "site_name": "例",
+    "blog_url": "https://example.com/",
+    "search_console_property": "https://example.com/"
+  },
+  "catalog": {
+    "catalog_id": "CAT-EX-0001",
+    "article_count": 1,
+    "generated_from": "ARTICLE_DATABASE",
+    "is_full_snapshot": true
+  },
+  "articles": [
+    {
+      "article_id": "A000001",
+      "url": "https://example.com/a",
+      "title": "例記事",
+      "published_at": "2025-01-01T00:00:00+09:00",
+      "article_status": "ACTIVE",
+      "workflow_status": "AVAILABLE",
+      "diagnosis_control": {
+        "doctor_eligible": true,
+        "exclusion_reason": null,
+        "manual_hold": false
+      }
+    }
+  ]
+}

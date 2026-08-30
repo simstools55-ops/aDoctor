@@ -1,0 +1,79 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-XA-1",
+      "observation_type": "CROSS_ARTICLE",
+      "facts": {
+        "current_article": {
+          "article_id": "A1",
+          "article_url": "https://example.com/a1",
+          "article_title": "Wi-Fiがつながらない",
+          "queries": [
+            "wifi つながらない",
+            "windows11 wifi",
+            "wifi 切れる",
+            "wifi 対処"
+          ],
+          "query_metrics": [
+            {
+              "query": "wifi つながらない",
+              "clicks": 80
+            },
+            {
+              "query": "windows11 wifi",
+              "clicks": 30
+            }
+          ],
+          "clicks": 120,
+          "impressions": 4000,
+          "ctr": 0.03,
+          "position": 5.0
+        },
+        "candidate_articles": [
+          {
+            "article_id": "A2",
+            "article_url": "https://example.com/a2",
+            "article_title": "Windows11 Wi-Fiトラブル",
+            "queries": [
+              "wifi つながらない",
+              "windows11 wifi",
+              "wifi 切れる",
+              "wifi 対処"
+            ],
+            "shared_queries": [
+              "wifi つながらない",
+              "windows11 wifi",
+              "wifi 切れる",
+              "wifi 対処"
+            ],
+            "query_metrics": [
+              {
+                "query": "wifi つながらない",
+                "clicks": 5
+              },
+              {
+                "query": "windows11 wifi",
+                "clicks": 2
+              }
+            ],
+            "query_overlap": 0.9,
+            "serp_overlap": 0.8,
+            "intent_similarity": 0.92,
+            "clicks": 7,
+            "impressions": 300,
+            "ctr": 0.004,
+            "position": 28.0
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "cannibalization_assessments": [],
+  "counters": {
+    "cannibalization_assessment_count": 0
+  }
+}

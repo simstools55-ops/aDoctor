@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_SBM_DOCTOR_BATCH_STATUS_V1.schema.json",
+  "title": "SIMS_SBM_DOCTOR_BATCH_STATUS_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "batch_request_id",
+    "queue_record_id",
+    "status",
+    "progress",
+    "items",
+    "updated_at",
+    "result_ready"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_SBM_DOCTOR_BATCH_STATUS_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "batch_request_id": {
+      "type": "string"
+    },
+    "queue_record_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "progress": {
+      "type": "object"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "result_ready": {
+      "type": "boolean"
+    }
+  }
+}

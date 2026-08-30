@@ -1,0 +1,52 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "composite_diagnoses": [
+    {
+      "composite_diagnosis_id": "CDX-1",
+      "final_diagnosis": "LOCAL_OPTIMIZATION",
+      "confidence": 91,
+      "priority": 78,
+      "severity": "MODERATE",
+      "reasons": [
+        "CTR改善機会があります。"
+      ],
+      "score": {
+        "base_score": 56,
+        "weighted_score": 45,
+        "risk_score": 56,
+        "health_score": 66
+      },
+      "safety": {
+        "winner_query_protected": false,
+        "recent_change_or_update": false,
+        "low_sample_or_insufficient": false,
+        "merge_required": false,
+        "new_article_allowed": false,
+        "full_rewrite_allowed": true
+      },
+      "supporting_assessments": [
+        {
+          "assessment_type": "ctr_opportunity_assessments",
+          "assessment_id": "CTA-1",
+          "classification": "HIGH_CTR_OPPORTUNITY",
+          "confidence": 94,
+          "severity": "SEVERE"
+        }
+      ]
+    }
+  ],
+  "treatment_recommendations": [
+    {
+      "recommendation_id": "TRX-1",
+      "referral_target": "SIMS_WRITER",
+      "treatment_mode": "LOCAL_OPTIMIZATION",
+      "priority": 78
+    }
+  ],
+  "diagnosis_explanations": [],
+  "counters": {
+    "diagnosis_explanation_count": 0
+  }
+}

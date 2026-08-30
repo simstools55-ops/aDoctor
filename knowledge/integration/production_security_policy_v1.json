@@ -1,0 +1,32 @@
+{
+  "policy_name": "SIMS_DOCTOR_PRODUCTION_SECURITY_POLICY_V1",
+  "version": "1.0",
+  "persistent_security_state": {
+    "nonce_store": "SQLITE",
+    "idempotency_store": "SQLITE",
+    "audit_log": "SQLITE"
+  },
+  "configuration": {
+    "client_secrets_source": "ENVIRONMENT",
+    "required_environment": [
+      "SIMS_DOCTOR_QUEUE_DB",
+      "SIMS_DOCTOR_SECURITY_DB",
+      "SIMS_DOCTOR_CLIENT_SECRETS_JSON"
+    ],
+    "forbid_default_secret": true
+  },
+  "health": {
+    "liveness_path": "/health/live",
+    "readiness_path": "/health/ready",
+    "readiness_checks": [
+      "QUEUE_DATABASE",
+      "SECURITY_DATABASE",
+      "CLIENT_SECRET_CONFIGURATION"
+    ]
+  },
+  "deployment": {
+    "application_factory": "src.doctor.deployment.app_factory:create_application",
+    "recommended_workers": 1,
+    "reason": "SQLite-backed queue and security state require serialized deployment until external database adapters are added."
+  }
+}

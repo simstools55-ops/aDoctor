@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_SINGLE_CASE_RESULT_V1.schema.json",
+  "title": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "case_id",
+    "medical_record_id",
+    "article",
+    "result_status",
+    "diagnosis",
+    "treatment",
+    "referral",
+    "review",
+    "user_display",
+    "trace",
+    "completed_at"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "article_id",
+        "url",
+        "title"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string"
+        },
+        "article_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "result_status": {
+      "type": "string",
+      "enum": [
+        "DIAGNOSED",
+        "FOLLOW_UP",
+        "FAILED"
+      ]
+    },
+    "diagnosis": {
+      "type": "object",
+      "required": [
+        "status",
+        "code",
+        "confidence",
+        "severity",
+        "defer_reason"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "CONFIRMED",
+            "DEFERRED",
+            "FAILED"
+          ]
+        },
+        "code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "severity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defer_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "treatment": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "string"
+        }
+      }
+    },
+    "referral": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "referral_id": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "recommended_review_days",
+        "review_due_at"
+      ],
+      "properties": {
+        "recommended_review_days": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "review_due_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "user_display": {
+      "type": "object",
+      "required": [
+        "headline",
+        "summary",
+        "reasons",
+        "next_action",
+        "attention"
+      ],
+      "properties": {
+        "headline": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "next_action": {
+          "type": "string"
+        },
+        "attention": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "trace": {
+      "type": "object",
+      "required": [
+        "pipeline_run_id",
+        "diagnosis_id",
+        "finding_ids",
+        "evidence_ids",
+        "vital_profile_id"
+      ],
+      "properties": {
+        "pipeline_run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "diagnosis_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "vital_profile_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

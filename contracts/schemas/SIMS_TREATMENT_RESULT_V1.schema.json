@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/schemas/SIMS_TREATMENT_RESULT_V1.schema.json",
+  "title": "SIMS Treatment Result V1",
+  "type": "object",
+  "required": [
+    "format",
+    "contract_version",
+    "schema_version",
+    "source_system",
+    "target_system",
+    "message_id",
+    "generated_at",
+    "timezone",
+    "site",
+    "case",
+    "treatment",
+    "execution",
+    "diagnosis_assessment",
+    "affected_content",
+    "publication",
+    "monitoring",
+    "follow_up",
+    "executor_result"
+  ],
+  "properties": {
+    "format": {
+      "const": "SIMS_TREATMENT_RESULT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "source_system": {
+      "enum": [
+        "SIMS_WRITER",
+        "SIMS_ARTICLE_CREATOR",
+        "SIMS_MERGE"
+      ]
+    },
+    "target_system": {
+      "enum": [
+        "SIMS_DOCTOR"
+      ]
+    },
+    "message_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "const": "Asia/Tokyo"
+    },
+    "site": {
+      "$ref": "#/$defs/site"
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "case_type"
+      ],
+      "additionalProperties": true
+    },
+    "treatment": {
+      "type": "object",
+      "required": [
+        "treatment_id",
+        "treatment_type",
+        "executor",
+        "request_message_id"
+      ],
+      "additionalProperties": true
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "status",
+        "result_level",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "IN_PROGRESS",
+            "COMPLETED",
+            "PARTIALLY_COMPLETED",
+            "BLOCKED",
+            "REJECTED",
+            "FAILED",
+            "CANCELLED"
+          ]
+        },
+        "result_level": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "NO_CHANGE",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "diagnosis_assessment": {
+      "type": "object",
+      "required": [
+        "validation",
+        "treatment_fit"
+      ],
+      "additionalProperties": true
+    },
+    "affected_content": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "publication": {
+      "type": "object",
+      "required": [
+        "publication_decision",
+        "publication_status"
+      ],
+      "additionalProperties": true
+    },
+    "monitoring": {
+      "type": "object",
+      "required": [
+        "required"
+      ],
+      "additionalProperties": true
+    },
+    "follow_up": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "executor_result": {
+      "type": "object",
+      "required": [
+        "format",
+        "contract_version",
+        "payload"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "commonHeader": {
+      "type": "object",
+      "required": [
+        "format",
+        "contract_version",
+        "schema_version",
+        "source_system",
+        "target_system",
+        "message_id",
+        "generated_at",
+        "timezone"
+      ],
+      "properties": {
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "source_system": {
+          "type": "string"
+        },
+        "target_system": {
+          "type": "string"
+        },
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "type": "string",
+          "const": "Asia/Tokyo"
+        }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "site_name",
+        "blog_url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blog_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "search_console_property": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

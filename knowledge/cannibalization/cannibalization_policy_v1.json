@@ -1,0 +1,33 @@
+{
+  "policy_name": "SIMS_DOCTOR_CANNIBALIZATION_POLICY_V1",
+  "version": "1.0",
+  "thresholds": {
+    "minimum_shared_queries": 3,
+    "possible_query_overlap": 0.4,
+    "confirmed_query_overlap": 0.65,
+    "merge_query_overlap": 0.75,
+    "confirmed_serp_overlap": 0.5,
+    "merge_serp_overlap": 0.65,
+    "same_intent_min": 0.7,
+    "role_separation_intent_max": 0.55,
+    "weak_article_traffic_ratio": 0.3,
+    "winner_query_click_share": 0.4,
+    "minimum_candidate_impressions": 50
+  },
+  "classifications": [
+    "NO_CANNIBALIZATION",
+    "POSSIBLE_CANNIBALIZATION",
+    "CONFIRMED_CANNIBALIZATION",
+    "ROLE_SEPARATION_RECOMMENDED",
+    "MERGE_CANDIDATE",
+    "FOLLOW_UP_REQUIRED"
+  ],
+  "safety": {
+    "merge_allowed": false,
+    "delete_allowed": false,
+    "redirect_allowed": false,
+    "noindex_allowed": false,
+    "winner_query_requires_protection": true,
+    "single_candidate_does_not_authorize_action": true
+  }
+}

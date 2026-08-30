@@ -1,0 +1,30 @@
+{
+  "policy_name": "SIMS_DOCTOR_IMPROVEMENT_FAILURE_POLICY_V1",
+  "version": "1.0",
+  "minimum_follow_up_days": 7,
+  "preferred_confirm_days": 28,
+  "thresholds": {
+    "no_effect_absolute_effect_score": 0.05,
+    "worsening_effect_score": -0.15,
+    "wrong_direction_effect_score": -0.05,
+    "vital_score_decline": -8,
+    "ctr_decline_ratio": -0.2,
+    "position_decline_ratio": -0.15,
+    "impression_decline_ratio": -0.2,
+    "recurrence_count": 2,
+    "minimum_impressions": 100
+  },
+  "classifications": [
+    "TREATMENT_EFFECTIVE",
+    "NO_MEASURABLE_EFFECT",
+    "POST_TREATMENT_WORSENING",
+    "POSSIBLE_WRONG_TREATMENT_DIRECTION",
+    "RECURRENT_FAILURE",
+    "INSUFFICIENT_FOLLOW_UP"
+  ],
+  "safety": {
+    "low_sample_cannot_confirm_failure": true,
+    "automatic_rollback_forbidden": true,
+    "writer_review_required_for_wrong_direction": true
+  }
+}

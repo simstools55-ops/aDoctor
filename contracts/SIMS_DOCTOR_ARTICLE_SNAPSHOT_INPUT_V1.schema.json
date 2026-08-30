@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1.schema.json",
+  "title": "SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "case_id",
+    "article",
+    "captured_at",
+    "title",
+    "meta_description",
+    "headings",
+    "faq_items",
+    "internal_links",
+    "metrics",
+    "intent_alignment"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "article_id",
+        "url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string"
+        },
+        "article_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "headings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "level",
+          "text",
+          "order"
+        ],
+        "properties": {
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "text": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "faq_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "answer"
+        ],
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "internal_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "anchor_text"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "anchor_text": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "OUTGOING",
+              "INCOMING"
+            ]
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "word_count",
+        "heading_count",
+        "faq_count",
+        "internal_link_count"
+      ],
+      "properties": {
+        "word_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "heading_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "faq_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "internal_link_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "intent_alignment": {
+      "type": "object",
+      "required": [
+        "score",
+        "signals"
+      ],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "freshness_markers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "comparison": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

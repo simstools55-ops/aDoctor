@@ -1,0 +1,36 @@
+{
+  "policy_name": "SIMS_DOCTOR_EXPLAINABILITY_POLICY_V1",
+  "version": "1.0",
+  "audiences": [
+    "USER",
+    "SYSTEM"
+  ],
+  "decision_step_order": [
+    "DATA_SUFFICIENCY",
+    "RECENT_CHANGE",
+    "WINNER_QUERY",
+    "MERGE",
+    "ROLE_SEPARATION",
+    "SEVERE_DAMAGE",
+    "OPPORTUNITY",
+    "FINAL_DIAGNOSIS"
+  ],
+  "user_explanation": {
+    "maximum_steps": 8,
+    "hide_rule_ids": true,
+    "hide_raw_evidence": true,
+    "hide_internal_scores": false,
+    "plain_language": true
+  },
+  "system_explanation": {
+    "include_rule_ids": true,
+    "include_assessment_ids": true,
+    "include_safety_flags": true,
+    "include_score_trace": true
+  },
+  "safety": {
+    "never_invent_missing_evidence": true,
+    "mark_inference_as_inference": true,
+    "do_not_expose_secrets": true
+  }
+}

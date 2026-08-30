@@ -1,0 +1,30 @@
+{
+  "policy_name": "SIMS_DOCTOR_ARTICLE_SNAPSHOT_POLICY_V1",
+  "version": "1.0",
+  "limits": {
+    "maximum_headings": 300,
+    "maximum_internal_links": 1000,
+    "maximum_faq_items": 100,
+    "maximum_title_length": 1000,
+    "maximum_text_length": 1000000
+  },
+  "content_integrity": {
+    "weights": {
+      "title_presence": 0.1,
+      "heading_structure": 0.2,
+      "faq_coverage": 0.15,
+      "internal_link_support": 0.15,
+      "intent_alignment": 0.25,
+      "freshness_markers": 0.15
+    },
+    "minimum_heading_count": 3,
+    "minimum_internal_links": 2,
+    "minimum_faq_items": 1
+  },
+  "comparison": {
+    "track_title_change": true,
+    "track_heading_change": true,
+    "track_faq_change": true,
+    "track_internal_link_change": true
+  }
+}

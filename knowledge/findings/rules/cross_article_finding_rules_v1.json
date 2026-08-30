@@ -1,0 +1,30 @@
+{
+  "rule_set": "SIMS_DOCTOR_CROSS_ARTICLE_FINDING_RULES_V1",
+  "version": "1.0",
+  "rules": [
+    {
+      "classification": "POSSIBLE_CANNIBALIZATION",
+      "finding_code": "QUERY_OVERLAP_HIGH",
+      "severity": "MODERATE",
+      "base_confidence": 80
+    },
+    {
+      "classification": "MERGE_CANDIDATE",
+      "finding_code": "MERGE_SUITABILITY_HIGH",
+      "severity": "SEVERE",
+      "base_confidence": 85
+    },
+    {
+      "classification": "SEPARATE_INTENT",
+      "finding_code": "DISTINCT_INTENT_OPPORTUNITY",
+      "severity": "INFO",
+      "base_confidence": 75
+    },
+    {
+      "classification": "NEW_ARTICLE_OPPORTUNITY",
+      "finding_code": "DISTINCT_INTENT_OPPORTUNITY",
+      "severity": "MILD",
+      "base_confidence": 80
+    }
+  ]
+}

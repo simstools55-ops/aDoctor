@@ -1,0 +1,39 @@
+{
+  "policy_name": "SIMS_DOCTOR_FRESHNESS_DECAY_POLICY_V1",
+  "version": "1.0",
+  "thresholds": {
+    "stale_days": 365,
+    "severe_stale_days": 730,
+    "recent_update_days": 60,
+    "minimum_freshness_score": 55,
+    "severe_freshness_score": 35,
+    "outdated_signal_count": 2,
+    "critical_outdated_signal_count": 4,
+    "winner_query_click_share": 0.4,
+    "minimum_impressions": 100
+  },
+  "outdated_signal_codes": [
+    "OUTDATED_YEAR",
+    "OUTDATED_PRICE",
+    "OUTDATED_SPECIFICATION",
+    "OUTDATED_PROCEDURE",
+    "OUTDATED_POLICY",
+    "BROKEN_EXTERNAL_REFERENCE",
+    "STALE_SCREENSHOT",
+    "OBSOLETE_PRODUCT_OR_SERVICE"
+  ],
+  "classifications": [
+    "FRESH",
+    "PARTIAL_FRESHNESS_DECAY",
+    "SEVERE_FRESHNESS_DECAY",
+    "RECENT_UPDATE_OBSERVATION",
+    "WINNER_QUERY_PROTECTED",
+    "INSUFFICIENT_DATA"
+  ],
+  "safety": {
+    "recent_update_requires_observation": true,
+    "winner_query_blocks_aggressive_title_change": true,
+    "freshness_only_does_not_authorize_deletion": true,
+    "partial_decay_prefers_local_update": true
+  }
+}

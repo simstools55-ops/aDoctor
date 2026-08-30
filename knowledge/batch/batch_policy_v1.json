@@ -1,0 +1,39 @@
+{
+  "policy_name": "SIMS_DOCTOR_BATCH_POLICY_V1",
+  "version": "1.0",
+  "limits": {
+    "default_batch_size": 50,
+    "maximum_batch_size": 500,
+    "maximum_attempts_per_case": 3
+  },
+  "priority": {
+    "weights": {
+      "longitudinal_priority": 0.4,
+      "severity": 0.25,
+      "recurrence": 0.2,
+      "traffic_opportunity": 0.15
+    },
+    "levels": {
+      "URGENT": 100,
+      "HIGH": 75,
+      "MEDIUM": 50,
+      "LOW": 25,
+      "UNKNOWN": 10
+    }
+  },
+  "execution": {
+    "case_isolation": true,
+    "continue_after_case_failure": true,
+    "resume_enabled": true,
+    "duplicate_behavior": "SKIP_SAME_SITE_ARTICLE_AND_REQUEST_FINGERPRINT",
+    "ordering": "PRIORITY_DESC_THEN_INPUT_ORDER"
+  },
+  "statuses": [
+    "PENDING",
+    "RUNNING",
+    "COMPLETED",
+    "COMPLETED_WITH_ERRORS",
+    "FAILED",
+    "PAUSED"
+  ]
+}

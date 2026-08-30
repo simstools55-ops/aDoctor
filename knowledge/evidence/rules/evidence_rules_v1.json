@@ -1,0 +1,81 @@
+{
+  "rule_set": "SIMS_DOCTOR_EVIDENCE_RULES_V1",
+  "version": "1.0",
+  "status": "INITIAL_UNCALIBRATED",
+  "sample_policy": {
+    "minimum_impressions_for_ctr": 100,
+    "minimum_impressions_for_trend": 100,
+    "minimum_clicks_for_ctr_support": 1,
+    "low_sample_behavior": "RECORD_EVIDENCE_WITH_LOW_SAMPLE_FLAG"
+  },
+  "rules": [
+    {
+      "evidence_code": "CTR_BELOW_POSITION_EXPECTATION",
+      "rule_version": "1.0",
+      "inputs": [
+        "days_28.ctr",
+        "days_28.position",
+        "days_28.impressions"
+      ],
+      "parameters": {
+        "position_bands": [
+          {
+            "min_position": 1.0,
+            "max_position": 3.0,
+            "minimum_expected_ctr": 0.08
+          },
+          {
+            "min_position": 3.01,
+            "max_position": 5.0,
+            "minimum_expected_ctr": 0.04
+          },
+          {
+            "min_position": 5.01,
+            "max_position": 10.0,
+            "minimum_expected_ctr": 0.015
+          },
+          {
+            "min_position": 10.01,
+            "max_position": 20.0,
+            "minimum_expected_ctr": 0.005
+          }
+        ]
+      },
+      "notes": "Initial conservative bands. Calibration required with real cases."
+    },
+    {
+      "evidence_code": "POSITION_DECLINE_OBSERVED",
+      "rule_version": "1.0",
+      "inputs": [
+        "baseline.position",
+        "current.position"
+      ],
+      "parameters": {
+        "minimum_absolute_decline": 1.0,
+        "minimum_relative_decline_ratio": 0.1
+      }
+    },
+    {
+      "evidence_code": "VISIBILITY_DECLINE_OBSERVED",
+      "rule_version": "1.0",
+      "inputs": [
+        "baseline.impressions",
+        "current.impressions"
+      ],
+      "parameters": {
+        "minimum_decline_ratio": 0.2
+      }
+    },
+    {
+      "evidence_code": "LONG_TIME_SINCE_UPDATE",
+      "rule_version": "1.0",
+      "inputs": [
+        "last_modified_at",
+        "observed_at"
+      ],
+      "parameters": {
+        "minimum_days_since_update": 365
+      }
+    }
+  ]
+}

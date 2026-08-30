@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_SEARCH_CONSOLE_OBSERVATION_INPUT_V1.schema.json",
+  "title": "SIMS_DOCTOR_SEARCH_CONSOLE_OBSERVATION_INPUT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "case_id",
+    "article",
+    "retrieval",
+    "periods",
+    "queries"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_SEARCH_CONSOLE_OBSERVATION_INPUT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "site_id",
+        "article_id",
+        "url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "article_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "retrieval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requested_at",
+        "completed_at",
+        "status",
+        "coverage_start",
+        "coverage_end"
+      ],
+      "properties": {
+        "requested_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "FAILED",
+            "NO_DATA"
+          ]
+        },
+        "coverage_start": {
+          "type": "string",
+          "format": "date"
+        },
+        "coverage_end": {
+          "type": "string",
+          "format": "date"
+        },
+        "missing_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "error_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error_message": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "component_errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "component",
+              "code",
+              "message"
+            ],
+            "properties": {
+              "component": {
+                "type": "string"
+              },
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "message": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "periods": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "days_28",
+        "days_90",
+        "days_365"
+      ],
+      "properties": {
+        "days_28": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "start_date",
+            "end_date",
+            "clicks",
+            "impressions",
+            "ctr",
+            "position"
+          ],
+          "properties": {
+            "start_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "end_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "clicks": {
+              "type": "number",
+              "minimum": 0
+            },
+            "impressions": {
+              "type": "number",
+              "minimum": 0
+            },
+            "ctr": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "position": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        "days_90": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "start_date",
+            "end_date",
+            "clicks",
+            "impressions",
+            "ctr",
+            "position"
+          ],
+          "properties": {
+            "start_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "end_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "clicks": {
+              "type": "number",
+              "minimum": 0
+            },
+            "impressions": {
+              "type": "number",
+              "minimum": 0
+            },
+            "ctr": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "position": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        "days_365": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "start_date",
+            "end_date",
+            "clicks",
+            "impressions",
+            "ctr",
+            "position"
+          ],
+          "properties": {
+            "start_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "end_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "clicks": {
+              "type": "number",
+              "minimum": 0
+            },
+            "impressions": {
+              "type": "number",
+              "minimum": 0
+            },
+            "ctr": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "position": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "queries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "query",
+          "clicks",
+          "impressions",
+          "ctr",
+          "position"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "clicks": {
+            "type": "number",
+            "minimum": 0
+          },
+          "impressions": {
+            "type": "number",
+            "minimum": 0
+          },
+          "ctr": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "position": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

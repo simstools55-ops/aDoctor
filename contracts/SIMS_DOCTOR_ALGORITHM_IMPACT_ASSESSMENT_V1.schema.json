@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1.schema.json",
+  "title": "SIMS Article Doctor Algorithm Impact Assessment V1",
+  "type": "object",
+  "required": ["contract_name", "contract_version", "assessment_id", "status", "confidence", "role", "impact_score", "update", "correlation", "reason_codes"],
+  "properties": {
+    "contract_name": {"const": "SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1"},
+    "contract_version": {"const": "1.0"},
+    "assessment_id": {"type": "string"},
+    "assessed_at": {"type": "string"},
+    "status": {"enum": ["NONE", "LOW", "POSSIBLE", "LIKELY", "HIGH", "UNKNOWN"]},
+    "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+    "role": {"enum": ["PRIMARY_FACTOR", "CONTRIBUTING_FACTOR", "POSSIBLE_FACTOR", "UNLIKELY_FACTOR", "NOT_SUPPORTED"]},
+    "impact_score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "update": {"type": "object"},
+    "correlation": {
+      "type": "object",
+      "required": ["temporal", "site_wide", "segment", "article", "serp"],
+      "additionalProperties": {"enum": ["NONE", "LOW", "MEDIUM", "HIGH", "UNKNOWN"]}
+    },
+    "evidence_confidence": {"type": "object"},
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

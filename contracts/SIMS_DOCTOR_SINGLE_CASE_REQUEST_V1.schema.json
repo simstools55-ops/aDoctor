@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1.schema.json",
+  "title": "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "requested_at",
+    "request_source",
+    "request_type",
+    "site",
+    "article",
+    "trigger"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "requested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "request_source": {
+      "const": "SIMS_BLOG_MANAGER"
+    },
+    "request_type": {
+      "const": "SINGLE_CASE_DIAGNOSIS"
+    },
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "site_id",
+        "site_name",
+        "blog_url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "blog_url": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 2048
+        }
+      }
+    },
+    "article": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "article_id",
+        "url",
+        "title"
+      ],
+      "properties": {
+        "article_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 2048
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "main_query": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "current_metrics": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "source_screen",
+        "reason"
+      ],
+      "properties": {
+        "source_screen": {
+          "type": "string",
+          "enum": [
+            "ARTICLE_LIST",
+            "IMPROVEMENT_TREND"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "vital_profiles": [
+    {
+      "profile_id": "VPR-1",
+      "signs": [
+        {
+          "code": "CONTENT_INTEGRITY",
+          "score": 72
+        },
+        {
+          "code": "COMPETITION_RESILIENCE",
+          "score": 68
+        }
+      ]
+    }
+  ],
+  "vital_scores": [
+    {
+      "score_id": "VSC-1",
+      "overall_score": 66
+    }
+  ],
+  "improvement_failure_assessments": [
+    {
+      "assessment_id": "IFA-1",
+      "classification": "TREATMENT_EFFECTIVE",
+      "confidence": 82,
+      "severity": "INFO",
+      "metrics": {
+        "low_sample": false
+      }
+    }
+  ],
+  "long_term_degradation_assessments": [
+    {
+      "assessment_id": "LDA-1",
+      "classification": "STABLE",
+      "confidence": 82,
+      "severity": "INFO",
+      "metrics": {
+        "low_sample": false
+      }
+    }
+  ],
+  "ctr_opportunity_assessments": [
+    {
+      "assessment_id": "CTA-1",
+      "classification": "HIGH_CTR_OPPORTUNITY",
+      "confidence": 94,
+      "severity": "SEVERE",
+      "metrics": {
+        "low_sample": false
+      },
+      "protections": {
+        "winner_query_protected": false
+      }
+    }
+  ],
+  "position_opportunity_assessments": [
+    {
+      "assessment_id": "POA-1",
+      "classification": "HIGH_POSITION_OPPORTUNITY",
+      "confidence": 94,
+      "severity": "SEVERE",
+      "metrics": {
+        "low_sample": false
+      },
+      "protections": {
+        "winner_query_protected": false
+      }
+    }
+  ],
+  "intent_drift_assessments": [
+    {
+      "assessment_id": "IDA-1",
+      "classification": "ALIGNED",
+      "confidence": 84,
+      "severity": "INFO",
+      "metrics": {
+        "low_sample": false
+      },
+      "protections": {
+        "winner_query_protected": false
+      }
+    }
+  ],
+  "freshness_decay_assessments": [
+    {
+      "assessment_id": "FDA-1",
+      "classification": "FRESH",
+      "confidence": 84,
+      "severity": "INFO",
+      "metrics": {
+        "low_sample": false
+      },
+      "protections": {
+        "winner_query_protected": false
+      }
+    }
+  ],
+  "cannibalization_assessments": [
+    {
+      "assessment_id": "CAA-1",
+      "classification": "NO_CANNIBALIZATION",
+      "confidence": 86,
+      "severity": "INFO",
+      "metrics": {
+        "low_sample": false
+      },
+      "protections": {
+        "winner_query_protected": false
+      }
+    }
+  ],
+  "composite_diagnoses": [],
+  "counters": {
+    "composite_diagnosis_count": 0
+  }
+}

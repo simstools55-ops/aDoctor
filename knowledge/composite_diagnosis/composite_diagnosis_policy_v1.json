@@ -1,0 +1,48 @@
+{
+  "policy_name": "SIMS_DOCTOR_COMPOSITE_DIAGNOSIS_POLICY_V1",
+  "version": "1.0",
+  "weights": {
+    "competition": 0.1,
+    "content_integrity": 0.2,
+    "ctr_opportunity": 0.15,
+    "position_opportunity": 0.15,
+    "intent_drift": 0.15,
+    "freshness_decay": 0.1,
+    "cannibalization": 0.15
+  },
+  "diagnoses": [
+    "HEALTHY",
+    "MINOR_REFRESH",
+    "LOCAL_OPTIMIZATION",
+    "FULL_REWRITE_RECOMMENDED",
+    "NEW_ARTICLE_RECOMMENDED",
+    "MERGE_RECOMMENDED",
+    "OBSERVE_ONLY",
+    "FOLLOW_UP_REQUIRED"
+  ],
+  "safety_precedence": [
+    "LOW_SAMPLE_OR_INSUFFICIENT_DATA",
+    "RECENT_CHANGE_OR_RECENT_UPDATE",
+    "WINNER_QUERY_PROTECTION",
+    "MERGE_CANDIDATE",
+    "ROLE_SEPARATION",
+    "SEVERE_COMPOSITE_DAMAGE"
+  ],
+  "thresholds": {
+    "healthy_vital_score": 75,
+    "local_optimization_score": 45,
+    "full_rewrite_score": 65,
+    "severe_content_integrity_max": 45,
+    "new_article_intent_confidence": 85,
+    "minimum_composite_confidence": 60,
+    "minimum_completed_assessments": 3
+  },
+  "safety": {
+    "winner_query_blocks_full_rewrite": true,
+    "recent_change_forces_observation": true,
+    "low_sample_forces_follow_up": true,
+    "merge_requires_cannibalization_merge_candidate": true,
+    "new_article_requires_intent_signal_and_no_merge_candidate": true,
+    "doctor_does_not_execute_treatment": true
+  }
+}

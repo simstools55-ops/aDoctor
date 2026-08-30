@@ -1,0 +1,1 @@
+Article Doctor v1.4.0: optional Personal Knowledge candidate emission; backward compatible; Shared baseline unchanged.

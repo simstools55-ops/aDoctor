@@ -1,0 +1,279 @@
+{
+  "rule_set": "SIMS_DOCTOR_DIFFERENTIAL_RULES_V1",
+  "version": "1.0",
+  "status": "INITIAL_UNCALIBRATED",
+  "global_policy": {
+    "candidate_limit": 5,
+    "minimum_candidate_confidence": 20,
+    "low_sample_penalty": 20,
+    "contradiction_penalty": 15,
+    "duplicate_behavior": "SKIP_IDENTICAL_FINGERPRINT",
+    "ranking": "CONFIDENCE_DESC_THEN_PRIORITY_DESC"
+  },
+  "candidates": [
+    {
+      "diagnosis_code": "LOW_CTR_WITH_STRONG_POSITION",
+      "priority": 90,
+      "supporting_findings": [
+        {
+          "code": "CTR_UNDERPERFORMING",
+          "weight": 45
+        },
+        {
+          "code": "HIGH_VISIBILITY_LOW_CLICK",
+          "weight": 40
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 20
+        }
+      ],
+      "base_confidence": 20,
+      "minimum_support_count": 1,
+      "notes": "Strong when CTR is weak while visibility remains healthy."
+    },
+    {
+      "diagnosis_code": "LONG_TERM_DECLINE",
+      "priority": 80,
+      "supporting_findings": [
+        {
+          "code": "POSITION_DECLINING",
+          "weight": 40
+        },
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 35
+        },
+        {
+          "code": "CONTENT_OUTDATED",
+          "weight": 20
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "POSITION_STABLE",
+          "weight": 30
+        }
+      ],
+      "base_confidence": 15,
+      "minimum_support_count": 2
+    },
+    {
+      "diagnosis_code": "CONTENT_STALE",
+      "priority": 70,
+      "supporting_findings": [
+        {
+          "code": "CONTENT_OUTDATED",
+          "weight": 60
+        },
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 20
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "UPDATE_FAILURE",
+      "priority": 75,
+      "supporting_findings": [
+        {
+          "code": "POSITION_DECLINING",
+          "weight": 35
+        },
+        {
+          "code": "LOW_VISIBILITY",
+          "weight": 30
+        },
+        {
+          "code": "CTR_UNDERPERFORMING",
+          "weight": 15
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 10,
+      "minimum_support_count": 2,
+      "required_context": [
+        "history.improvement_event_exists"
+      ]
+    },
+    {
+      "diagnosis_code": "INSUFFICIENT_DATA",
+      "priority": 100,
+      "supporting_findings": [
+        {
+          "code": "INSUFFICIENT_EVIDENCE",
+          "weight": 80
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "CANNIBALIZATION",
+      "priority": 95,
+      "supporting_findings": [
+        {
+          "code": "QUERY_OVERLAP_HIGH",
+          "weight": 70
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "ARTICLE_MERGE_REQUIRED",
+      "priority": 98,
+      "supporting_findings": [
+        {
+          "code": "MERGE_SUITABILITY_HIGH",
+          "weight": 75
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "NEW_ARTICLE_NEEDED",
+      "priority": 70,
+      "supporting_findings": [
+        {
+          "code": "DISTINCT_INTENT_OPPORTUNITY",
+          "weight": 60
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "priority": 92,
+      "supporting_findings": [
+        {
+          "code": "LONG_TERM_VISIBILITY_DECAY",
+          "weight": 50
+        },
+        {
+          "code": "LONG_TERM_CTR_DECAY",
+          "weight": 25
+        },
+        {
+          "code": "LONG_TERM_POSITION_DECAY",
+          "weight": 30
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "RECOVERY_TREND",
+          "weight": 40
+        }
+      ],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "SEASONAL_DECLINE",
+      "priority": 65,
+      "supporting_findings": [
+        {
+          "code": "SEASONALITY_DETECTED",
+          "weight": 65
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "priority": 85,
+      "supporting_findings": [
+        {
+          "code": "RECOVERY_TREND",
+          "weight": 70
+        }
+      ],
+      "contradicting_findings": [
+        {
+          "code": "LONG_TERM_VISIBILITY_DECAY",
+          "weight": 30
+        }
+      ],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "TREATMENT_SUCCESS",
+      "priority": 75,
+      "supporting_findings": [
+        {
+          "code": "IMPROVEMENT_CONFIRMED",
+          "weight": 75
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "IMPROVEMENT_FAILURE",
+      "priority": 94,
+      "supporting_findings": [
+        {
+          "code": "TREATMENT_INEFFECTIVE",
+          "weight": 60
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "priority": 99,
+      "supporting_findings": [
+        {
+          "code": "POST_TREATMENT_WORSENING",
+          "weight": 75
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "MIXED_TREATMENT_RESPONSE",
+      "priority": 80,
+      "supporting_findings": [
+        {
+          "code": "MIXED_TREATMENT_RESPONSE",
+          "weight": 60
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    },
+    {
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "priority": 90,
+      "supporting_findings": [
+        {
+          "code": "FOLLOW_UP_INSUFFICIENT",
+          "weight": 70
+        }
+      ],
+      "contradicting_findings": [],
+      "base_confidence": 20,
+      "minimum_support_count": 1
+    }
+  ]
+}

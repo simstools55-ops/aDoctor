@@ -1,0 +1,52 @@
+{
+  "format": "SIMS_DOCTOR_CASE_RESULT_V1",
+  "contract_version": "1.0",
+  "schema_version": "1.0.0",
+  "source_system": "SIMS_DOCTOR",
+  "target_system": "SIMS_BLOG_MANAGER",
+  "message_id": "MSG-EX-0006",
+  "generated_at": "2026-08-04T09:00:00+09:00",
+  "timezone": "Asia/Tokyo",
+  "site": {
+    "site_id": "example",
+    "site_name": "例",
+    "blog_url": "https://example.com/"
+  },
+  "case": {
+    "case_id": "CASE-EX-1",
+    "case_type": "CONTENT_DECAY",
+    "case_status": "MONITORING",
+    "previous_case_status": "TREATING"
+  },
+  "diagnosis": {
+    "original_diagnosis": "CONTENT_DECAY",
+    "final_diagnosis": "CONTENT_DECAY",
+    "diagnosis_status": "CONFIRMED"
+  },
+  "treatment_summary": {
+    "planned_treatment_count": 1,
+    "completed_treatment_count": 1,
+    "overall_status": "COMPLETED"
+  },
+  "treatments": [],
+  "affected_content": {},
+  "publication": {
+    "overall_publication_status": "PUBLISHED",
+    "ready_for_monitoring": true
+  },
+  "workflow_update": {
+    "case_status_update": {
+      "from": "TREATING",
+      "to": "MONITORING"
+    },
+    "article_status_updates": []
+  },
+  "monitoring": {
+    "required": true,
+    "monitoring_status": "READY"
+  },
+  "outcome": {
+    "outcome_status": "NOT_YET_MEASURED"
+  },
+  "required_actions": []
+}

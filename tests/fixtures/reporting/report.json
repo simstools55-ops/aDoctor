@@ -1,0 +1,121 @@
+{
+  "contract_name": "SIMS_DOCTOR_REPORT_V1",
+  "contract_version": "1.0",
+  "report_id": "RPT-20260804-061919-EA6421",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "generated_at": "2026-08-04T06:19:19.087643+00:00",
+  "audience": "USER",
+  "article": {
+    "site_id": "site",
+    "article_id": "A1",
+    "url": "https://example.com/a1",
+    "title": "Example Article"
+  },
+  "summary": "診断結果は「局所改善」です。SIMS_WRITERへの紹介を優先度78で推奨します。",
+  "diagnosis": {
+    "code": "LOCAL_OPTIMIZATION",
+    "label": "局所改善",
+    "confidence": 91,
+    "severity": "MODERATE",
+    "priority": 78
+  },
+  "recommendation": {
+    "referral_target": "SIMS_WRITER",
+    "treatment_mode": "LOCAL_OPTIMIZATION",
+    "recommended_scope": [
+      "SEO_TITLE",
+      "META_DESCRIPTION",
+      "INTRODUCTION",
+      "FAQ"
+    ],
+    "prohibited_actions": [
+      "AUTOMATIC_DELETE",
+      "AUTOMATIC_NOINDEX",
+      "AUTOMATIC_PUBLICATION"
+    ]
+  },
+  "monitoring": {
+    "required": true,
+    "recommended_days": 28,
+    "metrics": [
+      "CLICKS",
+      "IMPRESSIONS",
+      "CTR",
+      "POSITION"
+    ]
+  },
+  "sections": [
+    {
+      "code": "SUMMARY",
+      "title": "診断概要",
+      "content": "診断結果は「局所改善」です。SIMS_WRITERへの紹介を優先度78で推奨します。"
+    },
+    {
+      "code": "CURRENT_STATE",
+      "title": "現在の状態",
+      "content": {
+        "vital_score": 66,
+        "risk_score": 56,
+        "health_score": 66,
+        "winner_query_protected": false,
+        "recent_change_or_update": false
+      }
+    },
+    {
+      "code": "DIAGNOSIS",
+      "title": "診断",
+      "content": "局所改善（信頼度91%、優先度78）"
+    },
+    {
+      "code": "WHY",
+      "title": "診断理由",
+      "content": [
+        "CTR改善機会があります。",
+        "順位改善機会があります。"
+      ]
+    },
+    {
+      "code": "RECOMMENDED_ACTION",
+      "title": "推奨する対応",
+      "content": {
+        "target": "SIMS_WRITER",
+        "mode": "LOCAL_OPTIMIZATION",
+        "scope": [
+          "SEO_TITLE",
+          "META_DESCRIPTION",
+          "INTRODUCTION",
+          "FAQ"
+        ]
+      }
+    },
+    {
+      "code": "DO_NOT_DO",
+      "title": "行わないこと",
+      "content": [
+        "AUTOMATIC_DELETE",
+        "AUTOMATIC_NOINDEX",
+        "AUTOMATIC_PUBLICATION"
+      ]
+    },
+    {
+      "code": "MONITORING",
+      "title": "今後の確認",
+      "content": {
+        "required": true,
+        "recommended_days": 28,
+        "metrics": [
+          "CLICKS",
+          "IMPRESSIONS",
+          "CTR",
+          "POSITION"
+        ]
+      }
+    }
+  ],
+  "trace": {
+    "composite_diagnosis_id": "CDX-1",
+    "treatment_recommendation_id": "TRX-1",
+    "medical_record_event_count": 0
+  }
+}

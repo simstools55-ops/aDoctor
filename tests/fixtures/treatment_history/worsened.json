@@ -1,0 +1,61 @@
+{
+  "contract_name": "SIMS_DOCTOR_TREATMENT_HISTORY_INPUT_V1",
+  "contract_version": "1.0",
+  "case_id": "CASE-1",
+  "article": {
+    "site_id": "site",
+    "article_id": "A1",
+    "url": "https://example.com/a1"
+  },
+  "treatment": {
+    "treatment_id": "TRT-ORIGINAL-1",
+    "completed_at": "2026-06-30T00:00:00+09:00",
+    "treatment_type": "WRITER_REWRITE",
+    "changed_fields": [
+      "seo_title",
+      "introduction",
+      "faq"
+    ]
+  },
+  "baseline": {
+    "start_date": "2026-06-01",
+    "end_date": "2026-06-28",
+    "clicks": 100,
+    "impressions": 3000,
+    "ctr": 0.0333,
+    "position": 6.0
+  },
+  "checkpoints": [
+    {
+      "days_after_treatment": 7,
+      "start_date": "2026-07-01",
+      "end_date": "2026-07-07",
+      "clicks": 20,
+      "impressions": 700,
+      "ctr": 0.0286,
+      "position": 7.0
+    },
+    {
+      "days_after_treatment": 28,
+      "start_date": "2026-07-01",
+      "end_date": "2026-07-28",
+      "clicks": 55,
+      "impressions": 2100,
+      "ctr": 0.0262,
+      "position": 8.5
+    }
+  ],
+  "observed_at": "2026-07-29T00:00:00+09:00",
+  "assessment": {
+    "classification": "WORSENED",
+    "effect_score": -0.3541,
+    "metric_changes": {
+      "clicks": -0.45,
+      "impressions": -0.3,
+      "ctr": -0.2132,
+      "position": -0.4167
+    },
+    "selected_checkpoint_days": 28,
+    "low_sample": false
+  }
+}

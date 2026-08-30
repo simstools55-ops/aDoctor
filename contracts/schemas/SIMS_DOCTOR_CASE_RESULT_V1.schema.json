@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/schemas/SIMS_DOCTOR_CASE_RESULT_V1.schema.json",
+  "title": "SIMS Article Doctor Case Result V1",
+  "type": "object",
+  "required": [
+    "format",
+    "contract_version",
+    "schema_version",
+    "source_system",
+    "target_system",
+    "message_id",
+    "generated_at",
+    "timezone",
+    "site",
+    "case",
+    "diagnosis",
+    "treatment_summary",
+    "treatments",
+    "affected_content",
+    "publication",
+    "workflow_update",
+    "monitoring",
+    "outcome",
+    "required_actions"
+  ],
+  "properties": {
+    "format": {
+      "const": "SIMS_DOCTOR_CASE_RESULT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "source_system": {
+      "enum": [
+        "SIMS_DOCTOR"
+      ]
+    },
+    "target_system": {
+      "enum": [
+        "SIMS_BLOG_MANAGER"
+      ]
+    },
+    "message_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "const": "Asia/Tokyo"
+    },
+    "site": {
+      "$ref": "#/$defs/site"
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "case_type",
+        "case_status",
+        "previous_case_status"
+      ],
+      "additionalProperties": true
+    },
+    "diagnosis": {
+      "type": "object",
+      "required": [
+        "original_diagnosis",
+        "final_diagnosis",
+        "diagnosis_status"
+      ],
+      "additionalProperties": true
+    },
+    "treatment_summary": {
+      "type": "object",
+      "required": [
+        "planned_treatment_count",
+        "completed_treatment_count",
+        "overall_status"
+      ],
+      "additionalProperties": true
+    },
+    "treatments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "treatment_id",
+          "treatment_type",
+          "executor",
+          "execution_status"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "affected_content": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "publication": {
+      "type": "object",
+      "required": [
+        "overall_publication_status",
+        "ready_for_monitoring"
+      ],
+      "additionalProperties": true
+    },
+    "workflow_update": {
+      "type": "object",
+      "required": [
+        "case_status_update",
+        "article_status_updates"
+      ],
+      "additionalProperties": true
+    },
+    "monitoring": {
+      "type": "object",
+      "required": [
+        "required",
+        "monitoring_status"
+      ],
+      "additionalProperties": true
+    },
+    "outcome": {
+      "type": "object",
+      "required": [
+        "outcome_status"
+      ],
+      "additionalProperties": true
+    },
+    "required_actions": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "commonHeader": {
+      "type": "object",
+      "required": [
+        "format",
+        "contract_version",
+        "schema_version",
+        "source_system",
+        "target_system",
+        "message_id",
+        "generated_at",
+        "timezone"
+      ],
+      "properties": {
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "source_system": {
+          "type": "string"
+        },
+        "target_system": {
+          "type": "string"
+        },
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "type": "string",
+          "const": "Asia/Tokyo"
+        }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "site_name",
+        "blog_url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blog_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "search_console_property": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

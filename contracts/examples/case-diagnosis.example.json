@@ -1,0 +1,25 @@
+{
+  "format": "SIMS_DOCTOR_CASE_DIAGNOSIS_V1",
+  "contract_version": "1.0",
+  "schema_version": "1.0.0",
+  "source_system": "SIMS_DOCTOR",
+  "target_system": "SIMS_BLOG_MANAGER",
+  "message_id": "MSG-EX-0003",
+  "generated_at": "2026-08-03T11:00:00+09:00",
+  "timezone": "Asia/Tokyo",
+  "site": {
+    "site_id": "example",
+    "site_name": "例",
+    "blog_url": "https://example.com/"
+  },
+  "diagnosis_run": {
+    "diagnosis_run_id": "DRUN-EX-1",
+    "snapshot_id": "SNP-EX-1",
+    "catalog_id": "CAT-EX-0001",
+    "diagnosis_mode": "FULL_SITE_HEALTH_CHECK"
+  },
+  "cases": [],
+  "summary": {
+    "case_count": 0
+  }
+}

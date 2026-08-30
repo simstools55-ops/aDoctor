@@ -1,0 +1,66 @@
+{
+  "contract_name": "SIMS_DOCTOR_CANNIBALIZATION_ASSESSMENT_V1",
+  "contract_version": "1.0",
+  "assessment_id": "CAA-20260804-060036-F58000",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "assessed_at": "2026-08-04T06:00:36.095032+00:00",
+  "classification": "MERGE_CANDIDATE",
+  "confidence": 95,
+  "severity": "SEVERE",
+  "reasons": [
+    "検索意図とSERPが強く重複し、片方の記事の流入が著しく弱い状態です。",
+    "主要流入クエリを保護し、統合や役割変更は慎重に判断します。",
+    "最大共通クエリ率は90.0%です。",
+    "SERP一致率は80.0%です。",
+    "検索意図一致率は92.0%です。"
+  ],
+  "metrics": {
+    "candidate_count": 1,
+    "eligible_candidate_count": 1,
+    "maximum_query_overlap": 0.9,
+    "maximum_serp_overlap": 0.8,
+    "maximum_intent_similarity": 0.92,
+    "weakest_traffic_ratio": 0.0625
+  },
+  "protections": {
+    "winner_query_protected": true,
+    "winner_query": {
+      "query": "wifi つながらない",
+      "click_share": 0.6838,
+      "clicks": 80.0
+    },
+    "merge_allowed": false,
+    "delete_allowed": false,
+    "redirect_allowed": false,
+    "noindex_allowed": false
+  },
+  "candidate_articles": [
+    {
+      "article_id": "A2",
+      "article_url": "https://example.com/a2",
+      "article_title": "Windows11 Wi-Fiトラブル",
+      "shared_query_count": 4,
+      "query_overlap": 0.9,
+      "serp_overlap": 0.8,
+      "intent_similarity": 0.92,
+      "current_position": 5.0,
+      "candidate_position": 28.0,
+      "current_ctr": 0.03,
+      "candidate_ctr": 0.004,
+      "current_clicks": 120.0,
+      "candidate_clicks": 7.0,
+      "candidate_impressions": 300.0,
+      "weaker_traffic_ratio": 0.0625,
+      "winner_query": {
+        "query": "wifi つながらない",
+        "click_share": 0.6838,
+        "clicks": 80.0
+      }
+    }
+  ],
+  "trace": {
+    "cross_article_observation_id": "OBS-XA-1",
+    "finding_ids": []
+  }
+}

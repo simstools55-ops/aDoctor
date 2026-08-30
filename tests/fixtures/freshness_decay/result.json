@@ -1,0 +1,47 @@
+{
+  "contract_name": "SIMS_DOCTOR_FRESHNESS_DECAY_ASSESSMENT_V1",
+  "contract_version": "1.0",
+  "assessment_id": "FDA-20260804-054958-D58ACE",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "assessed_at": "2026-08-04T05:49:58.179402+00:00",
+  "classification": "SEVERE_FRESHNESS_DECAY",
+  "confidence": 94,
+  "severity": "SEVERE",
+  "reasons": [
+    "長期間未更新で、複数の陳腐化シグナルが確認されました。",
+    "最終更新から1311日経過しています。",
+    "FRESHNESS Vital Signは28点です。",
+    "陳腐化所見が4件確認されています。"
+  ],
+  "metrics": {
+    "days_since_update": 1311,
+    "freshness_score": 28,
+    "outdated_signal_count": 4,
+    "outdated_signal_codes": [
+      "OUTDATED_PROCEDURE",
+      "OUTDATED_SPECIFICATION",
+      "OUTDATED_YEAR",
+      "STALE_SCREENSHOT"
+    ],
+    "impressions": 2200.0,
+    "low_sample": false
+  },
+  "protections": {
+    "winner_query_protected": false,
+    "winner_query": null,
+    "aggressive_title_change_allowed": true,
+    "deletion_allowed": false,
+    "preferred_scope": "BROAD_REFRESH"
+  },
+  "trace": {
+    "search_observation_id": "OBS-GSC-1",
+    "vital_profile_id": "VPR-1",
+    "finding_ids": [
+      "FND-1",
+      "FND-2",
+      "FND-3",
+      "FND-4"
+    ]
+  }
+}

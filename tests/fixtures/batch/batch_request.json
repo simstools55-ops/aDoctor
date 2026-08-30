@@ -1,0 +1,53 @@
+{
+  "contract_name": "SIMS_DOCTOR_BATCH_REQUEST_V1",
+  "contract_version": "1.0",
+  "batch_request_id": "BATCH-20260804-001",
+  "requested_at": "2026-08-04T12:00:00+09:00",
+  "site": {
+    "site_id": "site",
+    "site_name": "Test Site",
+    "site_url": "https://example.com/"
+  },
+  "items": [
+    {
+      "item_id": "ITEM-1",
+      "article_id": "A1",
+      "url": "https://example.com/a1",
+      "title": "Urgent Article",
+      "request_payload": {
+        "contract_name": "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1"
+      },
+      "longitudinal_profile": {
+        "follow_up_priority": "URGENT",
+        "latest_severity": "CRITICAL",
+        "recurrence": {
+          "maximum_recurrence_count": 3
+        }
+      },
+      "current_metrics": {
+        "clicks": 10,
+        "impressions": 5000,
+        "severity": "CRITICAL"
+      }
+    },
+    {
+      "item_id": "ITEM-2",
+      "article_id": "A2",
+      "url": "https://example.com/a2",
+      "title": "Normal Article",
+      "request_payload": {
+        "contract_name": "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1"
+      },
+      "longitudinal_profile": {
+        "follow_up_priority": "LOW",
+        "recurrence": {
+          "maximum_recurrence_count": 0
+        }
+      },
+      "current_metrics": {
+        "clicks": 50,
+        "impressions": 1000
+      }
+    }
+  ]
+}

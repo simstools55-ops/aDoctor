@@ -1,0 +1,30 @@
+{
+  "policy_name": "SIMS_DOCTOR_LONG_TERM_DEGRADATION_POLICY_V1",
+  "version": "1.0",
+  "thresholds": {
+    "chronic_visibility_decline": -0.25,
+    "sharp_visibility_decline": -0.4,
+    "ctr_decline": -0.25,
+    "position_decline": 2.0,
+    "vital_score_decline": -10,
+    "recurrence_count": 2,
+    "seasonality_score": 0.75,
+    "recovery_visibility_growth": 0.2,
+    "minimum_windows": 6
+  },
+  "classifications": [
+    "STABLE",
+    "CHRONIC_DEGRADATION",
+    "SHARP_DEGRADATION",
+    "CTR_DEGRADATION",
+    "POSITION_DEGRADATION",
+    "SEASONAL_VARIATION",
+    "RECOVERY_IN_PROGRESS",
+    "INSUFFICIENT_HISTORY"
+  ],
+  "safety": {
+    "seasonality_blocks_chronic_diagnosis_when_strong": true,
+    "recovery_blocks_degradation_when_current": true,
+    "low_sample_reduces_confidence": true
+  }
+}

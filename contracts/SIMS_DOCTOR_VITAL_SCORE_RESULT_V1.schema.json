@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_VITAL_SCORE_RESULT_V1.schema.json",
+  "title": "SIMS_DOCTOR_VITAL_SCORE_RESULT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "score_id",
+    "case_id",
+    "medical_record_id",
+    "calculated_at",
+    "score_status",
+    "overall_score",
+    "health_band",
+    "available_sign_count",
+    "missing_signs",
+    "components",
+    "adjustments",
+    "negative_factors",
+    "positive_factors",
+    "trace"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_VITAL_SCORE_RESULT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "score_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "calculated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "score_status": {
+      "type": "string",
+      "enum": [
+        "CALCULATED",
+        "INSUFFICIENT_DATA"
+      ]
+    },
+    "overall_score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "health_band": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "available_sign_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "missing_signs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "raw_score",
+          "weight",
+          "effective_weight",
+          "weighted_score"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "raw_score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0
+          },
+          "effective_weight": {
+            "type": "number",
+            "minimum": 0
+          },
+          "weighted_score": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "adjustments": {
+      "type": "object",
+      "required": [
+        "penalty",
+        "bonus",
+        "reasons"
+      ],
+      "properties": {
+        "penalty": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bonus": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "negative_factors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "positive_factors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "trace": {
+      "type": "object",
+      "required": [
+        "vital_profile_id",
+        "finding_ids",
+        "observation_ids"
+      ],
+      "properties": {
+        "vital_profile_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observation_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

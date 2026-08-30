@@ -1,0 +1,33 @@
+{
+  "contract_name": "SIMS_DOCTOR_LONG_TERM_DEGRADATION_ASSESSMENT_V1",
+  "contract_version": "1.0",
+  "assessment_id": "LDA-20260804-003852-38AD87",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "assessed_at": "2026-08-04T00:38:52.530265+00:00",
+  "classification": "SHARP_DEGRADATION",
+  "confidence": 98,
+  "severity": "CRITICAL",
+  "reasons": [
+    "表示回数が長期基準から急激に低下しています。",
+    "Vital Scoreが前回より14点低下しています。"
+  ],
+  "metrics": {
+    "window_count": 8,
+    "visibility_change_ratio": -0.58,
+    "ctr_change_ratio": -0.2,
+    "position_change": 3.2,
+    "seasonality_score": 0.42,
+    "vital_score_change": -14,
+    "recurrence_count": 1,
+    "low_sample": false
+  },
+  "trace": {
+    "long_term_observation_id": "OBS-LT-1",
+    "latest_vital_score_id": "VSC-NEW",
+    "previous_vital_score_id": "VSC-OLD",
+    "finding_ids": [
+      "FND-LT-1"
+    ]
+  }
+}

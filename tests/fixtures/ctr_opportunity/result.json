@@ -1,0 +1,36 @@
+{
+  "contract_name": "SIMS_DOCTOR_CTR_OPPORTUNITY_ASSESSMENT_V1",
+  "contract_version": "1.0",
+  "assessment_id": "CTA-20260804-052035-33E5FE",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "assessed_at": "2026-08-04T05:20:35.596228+00:00",
+  "classification": "HIGH_CTR_OPPORTUNITY",
+  "confidence": 94,
+  "severity": "SEVERE",
+  "reasons": [
+    "順位に対してCTRが大幅に下回っています。",
+    "上位表示されているため、タイトル改善の影響が大きい可能性があります。",
+    "順位別期待CTRとの差は91.7%です。"
+  ],
+  "metrics": {
+    "clicks": 20.0,
+    "impressions": 4000.0,
+    "ctr": 0.005,
+    "position": 4.2,
+    "expected_ctr": 0.06,
+    "ctr_gap_ratio": -0.9167,
+    "low_sample": false
+  },
+  "protections": {
+    "winner_query_protected": false,
+    "winner_query": null,
+    "recent_title_change": false,
+    "body_rewrite_allowed": false
+  },
+  "trace": {
+    "search_observation_id": "OBS-GSC-1",
+    "finding_ids": [],
+    "treatment_history_observation_ids": []
+  }
+}

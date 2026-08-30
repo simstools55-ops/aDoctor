@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_SBM_DOCTOR_BATCH_IMPORT_ACK_V1.schema.json",
+  "title": "SIMS_SBM_DOCTOR_BATCH_IMPORT_ACK_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "site_id",
+    "batch_request_id",
+    "result_fingerprint",
+    "status",
+    "imported_at",
+    "imported_items",
+    "failed_items"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_SBM_DOCTOR_BATCH_IMPORT_ACK_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "batch_request_id": {
+      "type": "string"
+    },
+    "result_fingerprint": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "IMPORTED",
+        "ALREADY_IMPORTED",
+        "PARTIAL"
+      ]
+    },
+    "imported_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "imported_items": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "failed_items": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

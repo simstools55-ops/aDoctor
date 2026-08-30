@@ -1,0 +1,30 @@
+{
+  "format": "SIMS_DOCTOR_LONG_TERM_SNAPSHOT_V1",
+  "contract_version": "1.0",
+  "schema_version": "1.0.0",
+  "source_system": "SIMS_DOCTOR_COLLECTOR",
+  "target_system": "SIMS_DOCTOR_DIAGNOSIS_ENGINE",
+  "message_id": "MSG-EX-0002",
+  "generated_at": "2026-08-03T10:00:00+09:00",
+  "timezone": "Asia/Tokyo",
+  "site": {
+    "site_id": "example",
+    "site_name": "例",
+    "blog_url": "https://example.com/"
+  },
+  "snapshot": {
+    "snapshot_id": "SNP-EX-1",
+    "catalog_id": "CAT-EX-0001",
+    "collector_job_id": "JOB-EX-1",
+    "snapshot_type": "FULL",
+    "diagnosis_reference_date": "2026-07-31"
+  },
+  "data_coverage": {
+    "requested_start_date": "2025-08-01",
+    "requested_end_date": "2026-07-31",
+    "available_days": 365,
+    "coverage_rate": 1.0,
+    "minimum_diagnosis_ready": true
+  },
+  "articles": []
+}

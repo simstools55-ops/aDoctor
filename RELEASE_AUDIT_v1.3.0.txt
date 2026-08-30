@@ -1,0 +1,14 @@
+SIMS Article Doctor v1.3.0 Release Audit
+Date: 2026-08-29
+
+Version policy: MINOR
+Reason: Personal Knowledge separation from distributable product.
+
+Checks
+- Full standard test suite: PASS — 241 passed
+- Known tenant/blog markers: PASS
+- Known owner-specific operational IDs: none retained
+- Product version: 1.3.0
+- Shared compatibility baseline: 3.5.0
+- SIMS_DOCTOR contracts: preserved
+- No destructive operational-data migration required.

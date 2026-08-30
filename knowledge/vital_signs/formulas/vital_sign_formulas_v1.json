@@ -1,0 +1,110 @@
+{
+  "formula_set": "SIMS_DOCTOR_VITAL_SIGN_FORMULAS_V1",
+  "version": "1.0",
+  "status": "INITIAL_UNCALIBRATED",
+  "global_policy": {
+    "score_min": 0,
+    "score_max": 100,
+    "higher_is_healthier": true,
+    "low_sample_penalty": 15,
+    "missing_input_behavior": "MARK_UNAVAILABLE",
+    "rounding": "NEAREST_INTEGER"
+  },
+  "formulas": [
+    {
+      "code": "VISIBILITY",
+      "version": "1.0",
+      "inputs": [
+        "days_28.impressions",
+        "days_90.impressions",
+        "days_365.impressions"
+      ],
+      "method": "TREND_AND_COVERAGE",
+      "weights": {
+        "current_level": 0.4,
+        "trend": 0.4,
+        "historical_presence": 0.2
+      }
+    },
+    {
+      "code": "TRAFFIC",
+      "version": "1.0",
+      "inputs": [
+        "days_28.clicks",
+        "days_90.clicks",
+        "days_365.clicks"
+      ],
+      "method": "TREND_AND_CURRENT_SHARE",
+      "weights": {
+        "current_level": 0.5,
+        "trend": 0.5
+      }
+    },
+    {
+      "code": "CTR_HEALTH",
+      "version": "1.0",
+      "inputs": [
+        "days_28.ctr",
+        "days_28.position",
+        "evidence.CTR_BELOW_POSITION_EXPECTATION"
+      ],
+      "method": "POSITION_ADJUSTED_CTR",
+      "weights": {
+        "position_adjusted": 0.8,
+        "evidence_penalty": 0.2
+      }
+    },
+    {
+      "code": "RANKING_STABILITY",
+      "version": "1.0",
+      "inputs": [
+        "days_28.position",
+        "days_90.position",
+        "days_365.position",
+        "evidence.POSITION_DECLINE_OBSERVED"
+      ],
+      "method": "POSITION_VARIANCE",
+      "weights": {
+        "trend": 0.7,
+        "evidence_penalty": 0.3
+      }
+    },
+    {
+      "code": "FRESHNESS",
+      "version": "1.0",
+      "inputs": [
+        "metadata.last_modified_at",
+        "evidence.LONG_TIME_SINCE_UPDATE"
+      ],
+      "method": "DAYS_SINCE_UPDATE",
+      "parameters": {
+        "full_score_days": 90,
+        "zero_score_days": 730
+      }
+    },
+    {
+      "code": "COMPETITION_RESILIENCE",
+      "version": "1.0",
+      "inputs": [
+        "serp.strength",
+        "serp.intent_match",
+        "serp.content_gap"
+      ],
+      "method": "SERP_COMPETITION_INVERSION",
+      "notes": "Calculated from normalized SERP competition strength and intent match.",
+      "status": "INITIAL_UNCALIBRATED"
+    },
+    {
+      "code": "CONTENT_INTEGRITY",
+      "version": "1.0",
+      "inputs": [
+        "article_snapshot",
+        "internal_links",
+        "serp.intent_match"
+      ],
+      "method": "ARTICLE_STRUCTURE_AND_INTENT",
+      "notes": "Calculated from Article Snapshot structure and intent-alignment data.",
+      "status": "INITIAL_UNCALIBRATED"
+    }
+  ]
+}

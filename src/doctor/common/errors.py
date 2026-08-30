@@ -1,0 +1,28 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Optional
+
+
+@dataclass(frozen=True)
+class DoctorError(Exception):
+    code: str
+    message: str
+    field: Optional[str] = None
+
+    def __str__(self) -> str:
+        return f"{self.code}: {self.message}"
+
+
+INVALID_JSON = "INVALID_JSON"
+UNSUPPORTED_CONTRACT = "UNSUPPORTED_CONTRACT"
+UNSUPPORTED_VERSION = "UNSUPPORTED_VERSION"
+MISSING_REQUIRED_FIELD = "MISSING_REQUIRED_FIELD"
+INVALID_FIELD_TYPE = "INVALID_FIELD_TYPE"
+INVALID_FIELD_VALUE = "INVALID_FIELD_VALUE"
+INVALID_URL = "INVALID_URL"
+INVALID_DATETIME = "INVALID_DATETIME"
+DUPLICATE_REQUEST = "DUPLICATE_REQUEST"
+CASE_REGISTRY_FAILURE = "CASE_REGISTRY_FAILURE"
+MEDICAL_RECORD_CREATION_FAILURE = "MEDICAL_RECORD_CREATION_FAILURE"
+INTERNAL_ERROR = "INTERNAL_ERROR"

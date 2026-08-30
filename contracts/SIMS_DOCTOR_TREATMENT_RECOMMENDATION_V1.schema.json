@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_TREATMENT_RECOMMENDATION_V1.schema.json",
+  "title": "SIMS_DOCTOR_TREATMENT_RECOMMENDATION_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "recommendation_id",
+    "case_id",
+    "medical_record_id",
+    "created_at",
+    "source_composite_diagnosis_id",
+    "referral_target",
+    "treatment_mode",
+    "priority",
+    "recommended_scope",
+    "prohibited_actions",
+    "reasons",
+    "monitoring",
+    "safety",
+    "trace",
+    "referral_request"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_TREATMENT_RECOMMENDATION_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "recommendation_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_composite_diagnosis_id": {
+      "type": "string"
+    },
+    "referral_target": {
+      "type": "string"
+    },
+    "treatment_mode": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "recommended_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prohibited_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "monitoring": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object"
+    },
+    "trace": {
+      "type": "object"
+    },
+    "referral_request": {
+      "type": "object"
+    }
+  }
+}

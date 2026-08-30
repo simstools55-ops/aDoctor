@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1.1.schema.json",
+  "title": "SIMS Article Doctor Single Case Result v1.1",
+  "type": "object",
+  "required": [
+    "contract_name",
+    "contract_version",
+    "result_status",
+    "diagnosis",
+    "user_display"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1"
+    },
+    "contract_version": {
+      "enum": [
+        "1.0",
+        "1.1"
+      ]
+    },
+    "result_status": {
+      "enum": [
+        "DIAGNOSED",
+        "FOLLOW_UP",
+        "REFETCH_REQUIRED"
+      ]
+    },
+    "diagnosis": {
+      "type": "object"
+    },
+    "clinical_review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "correction_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence_quality": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "acquisition_quality",
+          "content_quality"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "acquisition_quality": {
+            "type": "string"
+          },
+          "content_quality": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "external_factors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "confidence_factors": {
+      "type": "object"
+    },
+    "treatment_tracks": {
+      "type": "object",
+      "properties": {
+        "seo": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "serp": {
+          "type": "string"
+        },
+        "workflow": {
+          "type": "string"
+        }
+      }
+    },
+    "user_display": {
+      "type": "object"
+    },
+    "workflow_handoff": {
+      "type": "object",
+      "properties": {
+        "next_action": {
+          "type": "string",
+          "enum": [
+            "WRITER",
+            "CREATOR",
+            "MERGE",
+            "MONITOR",
+            "USER_CONFIRMATION"
+          ]
+        },
+        "treatment_class": {
+          "type": "string"
+        },
+        "action_checklist": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "user_confirmation_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "writer_request_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "creator_request_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "merge_request_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dependencies": {
+          "type": "array"
+        },
+        "handoff_mode": {
+          "type": "string"
+        },
+        "doctor_json_usage": {
+          "type": "string"
+        },
+        "specialist_result_destination": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "next_action"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

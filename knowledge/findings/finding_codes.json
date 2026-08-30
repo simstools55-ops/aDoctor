@@ -1,0 +1,237 @@
+{
+  "registry_name": "FINDING_CODE_REGISTRY",
+  "version": "1.0",
+  "severity_levels": [
+    "INFO",
+    "MILD",
+    "MODERATE",
+    "SEVERE",
+    "CRITICAL"
+  ],
+  "items": [
+    {
+      "code": "CTR_UNDERPERFORMING",
+      "category": "CTR",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "TITLE_ATTRACTION_LOW",
+      "category": "SNIPPET",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "POSITION_DECLINING",
+      "category": "RANKING",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "POSITION_STABLE",
+      "category": "RANKING",
+      "allowed_severity": [
+        "INFO"
+      ]
+    },
+    {
+      "code": "LOW_VISIBILITY",
+      "category": "VISIBILITY",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "HIGH_VISIBILITY_LOW_CLICK",
+      "category": "CTR",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "QUERY_SHIFT",
+      "category": "QUERY",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "INTENT_DRIFT",
+      "category": "INTENT",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "CONTENT_OUTDATED",
+      "category": "FRESHNESS",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "SERP_COMPETITION_HIGH",
+      "category": "COMPETITION",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "INTERNAL_LINKS_WEAK",
+      "category": "LINKS",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE"
+      ]
+    },
+    {
+      "code": "FAQ_COVERAGE_WEAK",
+      "category": "CONTENT",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE"
+      ]
+    },
+    {
+      "code": "INSUFFICIENT_EVIDENCE",
+      "category": "QUALITY",
+      "allowed_severity": [
+        "INFO"
+      ]
+    },
+    {
+      "code": "QUERY_OVERLAP_HIGH",
+      "category": "CANNIBALIZATION",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "ARTICLE_INTENT_OVERLAP",
+      "category": "CANNIBALIZATION",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "MERGE_SUITABILITY_HIGH",
+      "category": "MERGE",
+      "allowed_severity": [
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "DISTINCT_INTENT_OPPORTUNITY",
+      "category": "CREATOR",
+      "allowed_severity": [
+        "INFO",
+        "MILD"
+      ]
+    },
+    {
+      "code": "LONG_TERM_VISIBILITY_DECAY",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "LONG_TERM_CTR_DECAY",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "LONG_TERM_POSITION_DECAY",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "MILD",
+        "MODERATE",
+        "SEVERE"
+      ]
+    },
+    {
+      "code": "SEASONALITY_DETECTED",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "INFO"
+      ]
+    },
+    {
+      "code": "RECOVERY_TREND",
+      "category": "LONG_TERM",
+      "allowed_severity": [
+        "INFO",
+        "MILD"
+      ]
+    },
+    {
+      "code": "IMPROVEMENT_CONFIRMED",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "INFO"
+      ]
+    },
+    {
+      "code": "TREATMENT_INEFFECTIVE",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "MODERATE"
+      ]
+    },
+    {
+      "code": "POST_TREATMENT_WORSENING",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    {
+      "code": "MIXED_TREATMENT_RESPONSE",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "MILD"
+      ]
+    },
+    {
+      "code": "FOLLOW_UP_INSUFFICIENT",
+      "category": "TREATMENT_RESPONSE",
+      "allowed_severity": [
+        "INFO"
+      ]
+    }
+  ]
+}

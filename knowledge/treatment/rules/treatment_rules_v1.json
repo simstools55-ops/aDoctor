@@ -1,0 +1,167 @@
+{
+  "rule_set": "SIMS_DOCTOR_TREATMENT_RULES_V1",
+  "version": "1.0",
+  "rules": [
+    {
+      "diagnosis_code": "CTR_PROBLEM",
+      "treatment_code": "REWRITE_SNIPPET_AND_INTENT_ALIGNMENT",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "POSITION_DECLINE",
+      "treatment_code": "REWRITE_CONTENT_RECOVERY",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "CONTENT_STALE",
+      "treatment_code": "REFRESH_OUTDATED_CONTENT",
+      "target": "WRITER",
+      "priority": "MEDIUM",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "UPDATE_FAILURE",
+      "treatment_code": "REASSESS_FAILED_TREATMENT",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "CANNIBALIZATION",
+      "treatment_code": "REVIEW_QUERY_CONFLICT",
+      "target": "MERGE",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "ARTICLE_MERGE_REQUIRED",
+      "treatment_code": "MERGE_OVERLAPPING_ARTICLES",
+      "target": "MERGE",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "NEW_ARTICLE_NEEDED",
+      "treatment_code": "CREATE_DISTINCT_INTENT_ARTICLE",
+      "target": "CREATOR",
+      "priority": "MEDIUM",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "treatment_code": "REWRITE_LONG_TERM_RECOVERY",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "SEASONAL_DECLINE",
+      "treatment_code": "SEASONAL_OBSERVATION",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "treatment_code": "CONTINUE_OBSERVATION",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "TREATMENT_SUCCESS",
+      "treatment_code": "CONTINUE_EFFECT_MONITORING",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "IMPROVEMENT_FAILURE",
+      "treatment_code": "REASSESS_INEFFECTIVE_IMPROVEMENT",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "treatment_code": "REVIEW_AND_ROLLBACK_WORSENING",
+      "target": "WRITER",
+      "priority": "HIGH",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "MIXED_TREATMENT_RESPONSE",
+      "treatment_code": "ADDITIONAL_EFFECT_MEASUREMENT",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM",
+      "required_status": "CONFIRMED"
+    },
+    {
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "treatment_code": "WAIT_FOR_EFFECT_MEASUREMENT",
+      "target": "OBSERVATION",
+      "priority": "LOW",
+      "required_status": "CONFIRMED"
+    }
+  ],
+  "deferred_rules": [
+    {
+      "defer_reason": "LOW_SAMPLE_ONLY",
+      "treatment_code": "OBSERVATION_ONLY",
+      "target": "OBSERVATION",
+      "priority": "LOW"
+    },
+    {
+      "defer_reason": "CLOSE_CANDIDATES",
+      "treatment_code": "ADDITIONAL_OBSERVATION",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM"
+    },
+    {
+      "defer_reason": "MISSING_EVIDENCE",
+      "treatment_code": "COLLECT_MISSING_EVIDENCE",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM"
+    },
+    {
+      "defer_reason": "MISSING_FINDINGS",
+      "treatment_code": "COLLECT_MISSING_EVIDENCE",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM"
+    },
+    {
+      "defer_reason": "MISSING_CONTEXT",
+      "treatment_code": "COLLECT_TREATMENT_HISTORY",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM"
+    },
+    {
+      "defer_reason": "CONTRADICTION",
+      "treatment_code": "MANUAL_REVIEW",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM"
+    },
+    {
+      "defer_reason": "NO_CANDIDATE",
+      "treatment_code": "OBSERVATION_ONLY",
+      "target": "OBSERVATION",
+      "priority": "LOW"
+    },
+    {
+      "defer_reason": "INSUFFICIENT_DATA",
+      "treatment_code": "OBSERVATION_ONLY",
+      "target": "OBSERVATION",
+      "priority": "LOW"
+    },
+    {
+      "defer_reason": "LOW_CONFIDENCE",
+      "treatment_code": "ADDITIONAL_OBSERVATION",
+      "target": "OBSERVATION",
+      "priority": "MEDIUM"
+    }
+  ]
+}

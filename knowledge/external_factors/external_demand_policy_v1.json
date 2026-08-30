@@ -1,0 +1,17 @@
+{
+  "policy_name": "external_demand_policy_v1",
+  "version": "1.0.0",
+  "demand_health": ["GROWING", "STABLE", "SHRINKING", "COLLAPSED", "UNKNOWN"],
+  "evidence_types": [
+    "SEARCH_CONSOLE",
+    "SERP_SNAPSHOT",
+    "OFFICIAL_ANNOUNCEMENT",
+    "NEWS",
+    "SEASONALITY",
+    "MANUAL_WEB_VERIFICATION"
+  ],
+  "improvement_failure_exclusion": {
+    "minimum_external_factor_confidence": 80,
+    "excluded_when_demand_health": ["SHRINKING", "COLLAPSED"]
+  }
+}

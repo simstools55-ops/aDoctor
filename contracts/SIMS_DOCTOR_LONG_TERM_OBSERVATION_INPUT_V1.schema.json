@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_LONG_TERM_OBSERVATION_INPUT_V1.schema.json",
+  "title": "SIMS_DOCTOR_LONG_TERM_OBSERVATION_INPUT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "case_id",
+    "article",
+    "observed_at",
+    "windows",
+    "trend"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_LONG_TERM_OBSERVATION_INPUT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "article_id",
+        "url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string"
+        },
+        "article_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "windows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "start_date",
+          "end_date",
+          "clicks",
+          "impressions",
+          "ctr",
+          "position"
+        ],
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "end_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "clicks": {
+            "type": "number",
+            "minimum": 0
+          },
+          "impressions": {
+            "type": "number",
+            "minimum": 0
+          },
+          "ctr": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "position": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "trend": {
+      "type": "object",
+      "required": [
+        "classification",
+        "visibility_change_ratio",
+        "click_change_ratio",
+        "ctr_change_ratio",
+        "position_change",
+        "low_sample"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string"
+        },
+        "visibility_change_ratio": {
+          "type": "number"
+        },
+        "click_change_ratio": {
+          "type": "number"
+        },
+        "ctr_change_ratio": {
+          "type": "number"
+        },
+        "position_change": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "seasonality_score": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "low_sample": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

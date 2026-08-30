@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_CLINICAL_PIPELINE_RESULT_V1.schema.json",
+  "title": "SIMS_DOCTOR_CLINICAL_PIPELINE_RESULT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pipeline_run_id",
+    "case_id",
+    "medical_record_id",
+    "status",
+    "started_at",
+    "completed_at",
+    "completed_steps",
+    "failed_step",
+    "final_diagnosis_id",
+    "referral_id",
+    "case_status",
+    "errors"
+  ],
+  "properties": {
+    "pipeline_run_id": {
+      "type": "string",
+      "pattern": "^RUN-[0-9]{8}-[0-9]{6}-[A-F0-9]{6}$"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "COMPLETE",
+        "COMPLETE_WITH_FOLLOW_UP",
+        "COMPLETE_WITHOUT_REFERRAL",
+        "FAILED"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failed_step": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "final_diagnosis_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "referral_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "case_status": {
+      "type": "string"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "registry_name": "DIAGNOSIS_CODE_REGISTRY",
+  "version": "1.0",
+  "items": [
+    {
+      "code": "LOW_CTR_WITH_STRONG_POSITION",
+      "category": "CTR"
+    },
+    {
+      "code": "LONG_TERM_DECLINE",
+      "category": "DECLINE"
+    },
+    {
+      "code": "CONTENT_STALE",
+      "category": "FRESHNESS"
+    },
+    {
+      "code": "UPDATE_FAILURE",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "INSUFFICIENT_DATA",
+      "category": "QUALITY"
+    },
+    {
+      "code": "CTR_PROBLEM",
+      "category": "FINAL_CTR"
+    },
+    {
+      "code": "POSITION_DECLINE",
+      "category": "FINAL_DECLINE"
+    },
+    {
+      "code": "CANNIBALIZATION",
+      "category": "CROSS_ARTICLE"
+    },
+    {
+      "code": "ARTICLE_MERGE_REQUIRED",
+      "category": "MERGE"
+    },
+    {
+      "code": "NEW_ARTICLE_NEEDED",
+      "category": "CREATOR"
+    },
+    {
+      "code": "LONG_TERM_DECAY",
+      "category": "LONG_TERM"
+    },
+    {
+      "code": "SEASONAL_DECLINE",
+      "category": "SEASONAL"
+    },
+    {
+      "code": "RECOVERY_IN_PROGRESS",
+      "category": "RECOVERY"
+    },
+    {
+      "code": "TREATMENT_SUCCESS",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "IMPROVEMENT_FAILURE",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "POST_IMPROVEMENT_WORSENING",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "MIXED_TREATMENT_RESPONSE",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "FOLLOW_UP_REQUIRED",
+      "category": "TREATMENT_RESPONSE"
+    },
+    {
+      "code": "POSITION_OPPORTUNITY",
+      "category": "RANKING"
+    },
+    {
+      "code": "POSITION_WINNER_QUERY_PROTECTED",
+      "category": "RANKING"
+    },
+    {
+      "code": "LOW_VISIBILITY_OR_MISALIGNMENT",
+      "category": "RANKING"
+    },
+    {
+      "code": "INTENT_DRIFT",
+      "category": "INTENT"
+    },
+    {
+      "code": "TOPIC_DISPERSION",
+      "category": "INTENT"
+    },
+    {
+      "code": "EMERGING_INTENT_TRANSITION",
+      "category": "INTENT"
+    },
+    {
+      "code": "INTENT_WINNER_QUERY_PROTECTED",
+      "category": "INTENT"
+    },
+    {
+      "code": "FRESHNESS_DECAY",
+      "category": "FRESHNESS"
+    },
+    {
+      "code": "SEVERE_FRESHNESS_DECAY",
+      "category": "FRESHNESS"
+    },
+    {
+      "code": "FRESHNESS_WINNER_QUERY_PROTECTED",
+      "category": "FRESHNESS"
+    },
+    {
+      "code": "MERGE_CANDIDATE",
+      "category": "CROSS_ARTICLE"
+    },
+    {
+      "code": "ROLE_SEPARATION",
+      "category": "CROSS_ARTICLE"
+    }
+  ]
+}

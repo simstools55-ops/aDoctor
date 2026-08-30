@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_DIAGNOSTIC_RULE_V1.schema.json",
+  "title": "SIMS_DOCTOR_DIAGNOSTIC_RULE_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule_id",
+    "rule_version",
+    "enabled",
+    "priority",
+    "diagnosis_code",
+    "condition_logic",
+    "conditions",
+    "base_confidence",
+    "severity",
+    "explanation_template"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "rule_version": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "diagnosis_code": {
+      "type": "string"
+    },
+    "condition_logic": {
+      "type": "string",
+      "enum": [
+        "ALL",
+        "ANY"
+      ]
+    },
+    "conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "field",
+          "operator",
+          "value"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "EVIDENCE",
+              "FINDING",
+              "VITAL_SIGN",
+              "OBSERVATION",
+              "LONGITUDINAL_PROFILE",
+              "TREATMENT_HISTORY",
+              "CONTEXT"
+            ]
+          },
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "field": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string",
+            "enum": [
+              "EQ",
+              "NE",
+              "GT",
+              "GTE",
+              "LT",
+              "LTE",
+              "IN",
+              "NOT_IN",
+              "CONTAINS",
+              "EXISTS"
+            ]
+          },
+          "value": {}
+        }
+      }
+    },
+    "base_confidence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "severity": {
+      "type": "string"
+    },
+    "mutual_exclusion_group": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "specificity": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "explanation_template": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

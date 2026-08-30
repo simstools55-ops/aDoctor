@@ -1,0 +1,31 @@
+{
+  "policy_name": "SIMS_DOCTOR_SBM_BATCH_INTEGRATION_POLICY_V1",
+  "version": "1.0",
+  "submission": {
+    "maximum_items": 500,
+    "duplicate_batch_behavior": "RETURN_EXISTING_QUEUE",
+    "duplicate_article_behavior": "REJECT_WITHIN_SAME_BATCH",
+    "request_contract": "SIMS_SBM_DOCTOR_BATCH_REQUEST_V1"
+  },
+  "status": {
+    "include_item_summary": true,
+    "include_internal_error_message": false,
+    "terminal_statuses": [
+      "COMPLETED",
+      "COMPLETED_WITH_ERRORS",
+      "FAILED",
+      "CANCELLED"
+    ]
+  },
+  "result_export": {
+    "only_terminal_batches": true,
+    "include_failed_items": true,
+    "include_single_case_result": true,
+    "include_writer_request": true,
+    "include_internal_medical_record": false
+  },
+  "import_ack": {
+    "idempotency_scope": "SITE_ID_AND_BATCH_REQUEST_ID_AND_RESULT_FINGERPRINT",
+    "duplicate_behavior": "ALREADY_IMPORTED"
+  }
+}

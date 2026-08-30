@@ -1,0 +1,48 @@
+{
+  "format": "SIMS_TREATMENT_RESULT_V1",
+  "contract_version": "1.0",
+  "schema_version": "1.0.0",
+  "source_system": "SIMS_WRITER",
+  "target_system": "SIMS_DOCTOR",
+  "message_id": "MSG-EX-0005",
+  "generated_at": "2026-08-03T13:00:00+09:00",
+  "timezone": "Asia/Tokyo",
+  "site": {
+    "site_id": "example",
+    "site_name": "例",
+    "blog_url": "https://example.com/"
+  },
+  "case": {
+    "case_id": "CASE-EX-1",
+    "case_type": "CONTENT_DECAY"
+  },
+  "treatment": {
+    "treatment_id": "TRT-EX-1",
+    "treatment_type": "CONTENT_DECAY_RECOVERY",
+    "executor": "SIMS_WRITER",
+    "request_message_id": "MSG-EX-0004"
+  },
+  "execution": {
+    "status": "COMPLETED",
+    "result_level": "FULL",
+    "success": true
+  },
+  "diagnosis_assessment": {
+    "validation": "CONFIRMED",
+    "treatment_fit": "APPROPRIATE"
+  },
+  "affected_content": {},
+  "publication": {
+    "publication_decision": "PUBLIC_OK",
+    "publication_status": "NOT_YET_PUBLISHED"
+  },
+  "monitoring": {
+    "required": true
+  },
+  "follow_up": {},
+  "executor_result": {
+    "format": "SIMS_FEEDBACK_V2",
+    "contract_version": "4.2",
+    "payload": {}
+  }
+}

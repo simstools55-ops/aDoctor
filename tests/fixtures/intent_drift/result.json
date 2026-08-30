@@ -1,0 +1,40 @@
+{
+  "contract_name": "SIMS_DOCTOR_INTENT_DRIFT_ASSESSMENT_V1",
+  "contract_version": "1.0",
+  "assessment_id": "IDA-20260804-054524-06439B",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "assessed_at": "2026-08-04T05:45:24.616147+00:00",
+  "classification": "TOPIC_DISPERSION",
+  "confidence": 90,
+  "severity": "SEVERE",
+  "reasons": [
+    "検索意図が複数方向へ分散しています。",
+    "最大クエリ群の表示構成比は53.3%です。",
+    "第2クエリ群の表示構成比は31.7%です。",
+    "クエリ分布エントロピーは0.896です。",
+    "主要クエリ群とタイトルの語彙一致度は0.0%です。"
+  ],
+  "metrics": {
+    "impressions": 3000.0,
+    "query_count": 5,
+    "primary_intent": "SPEED",
+    "primary_intent_share": 0.5333,
+    "secondary_intent": "DISCONNECT",
+    "secondary_intent_share": 0.3167,
+    "intent_entropy": 0.8956,
+    "query_title_overlap": 0.0,
+    "emerging_intent": null,
+    "low_sample": false
+  },
+  "protections": {
+    "winner_query_protected": false,
+    "winner_query": null,
+    "new_article_allowed": false,
+    "aggressive_retargeting_allowed": true
+  },
+  "trace": {
+    "search_observation_id": "OBS-GSC-1",
+    "finding_ids": []
+  }
+}

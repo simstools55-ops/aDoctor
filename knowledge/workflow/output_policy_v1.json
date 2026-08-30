@@ -1,0 +1,28 @@
+{
+  "policy_name": "SIMS_DOCTOR_OUTPUT_POLICY_V1",
+  "version": "1.0",
+  "user_display": {
+    "language": "ja",
+    "show_internal_ids": false,
+    "show_raw_rule_names": false,
+    "show_confidence": true,
+    "show_severity": true,
+    "show_review_date": true,
+    "show_supporting_reasons_limit": 5
+  },
+  "system_output": {
+    "include_trace_ids": true,
+    "include_evidence_ids": true,
+    "include_finding_ids": true,
+    "include_contract_version": true
+  },
+  "writer_referral": {
+    "allowed_diagnoses": [
+      "CTR_PROBLEM",
+      "POSITION_DECLINE",
+      "CONTENT_STALE",
+      "UPDATE_FAILURE"
+    ],
+    "deferred_behavior": "DO_NOT_CREATE_WRITER_REQUEST"
+  }
+}

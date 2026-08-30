@@ -1,0 +1,13 @@
+{
+  "product_code": "DOCTOR",
+  "product_name": "SIMS Article Doctor",
+  "repository_name": "SIMS-Article-Doctor",
+  "repository_type": "PRODUCT",
+  "platform": "SIMS Editorial Platform",
+  "platform_compatibility": "1.x",
+  "current_version": "1.4.1",
+  "shared_version": "3.5.0",
+  "role": "Single-article precision diagnosis and return to SBM for specialist referral generation; no treatment execution",
+  "release_status": "PATCH",
+  "notes": "Product-edition user-facing naming consolidation: aDoctor / SIMS Manager / site terminology. Internal SIMS_DOCTOR contracts, product identifiers, source_product values, and Shared v3.5.0 baseline are unchanged."
+}

@@ -1,0 +1,46 @@
+{
+  "policy_name": "SIMS_DOCTOR_SERP_OBSERVATION_POLICY_V1",
+  "version": "1.0",
+  "result_limit": 10,
+  "comparison_depth": 10,
+  "features": [
+    "AI_OVERVIEW",
+    "FEATURED_SNIPPET",
+    "PEOPLE_ALSO_ASK",
+    "VIDEO",
+    "IMAGE_PACK",
+    "LOCAL_PACK",
+    "SHOPPING",
+    "NEWS"
+  ],
+  "intent_labels": [
+    "INFORMATIONAL",
+    "HOW_TO",
+    "COMPARISON",
+    "TRANSACTIONAL",
+    "NAVIGATIONAL",
+    "LOCAL",
+    "MIXED",
+    "UNKNOWN"
+  ],
+  "competition": {
+    "authority_weight": 0.35,
+    "exact_intent_match_weight": 0.3,
+    "freshness_weight": 0.2,
+    "serp_feature_weight": 0.15,
+    "score_min": 0,
+    "score_max": 100
+  },
+  "retry": {
+    "maximum_attempts": 3,
+    "retryable_errors": [
+      "RATE_LIMIT",
+      "TEMPORARY_UNAVAILABLE",
+      "TIMEOUT"
+    ]
+  },
+  "privacy": {
+    "store_snippets": true,
+    "maximum_snippet_length": 500
+  }
+}

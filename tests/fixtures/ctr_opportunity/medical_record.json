@@ -1,0 +1,39 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-GSC-1",
+      "observation_type": "SEARCH_CONSOLE",
+      "facts": {
+        "metrics": {
+          "clicks": 20,
+          "impressions": 4000,
+          "ctr": 0.005,
+          "position": 4.2,
+          "low_sample": false
+        },
+        "queries": [
+          {
+            "query": "q1",
+            "clicks": 7
+          },
+          {
+            "query": "q2",
+            "clicks": 7
+          },
+          {
+            "query": "q3",
+            "clicks": 6
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "ctr_opportunity_assessments": [],
+  "counters": {
+    "ctr_opportunity_assessment_count": 0
+  }
+}

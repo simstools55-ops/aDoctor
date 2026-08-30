@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_BATCH_RESULT_V1.schema.json",
+  "title": "SIMS_DOCTOR_BATCH_RESULT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "batch_run_id",
+    "batch_request_id",
+    "status",
+    "started_at",
+    "completed_at",
+    "summary",
+    "items",
+    "errors"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_BATCH_RESULT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "batch_run_id": {
+      "type": "string"
+    },
+    "batch_request_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "COMPLETED",
+        "COMPLETED_WITH_ERRORS",
+        "FAILED",
+        "PAUSED"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "total",
+        "completed",
+        "failed",
+        "skipped",
+        "writer_referrals",
+        "creator_referrals",
+        "merge_referrals",
+        "follow_up"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "completed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "writer_referrals": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "creator_referrals": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "merge_referrals": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "follow_up": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "article_id",
+          "priority_score",
+          "status",
+          "attempts",
+          "case_id",
+          "result",
+          "error"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string"
+          },
+          "article_id": {
+            "type": "string"
+          },
+          "priority_score": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "COMPLETED",
+              "FAILED",
+              "SKIPPED"
+            ]
+          },
+          "attempts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "case_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "result": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "error": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

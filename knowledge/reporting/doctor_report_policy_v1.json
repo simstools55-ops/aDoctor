@@ -1,0 +1,25 @@
+{
+  "policy_name": "SIMS_DOCTOR_REPORT_POLICY_V1",
+  "version": "1.0",
+  "audiences": [
+    "USER",
+    "SYSTEM"
+  ],
+  "labels": {
+    "HEALTHY": "治療不要",
+    "MINOR_REFRESH": "部分更新",
+    "LOCAL_OPTIMIZATION": "局所改善",
+    "FULL_REWRITE_RECOMMENDED": "大規模リライト推奨",
+    "NEW_ARTICLE_RECOMMENDED": "新記事作成推奨",
+    "MERGE_RECOMMENDED": "記事統合推奨",
+    "OBSERVE_ONLY": "経過観察",
+    "FOLLOW_UP_REQUIRED": "再診・追加データ"
+  },
+  "safety": {
+    "hide_internal_rule_ids_from_user_report": true,
+    "hide_raw_evidence_from_user_report": true,
+    "hide_stack_traces": true,
+    "do_not_claim_treatment_executed": true,
+    "do_not_expose_secrets": true
+  }
+}

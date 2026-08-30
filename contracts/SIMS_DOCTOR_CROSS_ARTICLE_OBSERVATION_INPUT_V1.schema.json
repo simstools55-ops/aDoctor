@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_CROSS_ARTICLE_OBSERVATION_INPUT_V1.schema.json",
+  "title": "SIMS_DOCTOR_CROSS_ARTICLE_OBSERVATION_INPUT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "case_id",
+    "site_id",
+    "primary_article",
+    "candidates",
+    "observed_at"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_CROSS_ARTICLE_OBSERVATION_INPUT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "primary_article": {
+      "$ref": "#/$defs/article"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "article",
+          "shared_queries",
+          "query_overlap_ratio",
+          "title_similarity",
+          "intent_similarity",
+          "classification"
+        ],
+        "properties": {
+          "article": {
+            "$ref": "#/$defs/article"
+          },
+          "shared_queries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "query",
+                "primary_impressions",
+                "candidate_impressions"
+              ],
+              "properties": {
+                "query": {
+                  "type": "string"
+                },
+                "primary_impressions": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "candidate_impressions": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          },
+          "query_overlap_ratio": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "title_similarity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "intent_similarity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "NO_CONFLICT",
+              "POSSIBLE_CANNIBALIZATION",
+              "MERGE_CANDIDATE",
+              "SEPARATE_INTENT",
+              "NEW_ARTICLE_OPPORTUNITY"
+            ]
+          },
+          "dominant_article_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "article": {
+      "type": "object",
+      "required": [
+        "article_id",
+        "url",
+        "title",
+        "main_query",
+        "clicks",
+        "impressions",
+        "ctr",
+        "position"
+      ],
+      "properties": {
+        "article_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        },
+        "main_query": {
+          "type": "string"
+        },
+        "clicks": {
+          "type": "number",
+          "minimum": 0
+        },
+        "impressions": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ctr": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "position": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

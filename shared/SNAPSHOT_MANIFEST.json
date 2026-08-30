@@ -1,0 +1,36 @@
+{
+  "shared_version": "3.5.0",
+  "snapshot_for": "DOCTOR",
+  "generated_at": "2026-08-07T17:30:00+09:00",
+  "included_paths": [
+    "contracts/common",
+    "contracts/doctor",
+    "contracts/platform/platform-error-v1.schema.json",
+    "doctor/ALGORITHM_EVIDENCE_V1.md",
+    "doctor/INTERFACE_CONTRACTS_V2.md",
+    "doctor/TREATMENT_ROUTING_V1.md",
+    "doctor/SBM_DOCTOR_SAFETY_BOUNDARY.md",
+    "architecture/PRODUCT_RESPONSIBILITIES.md",
+    "enums/diagnosis-code.json",
+    "enums/treatment-type.json",
+    "enums/result-status.json",
+    "enums/priority.json",
+    "enums/product-code.json",
+    "presentation/HUMAN_EXPERIENCE_ARCHITECTURE_V1.md",
+    "presentation/PRESENTATION_STANDARD_V1.md",
+    "presentation/HUMAN_OUTPUT_POLICY_V1.md",
+    "presentation/MACHINE_OUTPUT_POLICY_V1.md",
+    "presentation/HUMAN_USABILITY_GATE_V1.md"
+  ],
+  "excluded_paths": [
+    "runtime/writer",
+    "runtime/creator",
+    "runtime/merge"
+  ],
+  "compatible_product_versions": [
+    "1.3.1"
+  ],
+  "compatible_package_versions": [
+    "1.3.1"
+  ]
+}

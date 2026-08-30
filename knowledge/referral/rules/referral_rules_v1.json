@@ -1,0 +1,18 @@
+{
+  "rule_set": "SIMS_DOCTOR_REFERRAL_RULES_V1",
+  "version": "1.0",
+  "targets": [
+    "WRITER",
+    "CREATOR",
+    "MERGE",
+    "OBSERVATION",
+    "NOINDEX_REVIEW",
+    "DELETE_REVIEW"
+  ],
+  "policies": {
+    "diagnosis_and_referral_are_separate": true,
+    "doctor_does_not_execute_treatment": true,
+    "deferred_diagnosis_cannot_route_to_writer_creator_merge": true,
+    "unsupported_target_behavior": "REJECT"
+  }
+}

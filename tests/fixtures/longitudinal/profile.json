@@ -1,0 +1,62 @@
+{
+  "contract_name": "SIMS_DOCTOR_LONGITUDINAL_PROFILE_V1",
+  "contract_version": "1.0",
+  "profile_id": "LPR-20260803-235644-AE4D46",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "article": {
+    "site_id": "site",
+    "article_id": "A1",
+    "url": "https://example.com/a1",
+    "title": "Recurring Article"
+  },
+  "generated_at": "2026-08-03T23:56:44.181788+00:00",
+  "profile_status": "CHRONIC",
+  "follow_up_priority": "URGENT",
+  "summary": "同じ問題が複数回再発し、慢性化している可能性があります。 最多診断はCTR_PROBLEMで、3回です。",
+  "diagnosis_history": {
+    "total_diagnoses": 3,
+    "confirmed_count": 3,
+    "deferred_count": 0,
+    "diagnosis_counts": {
+      "CTR_PROBLEM": 3
+    },
+    "defer_reason_counts": {},
+    "latest_diagnosis": "CTR_PROBLEM"
+  },
+  "treatment_response": {
+    "success_count": 0,
+    "failure_count": 1,
+    "worsening_count": 1,
+    "mixed_count": 0,
+    "success_ratio": 0.0,
+    "failure_ratio": 1.0
+  },
+  "recurrence": {
+    "recurrent_diagnoses": [
+      "CTR_PROBLEM"
+    ],
+    "dominant_diagnosis": "CTR_PROBLEM",
+    "maximum_recurrence_count": 3,
+    "recent_recurrence": true
+  },
+  "patterns": [
+    "REPEATED_DIAGNOSIS",
+    "CHRONIC_RECURRENCE",
+    "POOR_TREATMENT_RESPONSE",
+    "POST_TREATMENT_WORSENING_HISTORY",
+    "RECENT_RECURRENCE"
+  ],
+  "trace": {
+    "diagnosis_ids": [
+      "DX-1",
+      "DX-2",
+      "DX-3"
+    ],
+    "treatment_history_observation_ids": [
+      "OBS-H1",
+      "OBS-H2"
+    ]
+  },
+  "fingerprint": "9b882bdbabf552c29dc09b6b3d9e55b046cc9050ef56308fb2fc0c9a1b8b0535"
+}

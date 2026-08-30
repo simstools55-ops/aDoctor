@@ -1,0 +1,83 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "patient": {
+    "site_id": "site",
+    "article_id": "A1",
+    "article_url": "https://example.com/a1",
+    "article_title": "Example Article"
+  },
+  "events": [],
+  "vital_scores": [
+    {
+      "score_id": "VSC-1",
+      "overall_score": 66
+    }
+  ],
+  "composite_diagnoses": [
+    {
+      "composite_diagnosis_id": "CDX-1",
+      "final_diagnosis": "LOCAL_OPTIMIZATION",
+      "confidence": 91,
+      "priority": 78,
+      "severity": "MODERATE",
+      "reasons": [
+        "CTR改善機会があります。",
+        "順位改善機会があります。"
+      ],
+      "score": {
+        "risk_score": 56,
+        "health_score": 66
+      },
+      "safety": {
+        "winner_query_protected": false,
+        "recent_change_or_update": false
+      },
+      "supporting_assessments": [
+        {
+          "assessment_type": "ctr_opportunity_assessments",
+          "assessment_id": "CTA-1",
+          "classification": "HIGH_CTR_OPPORTUNITY",
+          "confidence": 94,
+          "severity": "SEVERE"
+        }
+      ]
+    }
+  ],
+  "treatment_recommendations": [
+    {
+      "recommendation_id": "TRX-1",
+      "referral_target": "SIMS_WRITER",
+      "treatment_mode": "LOCAL_OPTIMIZATION",
+      "priority": 78,
+      "recommended_scope": [
+        "SEO_TITLE",
+        "META_DESCRIPTION",
+        "INTRODUCTION",
+        "FAQ"
+      ],
+      "prohibited_actions": [
+        "AUTOMATIC_DELETE",
+        "AUTOMATIC_NOINDEX",
+        "AUTOMATIC_PUBLICATION"
+      ],
+      "monitoring": {
+        "required": true,
+        "recommended_days": 28,
+        "metrics": [
+          "CLICKS",
+          "IMPRESSIONS",
+          "CTR",
+          "POSITION"
+        ]
+      },
+      "referral_request": {
+        "contract_name": "SIMS_DOCTOR_WRITER_REQUEST_V1"
+      }
+    }
+  ],
+  "doctor_reports": [],
+  "counters": {
+    "doctor_report_count": 0
+  }
+}
