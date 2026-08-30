@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_SBM_DOCTOR_BATCH_ACCEPTED_V1.schema.json",
+  "title": "SIMS_SBM_DOCTOR_BATCH_ACCEPTED_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "batch_request_id",
+    "queue_record_id",
+    "status",
+    "accepted_at",
+    "item_count",
+    "duplicate_submission"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_SBM_DOCTOR_BATCH_ACCEPTED_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "batch_request_id": {
+      "type": "string"
+    },
+    "queue_record_id": {
+      "type": "string"
+    },
+    "status": {
+      "const": "ACCEPTED"
+    },
+    "accepted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "item_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "duplicate_submission": {
+      "type": "boolean"
+    }
+  }
+}

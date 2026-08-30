@@ -1,0 +1,27 @@
+{
+  "policy_name": "SIMS_DOCTOR_LONG_TERM_ANALYSIS_POLICY_V1",
+  "version": "1.0",
+  "window_days": 28,
+  "minimum_windows": 6,
+  "trend_thresholds": {
+    "gradual_decline_ratio": 0.25,
+    "sharp_decline_ratio": 0.4,
+    "ctr_decline_ratio": 0.25,
+    "position_decline_absolute": 2.0,
+    "recovery_ratio": 0.2,
+    "seasonality_similarity_threshold": 0.75
+  },
+  "minimum_sample": {
+    "impressions_per_window": 100,
+    "clicks_per_window": 1
+  },
+  "classification": [
+    "STABLE",
+    "GRADUAL_DECLINE",
+    "SHARP_DECLINE",
+    "CTR_DECAY",
+    "POSITION_DECAY",
+    "SEASONAL_PATTERN",
+    "RECOVERY"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "policy_name": "SIMS_DOCTOR_CROSS_ARTICLE_POLICY_V1",
+  "version": "1.0",
+  "thresholds": {
+    "minimum_shared_queries": 3,
+    "minimum_query_overlap_ratio": 0.35,
+    "minimum_title_similarity": 0.55,
+    "minimum_intent_similarity": 0.7,
+    "dominance_ratio_for_primary_article": 1.5,
+    "minimum_candidate_impressions": 100
+  },
+  "classifications": [
+    "NO_CONFLICT",
+    "POSSIBLE_CANNIBALIZATION",
+    "MERGE_CANDIDATE",
+    "SEPARATE_INTENT",
+    "NEW_ARTICLE_OPPORTUNITY"
+  ],
+  "safety": {
+    "never_auto_merge": true,
+    "never_auto_delete": true,
+    "creator_requires_distinct_intent": true
+  }
+}

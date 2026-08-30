@@ -1,0 +1,822 @@
+{
+  "rule_set": "SIMS_DOCTOR_CORE_DIAGNOSTIC_RULES_V1",
+  "version": "1.0",
+  "rules": [
+    {
+      "rule_id": "DR-CTR-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 80,
+      "diagnosis_code": "CTR_PROBLEM",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "FINDING",
+          "code": "CTR_UNDERPERFORMING",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "CTR_UNDERPERFORMING"
+        },
+        {
+          "source": "VITAL_SIGN",
+          "code": "CTR_HEALTH",
+          "field": "score",
+          "operator": "LT",
+          "value": 50
+        }
+      ],
+      "base_confidence": 65,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": null,
+      "specificity": 80,
+      "explanation_template": "CTR関連所見とCTR Health低下が一致しました。",
+      "tags": [
+        "CTR",
+        "SINGLE_CASE"
+      ]
+    },
+    {
+      "rule_id": "DR-LONG-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 95,
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "condition_logic": "ANY",
+      "conditions": [
+        {
+          "source": "FINDING",
+          "code": "LONG_TERM_VISIBILITY_DECAY",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "LONG_TERM_VISIBILITY_DECAY"
+        },
+        {
+          "source": "FINDING",
+          "code": "LONG_TERM_POSITION_DECAY",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "LONG_TERM_POSITION_DECAY"
+        }
+      ],
+      "base_confidence": 70,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 90,
+      "explanation_template": "長期推移に継続的な劣化所見が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "DECLINE"
+      ]
+    },
+    {
+      "rule_id": "DR-RECOVERY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 85,
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "FINDING",
+          "code": "RECOVERY_TREND",
+          "field": "finding_code",
+          "operator": "EQ",
+          "value": "RECOVERY_TREND"
+        }
+      ],
+      "base_confidence": 70,
+      "severity": "MILD",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 85,
+      "explanation_template": "直近データに回復傾向が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "RECOVERY"
+      ]
+    },
+    {
+      "rule_id": "DR-IMPROVEMENT-FAILURE-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "IMPROVEMENT_FAILURE",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "IMPROVEMENT_FAILURE_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "NO_MEASURABLE_EFFECT"
+        }
+      ],
+      "base_confidence": 78,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "IMPROVEMENT_OUTCOME",
+      "specificity": 90,
+      "explanation_template": "改善履歴の比較で明確な効果が確認できませんでした。",
+      "tags": [
+        "IMPROVEMENT",
+        "FAILURE"
+      ]
+    },
+    {
+      "rule_id": "DR-IMPROVEMENT-WORSENING-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 99,
+      "diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "condition_logic": "ANY",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "IMPROVEMENT_FAILURE_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "POST_TREATMENT_WORSENING",
+            "POSSIBLE_WRONG_TREATMENT_DIRECTION",
+            "RECURRENT_FAILURE"
+          ]
+        }
+      ],
+      "base_confidence": 85,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "IMPROVEMENT_OUTCOME",
+      "specificity": 95,
+      "explanation_template": "改善後の主要指標に悪化または再発が確認されました。",
+      "tags": [
+        "IMPROVEMENT",
+        "WORSENING"
+      ]
+    },
+    {
+      "rule_id": "DR-IMPROVEMENT-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 88,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "IMPROVEMENT_FAILURE_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_FOLLOW_UP"
+        }
+      ],
+      "base_confidence": 75,
+      "severity": "INFO",
+      "mutual_exclusion_group": "IMPROVEMENT_OUTCOME",
+      "specificity": 85,
+      "explanation_template": "改善効果を判断するための期間またはデータ量が不足しています。",
+      "tags": [
+        "IMPROVEMENT",
+        "FOLLOW_UP"
+      ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-CHRONIC-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "LONG_TERM_DECAY",
+      "condition_logic": "ANY",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "CHRONIC_DEGRADATION",
+            "SHARP_DEGRADATION"
+          ]
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 95,
+      "explanation_template": "365日推移に慢性的または急激な劣化が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "DEGRADATION"
+      ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-SEASONAL-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 89,
+      "diagnosis_code": "SEASONAL_DECLINE",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "SEASONAL_VARIATION"
+        }
+      ],
+      "base_confidence": 80,
+      "severity": "INFO",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 90,
+      "explanation_template": "過去期間と類似した季節変動が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "SEASONAL"
+      ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-RECOVERY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 91,
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "RECOVERY_IN_PROGRESS"
+        }
+      ],
+      "base_confidence": 82,
+      "severity": "MILD",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 92,
+      "explanation_template": "長期推移に回復傾向が確認されました。",
+      "tags": [
+        "LONG_TERM",
+        "RECOVERY"
+      ]
+    },
+    {
+      "rule_id": "DR-LONGTERM-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 82,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "LONG_TERM_DEGRADATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_HISTORY"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "specificity": 82,
+      "explanation_template": "長期診断に必要な観察期間が不足しています。",
+      "tags": [
+        "LONG_TERM",
+        "FOLLOW_UP"
+      ]
+    },
+    {
+      "rule_id": "DR-CTR-OPPORTUNITY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 93,
+      "diagnosis_code": "CTR_OPPORTUNITY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CTR_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "CTR_OPPORTUNITY",
+            "HIGH_CTR_OPPORTUNITY"
+          ]
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "CTR_STATE",
+      "specificity": 94,
+      "explanation_template": "現在順位に対してCTRが期待値を下回っています。",
+      "tags": [
+        "CTR",
+        "OPPORTUNITY"
+      ]
+    },
+    {
+      "rule_id": "DR-CTR-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "CTR_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CTR_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "CTR_STATE",
+      "specificity": 96,
+      "explanation_template": "主要流入クエリを保護しながら限定的なCTR改善を検討します。",
+      "tags": [
+        "CTR",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-CTR-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 86,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CTR_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "RECENT_CHANGE_OBSERVATION",
+            "INSUFFICIENT_DATA"
+          ]
+        }
+      ],
+      "base_confidence": 74,
+      "severity": "INFO",
+      "mutual_exclusion_group": "CTR_STATE",
+      "specificity": 84,
+      "explanation_template": "CTR改善判断には追加測定が必要です。",
+      "tags": [
+        "CTR",
+        "FOLLOW_UP"
+      ]
+    },
+    {
+      "rule_id": "DR-POSITION-OPPORTUNITY-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 92,
+      "diagnosis_code": "POSITION_OPPORTUNITY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "POSITION_OPPORTUNITY",
+            "HIGH_POSITION_OPPORTUNITY",
+            "QUERY_FOCUSED_OPPORTUNITY"
+          ]
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 94,
+      "explanation_template": "表示回数があり、上位表示へ改善できる余地があります。",
+      "tags": [
+        "POSITION",
+        "OPPORTUNITY"
+      ]
+    },
+    {
+      "rule_id": "DR-POSITION-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 95,
+      "diagnosis_code": "POSITION_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 96,
+      "explanation_template": "主要流入クエリを維持しながら限定的な順位改善を検討します。",
+      "tags": [
+        "POSITION",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-POSITION-MISALIGNMENT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 94,
+      "diagnosis_code": "LOW_VISIBILITY_OR_MISALIGNMENT",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "LOW_VISIBILITY_OR_MISALIGNMENT"
+        }
+      ],
+      "base_confidence": 82,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 92,
+      "explanation_template": "順位が低く、検索意図または記事役割のずれが疑われます。",
+      "tags": [
+        "POSITION",
+        "MISALIGNMENT"
+      ]
+    },
+    {
+      "rule_id": "DR-POSITION-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "POSITION_OPPORTUNITY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_DATA"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "POSITION_STATE",
+      "specificity": 82,
+      "explanation_template": "順位改善判断には追加データが必要です。",
+      "tags": [
+        "POSITION",
+        "FOLLOW_UP"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-DRIFT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "INTENT_DRIFT",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INTENT_DRIFT"
+        }
+      ],
+      "base_confidence": 86,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 96,
+      "explanation_template": "主要検索意図と記事テーマのずれが確認されました。",
+      "tags": [
+        "INTENT",
+        "DRIFT"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-DISPERSION-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 95,
+      "diagnosis_code": "TOPIC_DISPERSION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "TOPIC_DISPERSION"
+        }
+      ],
+      "base_confidence": 85,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 95,
+      "explanation_template": "流入クエリが複数の検索意図へ分散しています。",
+      "tags": [
+        "INTENT",
+        "DISPERSION"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-EMERGING-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 94,
+      "diagnosis_code": "EMERGING_INTENT_TRANSITION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "EMERGING_INTENT_TRANSITION"
+        }
+      ],
+      "base_confidence": 84,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 94,
+      "explanation_template": "新しい検索意図への流入遷移が確認されました。",
+      "tags": [
+        "INTENT",
+        "EMERGING"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "INTENT_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 97,
+      "explanation_template": "主要流入クエリを保護しながら意図調整を検討します。",
+      "tags": [
+        "INTENT",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-INTENT-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "INTENT_DRIFT_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "INSUFFICIENT_DATA"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "INTENT_STATE",
+      "specificity": 82,
+      "explanation_template": "検索意図診断には追加データが必要です。",
+      "tags": [
+        "INTENT",
+        "FOLLOW_UP"
+      ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-PARTIAL-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 90,
+      "diagnosis_code": "FRESHNESS_DECAY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "PARTIAL_FRESHNESS_DECAY"
+        }
+      ],
+      "base_confidence": 82,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 92,
+      "explanation_template": "一部情報に鮮度劣化があり、局所更新が必要です。",
+      "tags": [
+        "FRESHNESS",
+        "PARTIAL"
+      ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-SEVERE-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "SEVERE_FRESHNESS_DECAY",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "SEVERE_FRESHNESS_DECAY"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 97,
+      "explanation_template": "記事全体に重大な情報鮮度劣化が確認されました。",
+      "tags": [
+        "FRESHNESS",
+        "SEVERE"
+      ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-WINNER-PROTECT-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 96,
+      "diagnosis_code": "FRESHNESS_WINNER_QUERY_PROTECTED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "WINNER_QUERY_PROTECTED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MILD",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 96,
+      "explanation_template": "主要流入クエリを維持しながら事実情報を更新します。",
+      "tags": [
+        "FRESHNESS",
+        "WINNER_QUERY"
+      ]
+    },
+    {
+      "rule_id": "DR-FRESHNESS-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "FRESHNESS_DECAY_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "RECENT_UPDATE_OBSERVATION",
+            "INSUFFICIENT_DATA"
+          ]
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "FRESHNESS_STATE",
+      "specificity": 84,
+      "explanation_template": "鮮度劣化判断には追加観察が必要です。",
+      "tags": [
+        "FRESHNESS",
+        "FOLLOW_UP"
+      ]
+    },
+    {
+      "rule_id": "DR-CANNIBAL-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 97,
+      "diagnosis_code": "CANNIBALIZATION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "IN",
+          "value": [
+            "POSSIBLE_CANNIBALIZATION",
+            "CONFIRMED_CANNIBALIZATION"
+          ]
+        }
+      ],
+      "base_confidence": 86,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 96,
+      "explanation_template": "サイト内の記事間競合が確認されました。",
+      "tags": [
+        "CANNIBALIZATION"
+      ]
+    },
+    {
+      "rule_id": "DR-MERGE-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 100,
+      "diagnosis_code": "MERGE_CANDIDATE",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "MERGE_CANDIDATE"
+        }
+      ],
+      "base_confidence": 90,
+      "severity": "SEVERE",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 100,
+      "explanation_template": "同一意図の記事を統合候補としてMergeへ紹介します。",
+      "tags": [
+        "CANNIBALIZATION",
+        "MERGE"
+      ]
+    },
+    {
+      "rule_id": "DR-ROLE-SEPARATION-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 98,
+      "diagnosis_code": "ROLE_SEPARATION",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "ROLE_SEPARATION_RECOMMENDED"
+        }
+      ],
+      "base_confidence": 88,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 98,
+      "explanation_template": "記事統合ではなく役割分担が適切です。",
+      "tags": [
+        "CANNIBALIZATION",
+        "ROLE"
+      ]
+    },
+    {
+      "rule_id": "DR-CANNIBAL-FOLLOWUP-001",
+      "rule_version": "1.0",
+      "enabled": true,
+      "priority": 84,
+      "diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "condition_logic": "ALL",
+      "conditions": [
+        {
+          "source": "OBSERVATION",
+          "code": "CANNIBALIZATION_ASSESSMENT",
+          "field": "facts.classification",
+          "operator": "EQ",
+          "value": "FOLLOW_UP_REQUIRED"
+        }
+      ],
+      "base_confidence": 72,
+      "severity": "INFO",
+      "mutual_exclusion_group": "CANNIBAL_STATE",
+      "specificity": 84,
+      "explanation_template": "記事間競合の判断には追加データが必要です。",
+      "tags": [
+        "CANNIBALIZATION",
+        "FOLLOW_UP"
+      ]
+    }
+  ]
+}

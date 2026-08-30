@@ -1,0 +1,66 @@
+{
+  "registry_name": "OBSERVATION_TYPE_REGISTRY",
+  "version": "1.0",
+  "items": [
+    {
+      "code": "SEARCH_CONSOLE",
+      "description": "Search Consoleの期間別・クエリ別実測値",
+      "required_fields": [
+        "periods",
+        "queries"
+      ],
+      "evaluation_allowed": false
+    },
+    {
+      "code": "SERP",
+      "description": "検索結果面、競合、検索意図、SERP機能の観察",
+      "required_fields": [
+        "query",
+        "observed_at",
+        "results"
+      ],
+      "evaluation_allowed": false
+    },
+    {
+      "code": "ARTICLE_SNAPSHOT",
+      "description": "記事タイトル、見出し、本文構造、FAQ、更新情報のスナップショット",
+      "required_fields": [
+        "captured_at",
+        "title",
+        "headings"
+      ],
+      "evaluation_allowed": false
+    },
+    {
+      "code": "INTERNAL_LINKS",
+      "description": "受信・発信内部リンクの観察",
+      "required_fields": [
+        "captured_at",
+        "incoming",
+        "outgoing"
+      ],
+      "evaluation_allowed": false
+    },
+    {
+      "code": "HISTORY",
+      "description": "改善、診断、紹介、治療結果の履歴",
+      "required_fields": [
+        "events"
+      ],
+      "evaluation_allowed": false
+    },
+    {
+      "code": "METADATA",
+      "description": "公開日、更新日、カテゴリ、タグなどのメタデータ",
+      "required_fields": [
+        "captured_at"
+      ],
+      "evaluation_allowed": false
+    },
+    {
+      "code": "TREATMENT_HISTORY",
+      "description": "改善前後の効果測定履歴",
+      "source": "SBM_IMPROVEMENT_HISTORY"
+    }
+  ]
+}

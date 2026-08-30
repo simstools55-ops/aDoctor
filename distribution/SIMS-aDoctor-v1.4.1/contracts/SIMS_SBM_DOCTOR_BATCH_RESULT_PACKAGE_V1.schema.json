@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_SBM_DOCTOR_BATCH_RESULT_PACKAGE_V1.schema.json",
+  "title": "SIMS_SBM_DOCTOR_BATCH_RESULT_PACKAGE_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "package_id",
+    "batch_request_id",
+    "queue_record_id",
+    "site_id",
+    "batch_status",
+    "summary",
+    "items",
+    "generated_at",
+    "result_fingerprint"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_SBM_DOCTOR_BATCH_RESULT_PACKAGE_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "batch_request_id": {
+      "type": "string"
+    },
+    "queue_record_id": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "batch_status": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "article_id",
+          "status",
+          "case_id",
+          "single_case_result",
+          "writer_request",
+          "error"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string"
+          },
+          "article_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "case_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "single_case_result": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "writer_request": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "error": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "result_fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

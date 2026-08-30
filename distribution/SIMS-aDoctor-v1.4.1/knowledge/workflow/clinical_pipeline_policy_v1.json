@@ -1,0 +1,33 @@
+{
+  "policy_name": "SIMS_DOCTOR_CLINICAL_PIPELINE_POLICY_V1",
+  "version": "1.0",
+  "steps": [
+    "REQUEST_RECEPTION",
+    "SEARCH_CONSOLE_OBSERVATION",
+    "SERP_OBSERVATION",
+    "ARTICLE_SNAPSHOT_OBSERVATION",
+    "EVIDENCE_EXTRACTION",
+    "VITAL_SIGNS",
+    "FINDINGS",
+    "DIFFERENTIAL_DIAGNOSIS",
+    "FINAL_DIAGNOSIS",
+    "TREATMENT_RECOMMENDATION",
+    "REFERRAL"
+  ],
+  "failure_policy": {
+    "observation_failure": "CONTINUE_IF_AT_LEAST_ONE_OBSERVATION_SUCCEEDED",
+    "clinical_step_failure": "STOP_AND_RECORD_ERROR",
+    "referral_failure": "KEEP_DIAGNOSIS_AND_MARK_REFERRAL_PENDING"
+  },
+  "resume_policy": {
+    "enabled": true,
+    "completed_step_behavior": "REUSE_IDEMPOTENT_RESULT",
+    "failed_step_behavior": "RETRY_FROM_FAILED_STEP"
+  },
+  "completion_states": {
+    "REFERRED": "COMPLETE",
+    "FOLLOW_UP": "COMPLETE_WITH_FOLLOW_UP",
+    "DIAGNOSED": "COMPLETE_WITHOUT_REFERRAL",
+    "ERROR": "FAILED"
+  }
+}

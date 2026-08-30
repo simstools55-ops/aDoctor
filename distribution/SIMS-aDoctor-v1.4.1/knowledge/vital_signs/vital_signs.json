@@ -1,0 +1,110 @@
+{
+  "registry_name": "VITAL_SIGN_REGISTRY",
+  "version": "1.0",
+  "score_range": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "normal_ranges": [
+    {
+      "minimum": 90,
+      "maximum": 100,
+      "classification": "NORMAL"
+    },
+    {
+      "minimum": 70,
+      "maximum": 89,
+      "classification": "MILD_ATTENTION"
+    },
+    {
+      "minimum": 50,
+      "maximum": 69,
+      "classification": "OBSERVATION_REQUIRED"
+    },
+    {
+      "minimum": 30,
+      "maximum": 49,
+      "classification": "TREATMENT_REQUIRED"
+    },
+    {
+      "minimum": 0,
+      "maximum": 29,
+      "classification": "SEVERE"
+    }
+  ],
+  "items": [
+    {
+      "code": "VISIBILITY",
+      "direction": "HIGHER_IS_HEALTHIER",
+      "description": "検索結果上での露出状態",
+      "inputs": [
+        "impressions",
+        "query_coverage",
+        "historical_trend"
+      ],
+      "status": "FORMULA_PENDING_CALIBRATION"
+    },
+    {
+      "code": "TRAFFIC",
+      "direction": "HIGHER_IS_HEALTHIER",
+      "description": "検索流入の獲得状態",
+      "inputs": [
+        "clicks",
+        "historical_trend"
+      ],
+      "status": "FORMULA_PENDING_CALIBRATION"
+    },
+    {
+      "code": "CTR_HEALTH",
+      "direction": "HIGHER_IS_HEALTHIER",
+      "description": "掲載順位を考慮したクリック率の健全性",
+      "inputs": [
+        "ctr",
+        "position",
+        "impressions"
+      ],
+      "status": "FORMULA_PENDING_CALIBRATION"
+    },
+    {
+      "code": "RANKING_STABILITY",
+      "direction": "HIGHER_IS_HEALTHIER",
+      "description": "順位変動の安定性",
+      "inputs": [
+        "position_series"
+      ],
+      "status": "FORMULA_PENDING_CALIBRATION"
+    },
+    {
+      "code": "FRESHNESS",
+      "direction": "HIGHER_IS_HEALTHIER",
+      "description": "記事情報の鮮度",
+      "inputs": [
+        "last_modified_at",
+        "time_sensitive_markers"
+      ],
+      "status": "FORMULA_PENDING_CALIBRATION"
+    },
+    {
+      "code": "COMPETITION_RESILIENCE",
+      "direction": "HIGHER_IS_HEALTHIER",
+      "description": "競合圧力に対する耐性。競合圧力そのものではなく健全度として表す",
+      "inputs": [
+        "serp_strength",
+        "domain_mix",
+        "content_gap"
+      ],
+      "status": "FORMULA_PENDING_CALIBRATION"
+    },
+    {
+      "code": "CONTENT_INTEGRITY",
+      "direction": "HIGHER_IS_HEALTHIER",
+      "description": "検索意図、構造、内部リンク、FAQ、情報整合性の健全度",
+      "inputs": [
+        "article_snapshot",
+        "internal_links",
+        "serp_intent"
+      ],
+      "status": "FORMULA_PENDING_CALIBRATION"
+    }
+  ]
+}

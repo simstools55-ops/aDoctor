@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/schemas/SIMS_DOCTOR_LONG_TERM_SNAPSHOT_V1.schema.json",
+  "title": "SIMS Article Doctor Long Term Snapshot V1",
+  "type": "object",
+  "required": [
+    "format",
+    "contract_version",
+    "schema_version",
+    "source_system",
+    "target_system",
+    "message_id",
+    "generated_at",
+    "timezone",
+    "site",
+    "snapshot",
+    "data_coverage",
+    "articles"
+  ],
+  "properties": {
+    "format": {
+      "const": "SIMS_DOCTOR_LONG_TERM_SNAPSHOT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "source_system": {
+      "enum": [
+        "SIMS_DOCTOR_COLLECTOR"
+      ]
+    },
+    "target_system": {
+      "enum": [
+        "SIMS_DOCTOR_DIAGNOSIS_ENGINE"
+      ]
+    },
+    "message_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "const": "Asia/Tokyo"
+    },
+    "site": {
+      "$ref": "#/$defs/site"
+    },
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "snapshot_id",
+        "catalog_id",
+        "collector_job_id",
+        "snapshot_type",
+        "diagnosis_reference_date"
+      ],
+      "properties": {
+        "snapshot_id": {
+          "type": "string"
+        },
+        "catalog_id": {
+          "type": "string"
+        },
+        "collector_job_id": {
+          "type": "string"
+        },
+        "snapshot_type": {
+          "enum": [
+            "FULL",
+            "INCREMENTAL",
+            "PARTIAL",
+            "DETAIL",
+            "REBUILT"
+          ]
+        },
+        "diagnosis_reference_date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": true
+    },
+    "data_coverage": {
+      "type": "object",
+      "required": [
+        "requested_start_date",
+        "requested_end_date",
+        "available_days",
+        "coverage_rate",
+        "minimum_diagnosis_ready"
+      ],
+      "properties": {
+        "requested_start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "requested_end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "available_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "minimum_diagnosis_ready": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "identity",
+          "workflow",
+          "data_quality",
+          "performance_windows",
+          "diagnosis_eligibility"
+        ],
+        "properties": {
+          "identity": {
+            "type": "object",
+            "required": [
+              "article_id",
+              "url",
+              "title"
+            ],
+            "additionalProperties": true
+          },
+          "workflow": {
+            "type": "object",
+            "required": [
+              "workflow_status"
+            ],
+            "additionalProperties": true
+          },
+          "data_quality": {
+            "type": "object",
+            "required": [
+              "quality_grade"
+            ],
+            "additionalProperties": true
+          },
+          "performance_windows": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "diagnosis_eligibility": {
+            "type": "object",
+            "required": [
+              "eligible",
+              "automatic_case_allowed"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "commonHeader": {
+      "type": "object",
+      "required": [
+        "format",
+        "contract_version",
+        "schema_version",
+        "source_system",
+        "target_system",
+        "message_id",
+        "generated_at",
+        "timezone"
+      ],
+      "properties": {
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "source_system": {
+          "type": "string"
+        },
+        "target_system": {
+          "type": "string"
+        },
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "type": "string",
+          "const": "Asia/Tokyo"
+        }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "site_name",
+        "blog_url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blog_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "search_console_property": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

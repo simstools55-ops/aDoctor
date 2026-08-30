@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SIMS_DOCTOR_INTERNAL_LINK_RECOMMENDATION_V1.schema.json",
+  "title": "SIMS Article Doctor Internal Link Recommendation V1",
+  "type": "object",
+  "required": [
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "relationship": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "suggested_context": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "suggested_anchor_hint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "writer_must_finalize_anchor": {
+      "const": true
+    }
+  },
+  "additionalProperties": true
+}

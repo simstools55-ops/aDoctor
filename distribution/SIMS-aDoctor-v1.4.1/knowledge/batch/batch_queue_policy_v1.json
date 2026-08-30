@@ -1,0 +1,54 @@
+{
+  "policy_name": "SIMS_DOCTOR_BATCH_QUEUE_POLICY_V1",
+  "version": "1.0",
+  "lock": {
+    "lease_seconds": 900,
+    "renewal_interval_seconds": 300,
+    "expired_lock_behavior": "RECLAIM"
+  },
+  "execution": {
+    "maximum_items_per_cycle": 25,
+    "maximum_runtime_seconds": 1200,
+    "checkpoint_every_items": 1,
+    "continue_after_item_failure": true
+  },
+  "retry": {
+    "maximum_attempts_per_item": 3,
+    "backoff_seconds": [
+      60,
+      300,
+      1800
+    ]
+  },
+  "statuses": {
+    "batch": [
+      "QUEUED",
+      "RUNNING",
+      "PAUSED",
+      "COMPLETED",
+      "COMPLETED_WITH_ERRORS",
+      "FAILED",
+      "CANCELLED"
+    ],
+    "item": [
+      "PENDING",
+      "RUNNING",
+      "COMPLETED",
+      "FAILED",
+      "SKIPPED",
+      "CANCELLED"
+    ]
+  },
+  "nightly": {
+    "preferred_start_hour_local": 2,
+    "resume_incomplete_first": true
+  },
+  "notification_events": [
+    "BATCH_QUEUED",
+    "BATCH_STARTED",
+    "BATCH_PROGRESS_UPDATED",
+    "BATCH_PAUSED",
+    "BATCH_COMPLETED",
+    "BATCH_FAILED"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SIMS_DOCTOR_REPORT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "report_id",
+    "case_id",
+    "medical_record_id",
+    "generated_at",
+    "audience",
+    "article",
+    "summary",
+    "diagnosis",
+    "recommendation",
+    "monitoring",
+    "sections",
+    "trace"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_REPORT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "audience": {
+      "type": "string",
+      "enum": [
+        "USER",
+        "SYSTEM"
+      ]
+    },
+    "article": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "diagnosis": {
+      "type": "object"
+    },
+    "recommendation": {
+      "type": "object"
+    },
+    "monitoring": {
+      "type": "object"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "trace": {
+      "type": "object"
+    }
+  }
+}

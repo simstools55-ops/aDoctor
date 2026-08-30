@@ -1,0 +1,38 @@
+{
+  "policy_name": "SIMS_DOCTOR_DIAGNOSTIC_RULE_ENGINE_POLICY_V1",
+  "version": "1.0",
+  "evaluation": {
+    "condition_logic": [
+      "ALL",
+      "ANY"
+    ],
+    "unknown_value_behavior": "CONDITION_NOT_MET",
+    "maximum_rules_per_evaluation": 500,
+    "deterministic_order": [
+      "priority_desc",
+      "specificity_desc",
+      "rule_id_asc"
+    ]
+  },
+  "confidence": {
+    "base_range": [
+      0,
+      100
+    ],
+    "evidence_bonus_per_item": 3,
+    "finding_bonus_per_item": 4,
+    "low_sample_penalty": 20,
+    "maximum_bonus": 20
+  },
+  "conflict_resolution": {
+    "same_diagnosis": "KEEP_HIGHEST_SCORE",
+    "mutually_exclusive": "KEEP_HIGHEST_PRIORITY_THEN_SCORE",
+    "allow_multiple_non_exclusive": true
+  },
+  "safety": {
+    "rules_cannot_modify_article": true,
+    "rules_cannot_create_referral_directly": true,
+    "rules_must_explain_match": true,
+    "rules_must_reference_registered_codes": true
+  }
+}

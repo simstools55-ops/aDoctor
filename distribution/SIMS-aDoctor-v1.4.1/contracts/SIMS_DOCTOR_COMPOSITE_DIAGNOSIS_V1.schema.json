@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_COMPOSITE_DIAGNOSIS_V1.schema.json",
+  "title": "SIMS_DOCTOR_COMPOSITE_DIAGNOSIS_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "composite_diagnosis_id",
+    "case_id",
+    "medical_record_id",
+    "diagnosed_at",
+    "final_diagnosis",
+    "confidence",
+    "severity",
+    "priority",
+    "reasons",
+    "score",
+    "safety",
+    "supporting_assessments",
+    "trace"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_COMPOSITE_DIAGNOSIS_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "composite_diagnosis_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "diagnosed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "final_diagnosis": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "severity": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "score": {
+      "type": "object",
+      "required": [
+        "base_score",
+        "weighted_score",
+        "risk_score",
+        "health_score"
+      ]
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "winner_query_protected",
+        "recent_change_or_update",
+        "low_sample_or_insufficient",
+        "merge_required",
+        "new_article_allowed",
+        "full_rewrite_allowed"
+      ]
+    },
+    "supporting_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "trace": {
+      "type": "object"
+    }
+  }
+}

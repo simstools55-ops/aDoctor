@@ -1,0 +1,30 @@
+{
+  "policy_name": "SIMS_DOCTOR_ALGORITHM_IMPACT_POLICY_V1",
+  "version": "1.0",
+  "principles": {
+    "algorithm_update_is_evidence_not_diagnosis": true,
+    "temporal_overlap_alone_is_insufficient": true,
+    "official_google_source_preferred": true,
+    "site_and_serp_corroboration_required_for_high_confidence": true
+  },
+  "weights": {
+    "temporal": 25,
+    "site_wide": 30,
+    "segment": 10,
+    "article": 15,
+    "serp": 20
+  },
+  "thresholds": {
+    "low": 20,
+    "possible": 40,
+    "likely": 60,
+    "high": 80
+  },
+  "wait_policy": {
+    "eligible_statuses": ["LIKELY", "HIGH"],
+    "eligible_rollout_statuses": ["IN_PROGRESS"],
+    "minimum_wait_days": 7,
+    "recommended_review_days": 14,
+    "block_wait_when_severe_content_integrity_problem": true
+  }
+}

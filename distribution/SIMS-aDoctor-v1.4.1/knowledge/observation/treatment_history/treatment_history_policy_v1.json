@@ -1,0 +1,37 @@
+{
+  "policy_name": "SIMS_DOCTOR_TREATMENT_HISTORY_POLICY_V1",
+  "version": "1.0",
+  "minimum_follow_up_days": 7,
+  "preferred_checkpoints_days": [
+    7,
+    14,
+    28
+  ],
+  "metric_weights": {
+    "clicks": 0.35,
+    "impressions": 0.2,
+    "ctr": 0.25,
+    "position": 0.2
+  },
+  "thresholds": {
+    "improved_score": 0.15,
+    "partial_improvement_score": 0.05,
+    "worsened_score": -0.15,
+    "no_effect_absolute_score": 0.05,
+    "single_metric_guardrail_decline": -0.3,
+    "minimum_baseline_impressions": 100
+  },
+  "classifications": [
+    "IMPROVED",
+    "PARTIAL_IMPROVEMENT",
+    "NO_EFFECT",
+    "WORSENED",
+    "MIXED_RESPONSE",
+    "INSUFFICIENT_FOLLOW_UP"
+  ],
+  "safety": {
+    "never_auto_rollback": true,
+    "rollback_is_writer_review_only": true,
+    "low_sample_cannot_confirm_worsening": true
+  }
+}

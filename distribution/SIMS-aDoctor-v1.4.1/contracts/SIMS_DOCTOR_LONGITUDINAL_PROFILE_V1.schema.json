@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_LONGITUDINAL_PROFILE_V1.schema.json",
+  "title": "SIMS_DOCTOR_LONGITUDINAL_PROFILE_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "profile_id",
+    "case_id",
+    "medical_record_id",
+    "article",
+    "generated_at",
+    "profile_status",
+    "follow_up_priority",
+    "summary",
+    "diagnosis_history",
+    "treatment_response",
+    "recurrence",
+    "patterns",
+    "trace",
+    "fingerprint"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_LONGITUDINAL_PROFILE_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "profile_status": {
+      "type": "string"
+    },
+    "follow_up_priority": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "diagnosis_history": {
+      "type": "object",
+      "required": [
+        "total_diagnoses",
+        "confirmed_count",
+        "deferred_count",
+        "diagnosis_counts",
+        "defer_reason_counts",
+        "latest_diagnosis"
+      ],
+      "properties": {
+        "total_diagnoses": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "confirmed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deferred_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "diagnosis_counts": {
+          "type": "object"
+        },
+        "defer_reason_counts": {
+          "type": "object"
+        },
+        "latest_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "treatment_response": {
+      "type": "object",
+      "required": [
+        "success_count",
+        "failure_count",
+        "worsening_count",
+        "mixed_count",
+        "success_ratio",
+        "failure_ratio"
+      ],
+      "properties": {
+        "success_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failure_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "worsening_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mixed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "success_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "failure_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "recurrence": {
+      "type": "object",
+      "required": [
+        "recurrent_diagnoses",
+        "dominant_diagnosis",
+        "maximum_recurrence_count",
+        "recent_recurrence"
+      ],
+      "properties": {
+        "recurrent_diagnoses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dominant_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maximum_recurrence_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recent_recurrence": {
+          "type": "boolean"
+        }
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trace": {
+      "type": "object",
+      "required": [
+        "diagnosis_ids",
+        "treatment_history_observation_ids"
+      ],
+      "properties": {
+        "diagnosis_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "treatment_history_observation_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "product-code",
+  "version": "1.0",
+  "values": [
+    "SBM",
+    "DOCTOR",
+    "WRITER",
+    "CREATOR",
+    "MERGE",
+    "SHARED"
+  ]
+}

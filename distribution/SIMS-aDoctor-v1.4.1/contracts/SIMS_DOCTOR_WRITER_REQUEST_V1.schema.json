@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_WRITER_REQUEST_V1.schema.json",
+  "title": "SIMS_DOCTOR_WRITER_REQUEST_V1",
+  "type": "object",
+  "required": [
+    "contract_name",
+    "contract_version",
+    "request_id",
+    "case_id",
+    "article",
+    "diagnosis",
+    "treatment"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_WRITER_REQUEST_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object"
+    },
+    "diagnosis": {
+      "type": "object"
+    },
+    "treatment": {
+      "type": "object"
+    }
+  }
+}

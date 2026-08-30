@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_IMPROVEMENT_FAILURE_ASSESSMENT_V1.schema.json",
+  "title": "SIMS_DOCTOR_IMPROVEMENT_FAILURE_ASSESSMENT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "assessment_id",
+    "case_id",
+    "medical_record_id",
+    "assessed_at",
+    "classification",
+    "confidence",
+    "severity",
+    "reasons",
+    "metrics",
+    "trace"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_IMPROVEMENT_FAILURE_ASSESSMENT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "assessment_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "medical_record_id": {
+      "type": "string"
+    },
+    "assessed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "classification": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "severity": {
+      "type": "string"
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "effect_score",
+        "selected_checkpoint_days",
+        "vital_score_change",
+        "metric_changes",
+        "failure_recurrence_count",
+        "low_sample"
+      ]
+    },
+    "trace": {
+      "type": "object",
+      "required": [
+        "treatment_history_observation_id",
+        "latest_vital_score_id",
+        "previous_vital_score_id",
+        "finding_ids"
+      ]
+    }
+  }
+}

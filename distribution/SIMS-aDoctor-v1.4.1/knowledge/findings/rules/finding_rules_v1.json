@@ -1,0 +1,159 @@
+{
+  "rule_set": "SIMS_DOCTOR_FINDING_RULES_V1",
+  "version": "1.0",
+  "status": "INITIAL_UNCALIBRATED",
+  "global_policy": {
+    "confidence_min": 0,
+    "confidence_max": 100,
+    "low_sample_confidence_penalty": 25,
+    "duplicate_behavior": "SKIP_IDENTICAL_FINGERPRINT",
+    "missing_input_behavior": "DO_NOT_GENERATE"
+  },
+  "rules": [
+    {
+      "finding_code": "CTR_UNDERPERFORMING",
+      "rule_version": "1.0",
+      "required_evidence": [
+        "CTR_BELOW_POSITION_EXPECTATION"
+      ],
+      "required_vital_sign": "CTR_HEALTH",
+      "severity_by_score": [
+        {
+          "min": 0,
+          "max": 29,
+          "severity": "SEVERE"
+        },
+        {
+          "min": 30,
+          "max": 49,
+          "severity": "MODERATE"
+        },
+        {
+          "min": 50,
+          "max": 69,
+          "severity": "MILD"
+        }
+      ],
+      "base_confidence": 85
+    },
+    {
+      "finding_code": "POSITION_DECLINING",
+      "rule_version": "1.0",
+      "required_evidence": [
+        "POSITION_DECLINE_OBSERVED"
+      ],
+      "required_vital_sign": "RANKING_STABILITY",
+      "severity_by_score": [
+        {
+          "min": 0,
+          "max": 29,
+          "severity": "CRITICAL"
+        },
+        {
+          "min": 30,
+          "max": 49,
+          "severity": "SEVERE"
+        },
+        {
+          "min": 50,
+          "max": 69,
+          "severity": "MODERATE"
+        },
+        {
+          "min": 70,
+          "max": 89,
+          "severity": "MILD"
+        }
+      ],
+      "base_confidence": 90
+    },
+    {
+      "finding_code": "LOW_VISIBILITY",
+      "rule_version": "1.0",
+      "required_evidence": [
+        "VISIBILITY_DECLINE_OBSERVED"
+      ],
+      "required_vital_sign": "VISIBILITY",
+      "severity_by_score": [
+        {
+          "min": 0,
+          "max": 29,
+          "severity": "SEVERE"
+        },
+        {
+          "min": 30,
+          "max": 49,
+          "severity": "MODERATE"
+        },
+        {
+          "min": 50,
+          "max": 69,
+          "severity": "MILD"
+        }
+      ],
+      "base_confidence": 85
+    },
+    {
+      "finding_code": "CONTENT_OUTDATED",
+      "rule_version": "1.0",
+      "required_evidence": [
+        "LONG_TIME_SINCE_UPDATE"
+      ],
+      "required_vital_sign": "FRESHNESS",
+      "severity_by_score": [
+        {
+          "min": 0,
+          "max": 29,
+          "severity": "SEVERE"
+        },
+        {
+          "min": 30,
+          "max": 49,
+          "severity": "MODERATE"
+        },
+        {
+          "min": 50,
+          "max": 69,
+          "severity": "MILD"
+        }
+      ],
+      "base_confidence": 80
+    },
+    {
+      "finding_code": "HIGH_VISIBILITY_LOW_CLICK",
+      "rule_version": "1.0",
+      "required_evidence": [
+        "CTR_BELOW_POSITION_EXPECTATION"
+      ],
+      "required_vital_sign": "CTR_HEALTH",
+      "additional_conditions": {
+        "visibility_min_score": 70
+      },
+      "severity_by_score": [
+        {
+          "min": 0,
+          "max": 29,
+          "severity": "CRITICAL"
+        },
+        {
+          "min": 30,
+          "max": 49,
+          "severity": "SEVERE"
+        },
+        {
+          "min": 50,
+          "max": 69,
+          "severity": "MODERATE"
+        }
+      ],
+      "base_confidence": 90
+    },
+    {
+      "finding_code": "INSUFFICIENT_EVIDENCE",
+      "rule_version": "1.0",
+      "trigger": "LOW_SAMPLE_ONLY",
+      "severity": "INFO",
+      "base_confidence": 100
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_RULE_EVALUATION_RESULT_V1.schema.json",
+  "title": "SIMS_DOCTOR_RULE_EVALUATION_RESULT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "evaluation_id",
+    "case_id",
+    "evaluated_at",
+    "matched_rules",
+    "diagnosis_candidates",
+    "unmatched_rule_count"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_RULE_EVALUATION_RESULT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "evaluation_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "matched_rules": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "diagnosis_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "diagnosis_code",
+          "confidence",
+          "severity",
+          "priority",
+          "rule_id",
+          "explanation",
+          "evidence_ids",
+          "finding_ids"
+        ],
+        "properties": {
+          "diagnosis_code": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "severity": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "rule_id": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "finding_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "unmatched_rule_count": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_TREATMENT_HISTORY_INPUT_V1.schema.json",
+  "title": "SIMS_DOCTOR_TREATMENT_HISTORY_INPUT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "case_id",
+    "article",
+    "treatment",
+    "baseline",
+    "checkpoints",
+    "observed_at",
+    "assessment"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_TREATMENT_HISTORY_INPUT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "article_id",
+        "url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string"
+        },
+        "article_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "treatment": {
+      "type": "object",
+      "required": [
+        "treatment_id",
+        "completed_at",
+        "treatment_type"
+      ],
+      "properties": {
+        "treatment_id": {
+          "type": "string"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "treatment_type": {
+          "type": "string"
+        },
+        "changed_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "baseline": {
+      "$ref": "#/$defs/measurement"
+    },
+    "checkpoints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/measurement"
+          },
+          {
+            "type": "object",
+            "required": [
+              "days_after_treatment"
+            ],
+            "properties": {
+              "days_after_treatment": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "assessment": {
+      "type": "object",
+      "required": [
+        "classification",
+        "effect_score",
+        "metric_changes",
+        "selected_checkpoint_days",
+        "low_sample"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string"
+        },
+        "effect_score": {
+          "type": "number"
+        },
+        "metric_changes": {
+          "type": "object"
+        },
+        "selected_checkpoint_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "low_sample": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "measurement": {
+      "type": "object",
+      "required": [
+        "start_date",
+        "end_date",
+        "clicks",
+        "impressions",
+        "ctr",
+        "position"
+      ],
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "clicks": {
+          "type": "number",
+          "minimum": 0
+        },
+        "impressions": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ctr": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "position": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

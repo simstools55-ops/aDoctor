@@ -1,0 +1,32 @@
+{
+  "policy_name": "SIMS_DOCTOR_POSITION_OPPORTUNITY_POLICY_V1",
+  "version": "1.0",
+  "thresholds": {
+    "minimum_impressions": 100,
+    "low_sample_impressions": 50,
+    "near_page_one_min": 8.0,
+    "near_page_one_max": 20.0,
+    "strong_opportunity_min": 10.0,
+    "strong_opportunity_max": 15.0,
+    "weak_visibility_position": 30.0,
+    "query_concentration_ratio": 0.5,
+    "winner_query_click_share": 0.4,
+    "competition_resilience_min": 45,
+    "content_integrity_min": 55
+  },
+  "classifications": [
+    "POSITION_OPPORTUNITY",
+    "HIGH_POSITION_OPPORTUNITY",
+    "QUERY_FOCUSED_OPPORTUNITY",
+    "WINNER_QUERY_PROTECTED",
+    "LOW_VISIBILITY_OR_MISALIGNMENT",
+    "HEALTHY_POSITION",
+    "INSUFFICIENT_DATA"
+  ],
+  "safety": {
+    "low_sample_blocks_opportunity": true,
+    "winner_query_requires_protection": true,
+    "low_content_integrity_blocks_aggressive_rewrite": true,
+    "position_only_does_not_authorize_new_article": true
+  }
+}

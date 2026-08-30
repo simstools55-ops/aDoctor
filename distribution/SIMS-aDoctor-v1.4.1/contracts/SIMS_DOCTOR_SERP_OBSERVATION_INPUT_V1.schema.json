@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/contracts/SIMS_DOCTOR_SERP_OBSERVATION_INPUT_V1.schema.json",
+  "title": "SIMS_DOCTOR_SERP_OBSERVATION_INPUT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "case_id",
+    "article",
+    "query",
+    "retrieval",
+    "intent",
+    "features",
+    "results",
+    "competition"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "SIMS_DOCTOR_SERP_OBSERVATION_INPUT_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "article": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "article_id",
+        "url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string"
+        },
+        "article_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "query": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retrieval": {
+      "type": "object",
+      "required": [
+        "requested_at",
+        "completed_at",
+        "status"
+      ],
+      "properties": {
+        "requested_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "FAILED",
+            "NO_DATA"
+          ]
+        },
+        "error_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error_message": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "intent": {
+      "type": "object",
+      "required": [
+        "primary",
+        "confidence",
+        "signals"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "position",
+          "title",
+          "url",
+          "domain",
+          "snippet"
+        ],
+        "properties": {
+          "position": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "snippet": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "authority_score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          },
+          "intent_match": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "competition": {
+      "type": "object",
+      "required": [
+        "strength_score",
+        "freshness_score",
+        "intent_match_score",
+        "feature_pressure_score"
+      ],
+      "properties": {
+        "strength_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "freshness_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "intent_match_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "feature_pressure_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "comparison": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "previous_observation_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "new_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lost_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intent_changed": {
+          "type": "boolean"
+        },
+        "feature_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

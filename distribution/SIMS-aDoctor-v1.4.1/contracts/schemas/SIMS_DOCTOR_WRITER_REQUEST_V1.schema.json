@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sims.local/schemas/SIMS_DOCTOR_WRITER_REQUEST_V1.schema.json",
+  "title": "SIMS Article Doctor Writer Request V1",
+  "type": "object",
+  "required": [
+    "format",
+    "contract_version",
+    "schema_version",
+    "source_system",
+    "target_system",
+    "message_id",
+    "generated_at",
+    "timezone",
+    "site",
+    "case",
+    "treatment",
+    "article",
+    "diagnosis_context",
+    "editing_scope",
+    "protection",
+    "expected_result",
+    "return_contract"
+  ],
+  "properties": {
+    "format": {
+      "const": "SIMS_DOCTOR_WRITER_REQUEST_V1"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "source_system": {
+      "enum": [
+        "SIMS_DOCTOR"
+      ]
+    },
+    "target_system": {
+      "enum": [
+        "SIMS_WRITER"
+      ]
+    },
+    "message_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "const": "Asia/Tokyo"
+    },
+    "site": {
+      "$ref": "#/$defs/site"
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "case_type",
+        "case_status"
+      ],
+      "additionalProperties": true
+    },
+    "treatment": {
+      "type": "object",
+      "required": [
+        "treatment_id",
+        "treatment_type",
+        "executor",
+        "objective"
+      ],
+      "additionalProperties": true
+    },
+    "article": {
+      "type": "object",
+      "required": [
+        "article_id",
+        "url",
+        "title",
+        "workflow_status"
+      ],
+      "additionalProperties": true
+    },
+    "diagnosis_context": {
+      "type": "object",
+      "required": [
+        "primary_diagnosis"
+      ],
+      "additionalProperties": true
+    },
+    "editing_scope": {
+      "type": "object",
+      "required": [
+        "allowed_sections",
+        "prohibited_actions"
+      ],
+      "additionalProperties": true
+    },
+    "protection": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "expected_result": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "return_contract": {
+      "type": "object",
+      "required": [
+        "format",
+        "contract_version",
+        "return_to"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "commonHeader": {
+      "type": "object",
+      "required": [
+        "format",
+        "contract_version",
+        "schema_version",
+        "source_system",
+        "target_system",
+        "message_id",
+        "generated_at",
+        "timezone"
+      ],
+      "properties": {
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "source_system": {
+          "type": "string"
+        },
+        "target_system": {
+          "type": "string"
+        },
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "type": "string",
+          "const": "Asia/Tokyo"
+        }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "site_name",
+        "blog_url"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blog_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "search_console_property": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

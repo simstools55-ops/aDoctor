@@ -1,0 +1,32 @@
+{
+  "policy_name": "SIMS_DOCTOR_TRANSPORT_API_POLICY_V1",
+  "version": "1.0",
+  "authentication": {
+    "scheme": "SIMS-HMAC-SHA256",
+    "required_headers": [
+      "X-SIMS-Client-Id",
+      "X-SIMS-Timestamp",
+      "X-SIMS-Nonce",
+      "X-SIMS-Signature"
+    ],
+    "timestamp_tolerance_seconds": 300,
+    "nonce_ttl_seconds": 600
+  },
+  "rate_limit": {
+    "requests_per_minute_per_client": 60,
+    "burst": 20
+  },
+  "idempotency": {
+    "header": "Idempotency-Key",
+    "ttl_hours": 24
+  },
+  "endpoints": [
+    "POST /v1/sbm/batches",
+    "GET /v1/sbm/batches/{queue_record_id}",
+    "GET /v1/sbm/batches/{queue_record_id}/result"
+  ],
+  "response": {
+    "content_type": "application/json",
+    "include_internal_traceback": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "policy_name": "SIMS_DOCTOR_VITAL_SCORE_POLICY_V1",
+  "version": "1.0",
+  "weights": {
+    "VISIBILITY": 0.18,
+    "TRAFFIC": 0.16,
+    "CTR_HEALTH": 0.16,
+    "RANKING_STABILITY": 0.16,
+    "FRESHNESS": 0.12,
+    "COMPETITION_RESILIENCE": 0.12,
+    "CONTENT_INTEGRITY": 0.1
+  },
+  "missing_value": {
+    "strategy": "REWEIGHT_AVAILABLE_SIGNS",
+    "minimum_available_signs": 3,
+    "insufficient_profile_score": null
+  },
+  "adjustments": {
+    "low_sample_penalty": 8,
+    "critical_finding_penalty": 12,
+    "severe_finding_penalty": 6,
+    "recovery_bonus": 5,
+    "maximum_total_penalty": 25,
+    "maximum_total_bonus": 10
+  },
+  "health_bands": [
+    {
+      "minimum": 85,
+      "code": "EXCELLENT"
+    },
+    {
+      "minimum": 70,
+      "code": "GOOD"
+    },
+    {
+      "minimum": 55,
+      "code": "WATCH"
+    },
+    {
+      "minimum": 40,
+      "code": "UNHEALTHY"
+    },
+    {
+      "minimum": 0,
+      "code": "CRITICAL"
+    }
+  ],
+  "explanation": {
+    "top_negative_factors": 3,
+    "top_positive_factors": 3
+  }
+}

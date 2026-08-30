@@ -1,0 +1,172 @@
+{
+  "registry_name": "EVIDENCE_CODE_REGISTRY",
+  "version": "1.0",
+  "items": [
+    {
+      "code": "CTR_BELOW_POSITION_EXPECTATION",
+      "source": "SEARCH_CONSOLE",
+      "description": "掲載順位帯に対してCTRが期待値を下回る",
+      "required_inputs": [
+        "position",
+        "ctr",
+        "impressions"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "POSITION_DECLINE_OBSERVED",
+      "source": "SEARCH_CONSOLE",
+      "description": "比較期間において平均順位の下落が観察された",
+      "required_inputs": [
+        "baseline_position",
+        "current_position"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "VISIBILITY_DECLINE_OBSERVED",
+      "source": "SEARCH_CONSOLE",
+      "description": "比較期間において表示回数の減少が観察された",
+      "required_inputs": [
+        "baseline_impressions",
+        "current_impressions"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "LONG_TIME_SINCE_UPDATE",
+      "source": "METADATA",
+      "description": "最終更新から長期間経過している",
+      "required_inputs": [
+        "last_modified_at",
+        "observed_at"
+      ],
+      "minimum_sample_policy": "NOT_APPLICABLE"
+    },
+    {
+      "code": "QUERY_DISTRIBUTION_CHANGED",
+      "source": "SEARCH_CONSOLE",
+      "description": "流入クエリ構成が過去期間から変化した",
+      "required_inputs": [
+        "baseline_queries",
+        "current_queries"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "SERP_INTENT_CHANGED",
+      "source": "SERP",
+      "description": "検索結果上位の主要検索意図が以前から変化した",
+      "required_inputs": [
+        "baseline_intent",
+        "current_intent"
+      ],
+      "minimum_sample_policy": "NOT_APPLICABLE"
+    },
+    {
+      "code": "INTERNAL_LINK_SUPPORT_WEAK",
+      "source": "INTERNAL_LINKS",
+      "description": "記事への内部リンク支援が弱い",
+      "required_inputs": [
+        "incoming"
+      ],
+      "minimum_sample_policy": "NOT_APPLICABLE"
+    },
+    {
+      "code": "LONG_TERM_VISIBILITY_DECLINE",
+      "source": "LONG_TERM",
+      "description": "複数期間で表示回数の長期低下が観察された",
+      "required_inputs": [
+        "windows",
+        "trend.visibility_change_ratio"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "LONG_TERM_CTR_DECAY",
+      "source": "LONG_TERM",
+      "description": "長期的なCTR低下が観察された",
+      "required_inputs": [
+        "windows",
+        "trend.ctr_change_ratio"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "LONG_TERM_POSITION_DECAY",
+      "source": "LONG_TERM",
+      "description": "長期的な順位低下が観察された",
+      "required_inputs": [
+        "windows",
+        "trend.position_change"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "SEASONAL_PATTERN_OBSERVED",
+      "source": "LONG_TERM",
+      "description": "季節性が疑われる周期パターンが観察された",
+      "required_inputs": [
+        "windows",
+        "trend.seasonality_score"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "LONG_TERM_RECOVERY_OBSERVED",
+      "source": "LONG_TERM",
+      "description": "長期回復傾向が観察された",
+      "required_inputs": [
+        "windows",
+        "trend.visibility_change_ratio"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_EFFECT_POSITIVE",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後に総合的な改善効果が観察された",
+      "required_inputs": [
+        "assessment.effect_score"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_NO_EFFECT",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後に有意な効果が観察されない",
+      "required_inputs": [
+        "assessment.effect_score"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "POST_TREATMENT_WORSENING",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後に主要指標の悪化が観察された",
+      "required_inputs": [
+        "assessment.effect_score",
+        "assessment.metric_changes"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_MIXED_RESPONSE",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後の指標が改善と悪化に分かれた",
+      "required_inputs": [
+        "assessment.metric_changes"
+      ],
+      "minimum_sample_policy": "REQUIRED"
+    },
+    {
+      "code": "TREATMENT_FOLLOW_UP_INSUFFICIENT",
+      "source": "TREATMENT_HISTORY",
+      "description": "改善後の測定期間またはデータ量が不足している",
+      "required_inputs": [
+        "assessment.selected_checkpoint_days"
+      ],
+      "minimum_sample_policy": "ALWAYS"
+    }
+  ]
+}

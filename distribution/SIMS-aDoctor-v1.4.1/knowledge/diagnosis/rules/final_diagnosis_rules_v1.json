@@ -1,0 +1,216 @@
+{
+  "rule_set": "SIMS_DOCTOR_FINAL_DIAGNOSIS_RULES_V1",
+  "version": "1.0",
+  "status": "INITIAL_UNCALIBRATED",
+  "global_policy": {
+    "minimum_confirmation_confidence": 70,
+    "minimum_margin_to_second_candidate": 15,
+    "low_sample_only_behavior": "DEFER",
+    "contradiction_behavior": "DEFER_IF_PRESENT_AND_TOP_CONFIDENCE_BELOW_90",
+    "no_candidate_behavior": "DEFER",
+    "review_days": {
+      "CONFIRMED_DEFAULT": 28,
+      "DEFERRED_LOW_SAMPLE": 14,
+      "DEFERRED_CLOSE_CANDIDATES": 14,
+      "DEFERRED_LOW_CONFIDENCE": 28,
+      "DEFERRED_MISSING_EVIDENCE": 14,
+      "DEFERRED_CONTRADICTION": 14,
+      "DEFERRED_NO_CANDIDATE": 30
+    }
+  },
+  "diagnoses": [
+    {
+      "candidate_code": "LOW_CTR_WITH_STRONG_POSITION",
+      "final_diagnosis_code": "CTR_PROBLEM",
+      "required_evidence": [
+        "CTR_BELOW_POSITION_EXPECTATION"
+      ],
+      "required_findings": [
+        "CTR_UNDERPERFORMING"
+      ],
+      "severity_source": [
+        "HIGH_VISIBILITY_LOW_CLICK",
+        "CTR_UNDERPERFORMING"
+      ]
+    },
+    {
+      "candidate_code": "LONG_TERM_DECLINE",
+      "final_diagnosis_code": "POSITION_DECLINE",
+      "required_evidence": [
+        "POSITION_DECLINE_OBSERVED",
+        "VISIBILITY_DECLINE_OBSERVED"
+      ],
+      "required_findings": [
+        "POSITION_DECLINING",
+        "LOW_VISIBILITY"
+      ],
+      "severity_source": [
+        "POSITION_DECLINING",
+        "LOW_VISIBILITY"
+      ]
+    },
+    {
+      "candidate_code": "CONTENT_STALE",
+      "final_diagnosis_code": "CONTENT_STALE",
+      "required_evidence": [
+        "LONG_TIME_SINCE_UPDATE"
+      ],
+      "required_findings": [
+        "CONTENT_OUTDATED"
+      ],
+      "severity_source": [
+        "CONTENT_OUTDATED"
+      ]
+    },
+    {
+      "candidate_code": "UPDATE_FAILURE",
+      "final_diagnosis_code": "UPDATE_FAILURE",
+      "required_evidence": [
+        "POSITION_DECLINE_OBSERVED"
+      ],
+      "required_findings": [
+        "POSITION_DECLINING"
+      ],
+      "required_context": [
+        "history.improvement_event_exists"
+      ],
+      "severity_source": [
+        "POSITION_DECLINING",
+        "LOW_VISIBILITY",
+        "CTR_UNDERPERFORMING"
+      ]
+    },
+    {
+      "candidate_code": "INSUFFICIENT_DATA",
+      "final_diagnosis_code": "INSUFFICIENT_DATA",
+      "required_evidence": [],
+      "required_findings": [
+        "INSUFFICIENT_EVIDENCE"
+      ],
+      "force_status": "DEFERRED"
+    },
+    {
+      "candidate_code": "CANNIBALIZATION",
+      "final_diagnosis_code": "CANNIBALIZATION",
+      "required_evidence": [],
+      "required_findings": [
+        "QUERY_OVERLAP_HIGH"
+      ],
+      "severity_source": [
+        "QUERY_OVERLAP_HIGH"
+      ]
+    },
+    {
+      "candidate_code": "ARTICLE_MERGE_REQUIRED",
+      "final_diagnosis_code": "ARTICLE_MERGE_REQUIRED",
+      "required_evidence": [],
+      "required_findings": [
+        "MERGE_SUITABILITY_HIGH"
+      ],
+      "severity_source": [
+        "MERGE_SUITABILITY_HIGH"
+      ]
+    },
+    {
+      "candidate_code": "NEW_ARTICLE_NEEDED",
+      "final_diagnosis_code": "NEW_ARTICLE_NEEDED",
+      "required_evidence": [],
+      "required_findings": [
+        "DISTINCT_INTENT_OPPORTUNITY"
+      ],
+      "severity_source": [
+        "DISTINCT_INTENT_OPPORTUNITY"
+      ]
+    },
+    {
+      "candidate_code": "LONG_TERM_DECAY",
+      "final_diagnosis_code": "LONG_TERM_DECAY",
+      "required_evidence": [],
+      "required_findings": [
+        "LONG_TERM_VISIBILITY_DECAY"
+      ],
+      "severity_source": [
+        "LONG_TERM_VISIBILITY_DECAY",
+        "LONG_TERM_CTR_DECAY",
+        "LONG_TERM_POSITION_DECAY"
+      ]
+    },
+    {
+      "candidate_code": "SEASONAL_DECLINE",
+      "final_diagnosis_code": "SEASONAL_DECLINE",
+      "required_evidence": [],
+      "required_findings": [
+        "SEASONALITY_DETECTED"
+      ],
+      "severity_source": [
+        "SEASONALITY_DETECTED"
+      ]
+    },
+    {
+      "candidate_code": "RECOVERY_IN_PROGRESS",
+      "final_diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "required_evidence": [],
+      "required_findings": [
+        "RECOVERY_TREND"
+      ],
+      "severity_source": [
+        "RECOVERY_TREND"
+      ]
+    },
+    {
+      "candidate_code": "TREATMENT_SUCCESS",
+      "final_diagnosis_code": "TREATMENT_SUCCESS",
+      "required_evidence": [],
+      "required_findings": [
+        "IMPROVEMENT_CONFIRMED"
+      ],
+      "severity_source": [
+        "IMPROVEMENT_CONFIRMED"
+      ]
+    },
+    {
+      "candidate_code": "IMPROVEMENT_FAILURE",
+      "final_diagnosis_code": "IMPROVEMENT_FAILURE",
+      "required_evidence": [],
+      "required_findings": [
+        "TREATMENT_INEFFECTIVE"
+      ],
+      "severity_source": [
+        "TREATMENT_INEFFECTIVE"
+      ]
+    },
+    {
+      "candidate_code": "POST_IMPROVEMENT_WORSENING",
+      "final_diagnosis_code": "POST_IMPROVEMENT_WORSENING",
+      "required_evidence": [],
+      "required_findings": [
+        "POST_TREATMENT_WORSENING"
+      ],
+      "severity_source": [
+        "POST_TREATMENT_WORSENING"
+      ]
+    },
+    {
+      "candidate_code": "MIXED_TREATMENT_RESPONSE",
+      "final_diagnosis_code": "MIXED_TREATMENT_RESPONSE",
+      "required_evidence": [],
+      "required_findings": [
+        "MIXED_TREATMENT_RESPONSE"
+      ],
+      "severity_source": [
+        "MIXED_TREATMENT_RESPONSE"
+      ]
+    },
+    {
+      "candidate_code": "FOLLOW_UP_REQUIRED",
+      "final_diagnosis_code": "FOLLOW_UP_REQUIRED",
+      "required_evidence": [],
+      "required_findings": [
+        "FOLLOW_UP_INSUFFICIENT"
+      ],
+      "severity_source": [
+        "FOLLOW_UP_INSUFFICIENT"
+      ]
+    }
+  ]
+}

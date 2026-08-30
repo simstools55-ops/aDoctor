@@ -1,0 +1,28 @@
+{
+  "policy_name": "SIMS_DOCTOR_INTENT_DRIFT_POLICY_V1",
+  "version": "1.0",
+  "thresholds": {
+    "minimum_impressions": 100,
+    "minimum_queries": 3,
+    "primary_intent_share_min": 0.55,
+    "secondary_intent_share_warning": 0.3,
+    "intent_entropy_high": 0.75,
+    "query_title_overlap_min": 0.35,
+    "winner_query_click_share": 0.4,
+    "emerging_intent_growth_ratio": 0.5
+  },
+  "classifications": [
+    "ALIGNED",
+    "INTENT_DRIFT",
+    "TOPIC_DISPERSION",
+    "EMERGING_INTENT_TRANSITION",
+    "WINNER_QUERY_PROTECTED",
+    "INSUFFICIENT_DATA"
+  ],
+  "safety": {
+    "winner_query_blocks_aggressive_retargeting": true,
+    "intent_drift_does_not_authorize_new_article_alone": true,
+    "low_sample_blocks_confirmation": true,
+    "article_title_and_query_overlap_is_supporting_evidence_only": true
+  }
+}

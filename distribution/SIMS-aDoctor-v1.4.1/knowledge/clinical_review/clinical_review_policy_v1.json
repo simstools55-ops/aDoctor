@@ -1,0 +1,27 @@
+{
+  "policy_name": "clinical_review_policy_v1",
+  "version": "1.0.0",
+  "diagnostic_order": [
+    "EVIDENCE_VALIDATION",
+    "CLINICAL_REVIEW",
+    "SEO_PERFORMANCE_REVIEW",
+    "SERP_REVIEW",
+    "COMPOSITE_DIAGNOSIS",
+    "TREATMENT_RECOMMENDATION"
+  ],
+  "checks": [
+    "INTERNAL_CONTRADICTION",
+    "FACTUAL_ACCURACY",
+    "FRESHNESS",
+    "TITLE_BODY_ALIGNMENT",
+    "INTERNAL_LINK_RELEVANCE"
+  ],
+  "low_sample_rule": {
+    "block_broad_seo_rewrite": true,
+    "allow_factual_correction": true,
+    "allow_internal_contradiction_repair": true,
+    "allow_freshness_verification": true,
+    "allow_low_relevance_link_removal": true
+  },
+  "user_language": "ja"
+}

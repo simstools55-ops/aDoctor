@@ -1,0 +1,33 @@
+{
+  "policy_name": "SIMS_DOCTOR_LONGITUDINAL_PROFILE_POLICY_V1",
+  "version": "1.0",
+  "minimum_completed_diagnoses": 2,
+  "thresholds": {
+    "recurrence_count": 2,
+    "chronic_case_count": 3,
+    "treatment_success_ratio_good": 0.6,
+    "treatment_failure_ratio_high": 0.5,
+    "recent_window_cases": 3,
+    "urgent_recurrence_days": 60
+  },
+  "profile_statuses": [
+    "INSUFFICIENT_HISTORY",
+    "STABLE",
+    "RECURRENT",
+    "CHRONIC",
+    "TREATMENT_RESPONSIVE",
+    "TREATMENT_RESISTANT",
+    "RECOVERING"
+  ],
+  "priority_levels": [
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "URGENT"
+  ],
+  "safety": {
+    "profile_is_not_final_diagnosis": true,
+    "no_automatic_treatment": true,
+    "no_automatic_deletion": true
+  }
+}

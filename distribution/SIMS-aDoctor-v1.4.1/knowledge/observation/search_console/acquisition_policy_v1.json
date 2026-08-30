@@ -1,0 +1,33 @@
+{
+  "policy_name": "SIMS_DOCTOR_SEARCH_CONSOLE_ACQUISITION_POLICY_V1",
+  "version": "1.0",
+  "coverage_days": 365,
+  "periods": {
+    "days_28": 28,
+    "days_90": 90,
+    "days_365": 365
+  },
+  "query_rows": {
+    "page_size": 25000,
+    "maximum_rows": 200000,
+    "sort": "CLICKS_DESC"
+  },
+  "retry": {
+    "maximum_attempts": 3,
+    "retryable_errors": [
+      "RATE_LIMIT",
+      "TEMPORARY_UNAVAILABLE",
+      "TIMEOUT"
+    ]
+  },
+  "status_policy": {
+    "all_requests_successful": "COMPLETE",
+    "some_requests_failed": "PARTIAL",
+    "all_requests_failed": "FAILED",
+    "successful_with_zero_rows": "NO_DATA"
+  },
+  "date_policy": {
+    "end_date_lag_days": 3,
+    "timezone": "SITE_DEFAULT"
+  }
+}

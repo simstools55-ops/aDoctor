@@ -1,0 +1,99 @@
+{
+  "policy_name": "SIMS_DOCTOR_TREATMENT_RECOMMENDATION_POLICY_V1",
+  "version": "1.0",
+  "referral_targets": [
+    "SIMS_WRITER",
+    "SIMS_CREATOR",
+    "SIMS_MERGE",
+    "OBSERVE",
+    "FOLLOW_UP",
+    "NONE"
+  ],
+  "mapping": {
+    "HEALTHY": {
+      "target": "NONE",
+      "treatment_mode": "NO_TREATMENT",
+      "scope": []
+    },
+    "MINOR_REFRESH": {
+      "target": "SIMS_WRITER",
+      "treatment_mode": "LOCAL_REFRESH",
+      "scope": [
+        "FACTS",
+        "YEAR",
+        "PRICE",
+        "SPECIFICATION",
+        "FAQ"
+      ]
+    },
+    "LOCAL_OPTIMIZATION": {
+      "target": "SIMS_WRITER",
+      "treatment_mode": "LOCAL_OPTIMIZATION",
+      "scope": [
+        "SEO_TITLE",
+        "META_DESCRIPTION",
+        "INTRODUCTION",
+        "HEADINGS",
+        "FAQ",
+        "INTERNAL_LINKS"
+      ]
+    },
+    "FULL_REWRITE_RECOMMENDED": {
+      "target": "SIMS_WRITER",
+      "treatment_mode": "FULL_REWRITE",
+      "scope": [
+        "SEO_TITLE",
+        "META_DESCRIPTION",
+        "INTRODUCTION",
+        "STRUCTURE",
+        "BODY",
+        "FAQ",
+        "INTERNAL_LINKS"
+      ]
+    },
+    "NEW_ARTICLE_RECOMMENDED": {
+      "target": "SIMS_CREATOR",
+      "treatment_mode": "NEW_ARTICLE",
+      "scope": [
+        "NEW_ARTICLE_BRIEF"
+      ]
+    },
+    "MERGE_RECOMMENDED": {
+      "target": "SIMS_MERGE",
+      "treatment_mode": "MERGE_REVIEW",
+      "scope": [
+        "SOURCE_ARTICLES",
+        "PRIMARY_ARTICLE",
+        "REDIRECT_PLAN",
+        "ROLE_CONSOLIDATION"
+      ]
+    },
+    "OBSERVE_ONLY": {
+      "target": "OBSERVE",
+      "treatment_mode": "OBSERVATION",
+      "scope": [
+        "MONITORING"
+      ]
+    },
+    "FOLLOW_UP_REQUIRED": {
+      "target": "FOLLOW_UP",
+      "treatment_mode": "FOLLOW_UP",
+      "scope": [
+        "ADDITIONAL_DATA",
+        "REASSESSMENT"
+      ]
+    }
+  },
+  "safety": {
+    "doctor_never_executes_treatment": true,
+    "winner_query_blocks_full_rewrite": true,
+    "merge_requires_merge_target": true,
+    "creator_requires_new_article_allowed": true,
+    "full_rewrite_requires_full_rewrite_allowed": true,
+    "no_delete_noindex_redirect_execution": true
+  },
+  "wait_policy": {
+    "minimum_wait_days": 7,
+    "recommended_review_days": 14
+  }
+}
