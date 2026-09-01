@@ -1,4 +1,5 @@
-## 1.5.0 - 2026-09-01
+- v1.5.1-dev: Added cluster-opportunity diagnosis and aCreator routing for LOW_SAMPLE hard-SERP cases.
+## 1.5.1 - 2026-09-01
 - LOW_SAMPLE SERP competitiveness fallback.
 
 ## 1.2.0-RC4

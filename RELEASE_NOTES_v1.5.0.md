@@ -1,4 +1,4 @@
-# Release Notes v1.5.0
+# Release Notes v1.5.1
 
 - Added LOW_SAMPLE target-query SERP competitiveness fallback.
 - LOW_SAMPLE alone no longer implies improvement failure or broad rewrite.
