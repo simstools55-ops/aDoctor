@@ -1,3 +1,6 @@
+## 1.5.0 - 2026-09-01
+- LOW_SAMPLE SERP competitiveness fallback.
+
 ## 1.2.0-RC4
 
 - Structured internal-link referral metadata and workflow scope propagation.

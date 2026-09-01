@@ -423,3 +423,6 @@ The complete Doctor workflow is frozen as a release candidate for end-to-end acc
 
 ## v1.0.1 行動優先型出力
 利用者向け診断は「今回やること」から開始し、利用者が次の担当製品へ直接渡せる依頼文を含みます。
+## v1.5.0 LOW_SAMPLE SERP fallback
+When Search Console evidence is too sparse for a reliable outcome judgment, aDoctor now treats low sample as an evidence limitation rather than treatment failure. It can fall back to target-query SERP competitiveness review, distinguish actionable SERP gaps from sufficient competitiveness or low demand, and return low-demand/low-priority cases as normal close candidates instead of repeatedly rewriting them.
+
