@@ -1,8 +1,15 @@
-# aDoctor v1.4.1
+# aDoctor v1.5.1
 
 ## Current release
 
-`1.4.0`
+`1.5.1`
+
+### v1.5.1
+
+- LOW_SAMPLE + structurally hard SERP now triggers `CLUSTER_OPPORTUNITY_CHECK` before low-priority closure.
+- Added existing-content support and aCreator opportunity routes.
+- New articles must have independent search intent/user value and pass cannibalization/SERP checks; thin link-only satellites are prohibited.
+- Enforced workflow consistency: normal-close outcomes cannot simultaneously request WAIT/MONITOR.
 
 ## v1.0.4
 - Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
