@@ -1,0 +1,45 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "evidence": [
+    {
+      "evidence_id": "EVD-1",
+      "evidence_code": "CTR_BELOW_EXPECTED",
+      "low_sample": false
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FND-1",
+      "finding_code": "CTR_UNDERPERFORMING",
+      "severity": "MODERATE"
+    },
+    {
+      "finding_id": "FND-2",
+      "finding_code": "RECOVERY_TREND",
+      "severity": "MILD"
+    }
+  ],
+  "vital_profiles": [
+    {
+      "profile_id": "VPR-1",
+      "signs": [
+        {
+          "code": "CTR_HEALTH",
+          "score": 35
+        },
+        {
+          "code": "VISIBILITY",
+          "score": 70
+        }
+      ]
+    }
+  ],
+  "observations": [],
+  "longitudinal_profiles": [],
+  "rule_evaluations": [],
+  "counters": {
+    "rule_evaluation_count": 0
+  }
+}

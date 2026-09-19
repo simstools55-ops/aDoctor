@@ -1,0 +1,102 @@
+{
+  "contract_name": "SIMS_DOCTOR_LONG_TERM_OBSERVATION_INPUT_V1",
+  "contract_version": "1.0",
+  "case_id": "CASE-1",
+  "article": {
+    "site_id": "site",
+    "article_id": "A1",
+    "url": "https://example.com/a1"
+  },
+  "observed_at": "2026-08-04T12:00:00+00:00",
+  "windows": [
+    {
+      "start_date": "2025-01-01",
+      "end_date": "2025-01-28",
+      "clicks": 100,
+      "impressions": 5000,
+      "ctr": 0.02,
+      "position": 5.0
+    },
+    {
+      "start_date": "2025-02-01",
+      "end_date": "2025-02-28",
+      "clicks": 92,
+      "impressions": 4650,
+      "ctr": 0.019,
+      "position": 5.3
+    },
+    {
+      "start_date": "2025-03-01",
+      "end_date": "2025-03-28",
+      "clicks": 84,
+      "impressions": 4300,
+      "ctr": 0.018000000000000002,
+      "position": 5.6
+    },
+    {
+      "start_date": "2025-04-01",
+      "end_date": "2025-04-28",
+      "clicks": 76,
+      "impressions": 3950,
+      "ctr": 0.017,
+      "position": 5.9
+    },
+    {
+      "start_date": "2025-05-01",
+      "end_date": "2025-05-28",
+      "clicks": 68,
+      "impressions": 3600,
+      "ctr": 0.016,
+      "position": 6.2
+    },
+    {
+      "start_date": "2025-06-01",
+      "end_date": "2025-06-28",
+      "clicks": 60,
+      "impressions": 3250,
+      "ctr": 0.015,
+      "position": 6.5
+    },
+    {
+      "start_date": "2025-07-01",
+      "end_date": "2025-07-28",
+      "clicks": 52,
+      "impressions": 2900,
+      "ctr": 0.014,
+      "position": 6.8
+    },
+    {
+      "start_date": "2025-08-01",
+      "end_date": "2025-08-28",
+      "clicks": 44,
+      "impressions": 2550,
+      "ctr": 0.013000000000000001,
+      "position": 7.1
+    },
+    {
+      "start_date": "2025-09-01",
+      "end_date": "2025-09-28",
+      "clicks": 36,
+      "impressions": 2200,
+      "ctr": 0.012,
+      "position": 7.4
+    },
+    {
+      "start_date": "2025-10-01",
+      "end_date": "2025-10-28",
+      "clicks": 28,
+      "impressions": 1850,
+      "ctr": 0.011,
+      "position": 7.699999999999999
+    }
+  ],
+  "trend": {
+    "classification": "GRADUAL_DECLINE",
+    "visibility_change_ratio": -0.63,
+    "click_change_ratio": -0.72,
+    "ctr_change_ratio": -0.45,
+    "position_change": 2.7,
+    "seasonality_score": 0.9246,
+    "low_sample": false
+  }
+}

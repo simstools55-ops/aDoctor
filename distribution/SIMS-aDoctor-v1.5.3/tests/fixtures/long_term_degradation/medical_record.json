@@ -1,0 +1,74 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-LT-1",
+      "observation_type": "LONG_TERM",
+      "facts": {
+        "windows": [
+          {
+            "impressions": 5000
+          },
+          {
+            "impressions": 4700
+          },
+          {
+            "impressions": 4300
+          },
+          {
+            "impressions": 3900
+          },
+          {
+            "impressions": 3400
+          },
+          {
+            "impressions": 2800
+          },
+          {
+            "impressions": 2400
+          },
+          {
+            "impressions": 2100
+          }
+        ],
+        "trend": {
+          "classification": "GRADUAL_DECLINE",
+          "visibility_change_ratio": -0.58,
+          "ctr_change_ratio": -0.2,
+          "position_change": 3.2,
+          "seasonality_score": 0.42,
+          "low_sample": false
+        }
+      }
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FND-LT-1",
+      "finding_code": "LONG_TERM_VISIBILITY_DECAY",
+      "severity": "SEVERE"
+    }
+  ],
+  "final_diagnoses": [
+    {
+      "status": "CONFIRMED",
+      "diagnosis_code": "LONG_TERM_DECAY"
+    }
+  ],
+  "vital_scores": [
+    {
+      "score_id": "VSC-OLD",
+      "overall_score": 72
+    },
+    {
+      "score_id": "VSC-NEW",
+      "overall_score": 58
+    }
+  ],
+  "long_term_degradation_assessments": [],
+  "counters": {
+    "long_term_degradation_assessment_count": 0
+  }
+}

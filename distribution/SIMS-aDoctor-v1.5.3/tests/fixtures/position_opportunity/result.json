@@ -1,0 +1,44 @@
+{
+  "contract_name": "SIMS_DOCTOR_POSITION_OPPORTUNITY_ASSESSMENT_V1",
+  "contract_version": "1.0",
+  "assessment_id": "POA-20260804-052500-92E665",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "assessed_at": "2026-08-04T05:25:00.136646+00:00",
+  "classification": "HIGH_POSITION_OPPORTUNITY",
+  "confidence": 94,
+  "severity": "SEVERE",
+  "reasons": [
+    "上位表示まであと一歩で、改善効果が期待できます。",
+    "Competition Resilienceは62点です。",
+    "上位クエリ群の表示集中率は79.2%です。"
+  ],
+  "metrics": {
+    "clicks": 18.0,
+    "impressions": 2400.0,
+    "ctr": 0.0075,
+    "position": 12.4,
+    "competition_resilience": 62,
+    "content_integrity": 78,
+    "query_focus": {
+      "queries": [
+        "query a",
+        "query b",
+        "query d"
+      ],
+      "impression_share": 0.7917
+    },
+    "low_sample": false
+  },
+  "protections": {
+    "winner_query_protected": false,
+    "winner_query": null,
+    "aggressive_rewrite_allowed": true,
+    "new_article_allowed": false
+  },
+  "trace": {
+    "search_observation_id": "OBS-GSC-1",
+    "vital_profile_id": "VPR-1",
+    "finding_ids": []
+  }
+}

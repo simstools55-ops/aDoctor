@@ -1,0 +1,40 @@
+{
+  "contract_name": "SIMS_DOCTOR_IMPROVEMENT_FAILURE_ASSESSMENT_V1",
+  "contract_version": "1.0",
+  "assessment_id": "IFA-20260804-003304-B0B0A9",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "assessed_at": "2026-08-04T00:33:04.251822+00:00",
+  "classification": "POSSIBLE_WRONG_TREATMENT_DIRECTION",
+  "confidence": 86,
+  "severity": "SEVERE",
+  "reasons": [
+    "前回改善後に複数の主要指標またはVital Scoreが同時に悪化しています。",
+    "クリック数が改善前より悪化しています。",
+    "表示回数が改善前より悪化しています。",
+    "CTRが改善前より悪化しています。",
+    "順位健康度が改善前より悪化しています。",
+    "Vital Scoreが改善前より13点低下しています。"
+  ],
+  "metrics": {
+    "effect_score": -0.28,
+    "selected_checkpoint_days": 28,
+    "vital_score_change": -13,
+    "metric_changes": {
+      "clicks": -0.35,
+      "impressions": -0.25,
+      "ctr": -0.18,
+      "position": -0.22
+    },
+    "failure_recurrence_count": 0,
+    "low_sample": false
+  },
+  "trace": {
+    "treatment_history_observation_id": "OBS-TRT-1",
+    "latest_vital_score_id": "VSC-NEW",
+    "previous_vital_score_id": "VSC-OLD",
+    "finding_ids": [
+      "FND-1"
+    ]
+  }
+}

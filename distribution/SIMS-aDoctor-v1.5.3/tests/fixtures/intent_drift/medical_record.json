@@ -1,0 +1,61 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "patient": {
+    "site_id": "site",
+    "article_id": "A1",
+    "article_url": "https://example.com/a1",
+    "article_title": "Windows 11 Wi-Fiがつながらないときの対処法"
+  },
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-GSC-1",
+      "observation_type": "SEARCH_CONSOLE",
+      "facts": {
+        "metrics": {
+          "impressions": 3000,
+          "clicks": 30,
+          "low_sample": false
+        },
+        "queries": [
+          {
+            "query": "windows11 wifi 遅い",
+            "clicks": 7,
+            "impressions": 900,
+            "intent_cluster": "SPEED"
+          },
+          {
+            "query": "windows11 wifi 速度",
+            "clicks": 6,
+            "impressions": 700,
+            "intent_cluster": "SPEED"
+          },
+          {
+            "query": "windows11 wifi 切れる",
+            "clicks": 5,
+            "impressions": 650,
+            "intent_cluster": "DISCONNECT"
+          },
+          {
+            "query": "windows11 wifi つながらない",
+            "clicks": 6,
+            "impressions": 450,
+            "intent_cluster": "CONNECTION"
+          },
+          {
+            "query": "windows11 無線lan 不安定",
+            "clicks": 6,
+            "impressions": 300,
+            "intent_cluster": "DISCONNECT"
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "intent_drift_assessments": [],
+  "counters": {
+    "intent_drift_assessment_count": 0
+  }
+}

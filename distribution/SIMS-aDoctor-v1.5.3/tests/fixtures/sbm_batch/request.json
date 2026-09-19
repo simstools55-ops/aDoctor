@@ -1,0 +1,83 @@
+{
+  "contract_name": "SIMS_SBM_DOCTOR_BATCH_REQUEST_V1",
+  "contract_version": "1.0",
+  "batch_request_id": "SBM-BATCH-20260804-001",
+  "requested_at": "2026-08-04T12:00:00+09:00",
+  "source": {
+    "product": "SIMS_BLOG_MANAGER",
+    "product_version": "5.6.12"
+  },
+  "site": {
+    "site_id": "site",
+    "site_name": "Test Site",
+    "site_url": "https://example.com/"
+  },
+  "items": [
+    {
+      "item_id": "SBM-ITEM-1",
+      "article_id": "A000001",
+      "url": "https://example.invalid/entry/example",
+      "title": "テスト記事",
+      "single_case_request": {
+        "contract_name": "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1",
+        "contract_version": "1.0",
+        "requested_at": "2026-08-04T19:00:00+09:00",
+        "request_source": "SIMS_BLOG_MANAGER",
+        "request_type": "SINGLE_CASE_DIAGNOSIS",
+        "site": {
+          "site_id": "sample-site",
+          "site_name": "サンプルブログ",
+          "blog_url": "https://example.invalid/"
+        },
+        "article": {
+          "article_id": "A000001",
+          "url": "https://example.invalid/entry/example",
+          "title": "テスト記事",
+          "main_query": "テスト クエリ"
+        },
+        "trigger": {
+          "source_screen": "ARTICLE_LIST",
+          "reason": "MANUAL_DIAGNOSIS_REQUEST"
+        }
+      },
+      "longitudinal_profile": null,
+      "current_metrics": {
+        "clicks": 10,
+        "impressions": 1000
+      }
+    },
+    {
+      "item_id": "SBM-ITEM-2",
+      "article_id": "A000002",
+      "url": "https://example.com/a2",
+      "title": "Article 2",
+      "single_case_request": {
+        "contract_name": "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1",
+        "contract_version": "1.0",
+        "requested_at": "2026-08-04T19:00:00+09:00",
+        "request_source": "SIMS_BLOG_MANAGER",
+        "request_type": "SINGLE_CASE_DIAGNOSIS",
+        "site": {
+          "site_id": "sample-site",
+          "site_name": "サンプルブログ",
+          "blog_url": "https://example.invalid/"
+        },
+        "article": {
+          "article_id": "A000002",
+          "url": "https://example.com/a2",
+          "title": "Article 2",
+          "main_query": "テスト クエリ"
+        },
+        "trigger": {
+          "source_screen": "ARTICLE_LIST",
+          "reason": "MANUAL_DIAGNOSIS_REQUEST"
+        }
+      },
+      "longitudinal_profile": null,
+      "current_metrics": {
+        "clicks": 5,
+        "impressions": 500
+      }
+    }
+  ]
+}

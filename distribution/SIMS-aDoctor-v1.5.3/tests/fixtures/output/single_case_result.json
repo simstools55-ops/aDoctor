@@ -1,0 +1,54 @@
+{
+  "contract_name": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
+  "contract_version": "1.0",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "article": {
+    "site_id": "site",
+    "article_id": "A1",
+    "url": "https://example.com/a",
+    "title": "Test Article"
+  },
+  "result_status": "DIAGNOSED",
+  "diagnosis": {
+    "status": "CONFIRMED",
+    "code": "CONTENT_STALE",
+    "confidence": 90,
+    "severity": "MODERATE",
+    "defer_reason": null
+  },
+  "treatment": {
+    "code": "REFRESH_OUTDATED_CONTENT",
+    "target": "WRITER",
+    "priority": "MEDIUM"
+  },
+  "referral": {
+    "referral_id": "REF-1",
+    "target": "WRITER"
+  },
+  "review": {
+    "recommended_review_days": 28,
+    "review_due_at": "2026-09-01T00:00:00+00:00"
+  },
+  "user_display": {
+    "headline": "記事情報の鮮度不足が確認されました",
+    "summary": "診断を確定しました。診断信頼度は90%です。重症度はMODERATEです。",
+    "reasons": [
+      "最終更新から長期間が経過しています。"
+    ],
+    "next_action": "Writerで古い情報を確認し、必要部分を更新します",
+    "attention": null
+  },
+  "trace": {
+    "pipeline_run_id": "RUN-1",
+    "diagnosis_id": "DX-1",
+    "finding_ids": [
+      "FND-1"
+    ],
+    "evidence_ids": [
+      "EVD-1"
+    ],
+    "vital_profile_id": "VPR-1"
+  },
+  "completed_at": "2026-08-03T23:03:38.816494+00:00"
+}

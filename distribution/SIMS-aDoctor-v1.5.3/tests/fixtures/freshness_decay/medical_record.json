@@ -1,0 +1,80 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "patient": {
+    "site_id": "site",
+    "article_id": "A1",
+    "article_url": "https://example.com/a1",
+    "article_title": "Windows 11設定ガイド",
+    "article_updated_at": "2023-01-01T00:00:00+00:00"
+  },
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-GSC-1",
+      "observation_type": "SEARCH_CONSOLE",
+      "facts": {
+        "metrics": {
+          "impressions": 2200,
+          "clicks": 30,
+          "low_sample": false
+        },
+        "queries": [
+          {
+            "query": "windows11 設定",
+            "clicks": 10
+          },
+          {
+            "query": "windows11 設定方法",
+            "clicks": 9
+          },
+          {
+            "query": "windows11 初期設定",
+            "clicks": 8
+          },
+          {
+            "query": "windows11 設定 変更",
+            "clicks": 3
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FND-1",
+      "finding_code": "OUTDATED_PROCEDURE",
+      "severity": "SEVERE"
+    },
+    {
+      "finding_id": "FND-2",
+      "finding_code": "STALE_SCREENSHOT",
+      "severity": "MODERATE"
+    },
+    {
+      "finding_id": "FND-3",
+      "finding_code": "OUTDATED_YEAR",
+      "severity": "MODERATE"
+    },
+    {
+      "finding_id": "FND-4",
+      "finding_code": "OUTDATED_SPECIFICATION",
+      "severity": "SEVERE"
+    }
+  ],
+  "vital_profiles": [
+    {
+      "profile_id": "VPR-1",
+      "signs": [
+        {
+          "code": "FRESHNESS",
+          "score": 28
+        }
+      ]
+    }
+  ],
+  "freshness_decay_assessments": [],
+  "counters": {
+    "freshness_decay_assessment_count": 0
+  }
+}

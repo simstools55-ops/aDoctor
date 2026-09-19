@@ -1,0 +1,60 @@
+{
+  "contract_name": "SIMS_DOCTOR_SERP_OBSERVATION_INPUT_V1",
+  "contract_version": "1.0",
+  "case_id": "CASE-20260804-000001",
+  "article": {
+    "site_id": "sample-site",
+    "article_id": "A000001",
+    "url": "https://example.invalid/entry/example"
+  },
+  "query": "windows 11 設定 方法",
+  "retrieval": {
+    "requested_at": "2026-08-04T10:00:00+00:00",
+    "completed_at": "2026-08-04T10:00:03+00:00",
+    "status": "COMPLETE",
+    "error_code": null,
+    "error_message": null
+  },
+  "intent": {
+    "primary": "HOW_TO",
+    "confidence": 80,
+    "signals": [
+      "QUERY_HOW_TO_TOKEN"
+    ]
+  },
+  "features": [
+    "PEOPLE_ALSO_ASK",
+    "VIDEO"
+  ],
+  "results": [
+    {
+      "position": 1,
+      "title": "Windows 11の設定方法",
+      "url": "https://example.com/1",
+      "domain": "example.com",
+      "snippet": "設定方法を解説します。",
+      "published_at": null,
+      "updated_at": "2026-07-01",
+      "authority_score": 80,
+      "intent_match": 95
+    },
+    {
+      "position": 2,
+      "title": "Windows 11設定ガイド",
+      "url": "https://example.net/2",
+      "domain": "example.net",
+      "snippet": "手順を紹介します。",
+      "published_at": "2026-01-01",
+      "updated_at": null,
+      "authority_score": 70,
+      "intent_match": 90
+    }
+  ],
+  "competition": {
+    "strength_score": 72,
+    "freshness_score": 100,
+    "intent_match_score": 92,
+    "feature_pressure_score": 30
+  },
+  "comparison": null
+}

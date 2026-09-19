@@ -1,0 +1,53 @@
+{
+  "contract_name": "SIMS_DOCTOR_CROSS_ARTICLE_OBSERVATION_INPUT_V1",
+  "contract_version": "1.0",
+  "case_id": "CASE-1",
+  "site_id": "site",
+  "primary_article": {
+    "article_id": "A1",
+    "url": "https://example.com/a1",
+    "title": "Windows 11 Wi-Fi設定方法",
+    "main_query": "windows 11 wifi 設定",
+    "clicks": 100,
+    "impressions": 3000,
+    "ctr": 0.0333,
+    "position": 5.0
+  },
+  "candidates": [
+    {
+      "article": {
+        "article_id": "A2",
+        "url": "https://example.com/a2",
+        "title": "Windows 11のWi-Fi設定手順",
+        "main_query": "windows 11 wifi 設定 方法",
+        "clicks": 40,
+        "impressions": 1800,
+        "ctr": 0.0222,
+        "position": 8.0
+      },
+      "shared_queries": [
+        {
+          "query": "windows 11 wifi 設定",
+          "primary_impressions": 1200,
+          "candidate_impressions": 800
+        },
+        {
+          "query": "windows11 wifi 設定",
+          "primary_impressions": 700,
+          "candidate_impressions": 500
+        },
+        {
+          "query": "windows 11 wi-fi 設定",
+          "primary_impressions": 500,
+          "candidate_impressions": 300
+        }
+      ],
+      "query_overlap_ratio": 0.6,
+      "title_similarity": 0.82,
+      "intent_similarity": 0.9,
+      "classification": "MERGE_CANDIDATE",
+      "dominant_article_id": "A1"
+    }
+  ],
+  "observed_at": "2026-08-04T12:00:00+00:00"
+}

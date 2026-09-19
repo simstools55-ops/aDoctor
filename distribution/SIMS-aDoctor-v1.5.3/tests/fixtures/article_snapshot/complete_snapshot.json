@@ -1,0 +1,73 @@
+{
+  "contract_name": "SIMS_DOCTOR_ARTICLE_SNAPSHOT_INPUT_V1",
+  "contract_version": "1.0",
+  "case_id": "CASE-20260804-000001",
+  "article": {
+    "site_id": "sample-site",
+    "article_id": "A000001",
+    "url": "https://example.invalid/entry/example",
+    "published_at": "2025-01-01T00:00:00+09:00",
+    "updated_at": "2026-07-01T00:00:00+09:00"
+  },
+  "captured_at": "2026-08-04T10:00:00+09:00",
+  "title": "Windows 11の設定方法",
+  "meta_description": "Windows 11の設定手順を解説します。",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows 11の設定方法",
+      "order": 1
+    },
+    {
+      "level": 2,
+      "text": "設定前の確認",
+      "order": 2
+    },
+    {
+      "level": 2,
+      "text": "設定手順",
+      "order": 3
+    },
+    {
+      "level": 2,
+      "text": "よくある質問",
+      "order": 4
+    }
+  ],
+  "faq_items": [
+    {
+      "question": "設定はどこから行いますか？",
+      "answer": "設定アプリから行います。"
+    }
+  ],
+  "internal_links": [
+    {
+      "url": "https://example.invalid/entry/a",
+      "anchor_text": "関連記事A",
+      "direction": "OUTGOING"
+    },
+    {
+      "url": "https://example.invalid/entry/b",
+      "anchor_text": "関連記事B",
+      "direction": "OUTGOING"
+    }
+  ],
+  "metrics": {
+    "word_count": 3500,
+    "heading_count": 4,
+    "faq_count": 1,
+    "internal_link_count": 2
+  },
+  "intent_alignment": {
+    "score": 90,
+    "signals": [
+      "TITLE_MATCH",
+      "H2_MATCH",
+      "FAQ_MATCH"
+    ]
+  },
+  "freshness_markers": [
+    "2026"
+  ],
+  "comparison": null
+}

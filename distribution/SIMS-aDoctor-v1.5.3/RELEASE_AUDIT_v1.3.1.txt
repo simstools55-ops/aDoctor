@@ -1,0 +1,14 @@
+SIMS Article Doctor v1.3.1 Release Audit
+Date: 2026-08-29
+
+Version policy: PATCH
+Reason: complete Personal Knowledge release gate after v1.3.0.
+
+Checks
+- Full standard test suite: PASS — 241 passed
+- Known tenant/blog markers: PASS
+- Known owner-specific operational Article IDs: PASS — none retained
+- Synthetic contract/test IDs remain allowed where paired with example.invalid/example.com fixtures
+- Product version: 1.3.1
+- Shared compatibility baseline: 3.5.0
+- SIMS_DOCTOR contracts and SBM orchestration: unchanged

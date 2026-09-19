@@ -1,0 +1,55 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "patient": {
+    "site_id": "site",
+    "article_id": "A1",
+    "article_url": "https://example.com/a1",
+    "article_title": "Recurring Article"
+  },
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-H1",
+      "observation_type": "TREATMENT_HISTORY",
+      "facts": {
+        "assessment": {
+          "classification": "NO_EFFECT"
+        }
+      }
+    },
+    {
+      "observation_id": "OBS-H2",
+      "observation_type": "TREATMENT_HISTORY",
+      "facts": {
+        "assessment": {
+          "classification": "WORSENED"
+        }
+      }
+    }
+  ],
+  "final_diagnoses": [
+    {
+      "diagnosis_id": "DX-1",
+      "status": "CONFIRMED",
+      "diagnosis_code": "CTR_PROBLEM",
+      "diagnosed_at": "2026-01-01T00:00:00+00:00"
+    },
+    {
+      "diagnosis_id": "DX-2",
+      "status": "CONFIRMED",
+      "diagnosis_code": "CTR_PROBLEM",
+      "diagnosed_at": "2026-03-01T00:00:00+00:00"
+    },
+    {
+      "diagnosis_id": "DX-3",
+      "status": "CONFIRMED",
+      "diagnosis_code": "CTR_PROBLEM",
+      "diagnosed_at": "2026-06-01T00:00:00+00:00"
+    }
+  ],
+  "longitudinal_profiles": [],
+  "counters": {
+    "longitudinal_profile_count": 0
+  }
+}

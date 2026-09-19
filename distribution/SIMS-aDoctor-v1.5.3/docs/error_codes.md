@@ -1,0 +1,16 @@
+# Sprint2-1 Error Codes
+
+- `INVALID_JSON`
+- `UNSUPPORTED_CONTRACT`
+- `UNSUPPORTED_VERSION`
+- `MISSING_REQUIRED_FIELD`
+- `INVALID_FIELD_TYPE`
+- `INVALID_FIELD_VALUE`
+- `INVALID_URL`
+- `INVALID_DATETIME`
+- `DUPLICATE_REQUEST`
+- `CASE_REGISTRY_FAILURE`
+- `MEDICAL_RECORD_CREATION_FAILURE`
+- `INTERNAL_ERROR`
+
+Technical detail belongs in logs. User-facing messages must remain short and actionable.

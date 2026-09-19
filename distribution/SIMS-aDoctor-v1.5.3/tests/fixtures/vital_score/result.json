@@ -1,0 +1,122 @@
+{
+  "contract_name": "SIMS_DOCTOR_VITAL_SCORE_RESULT_V1",
+  "contract_version": "1.0",
+  "score_id": "VSC-20260804-002734-E0650E",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "calculated_at": "2026-08-04T00:27:34.258681+00:00",
+  "score_status": "CALCULATED",
+  "overall_score": 60,
+  "health_band": "WATCH",
+  "available_sign_count": 7,
+  "missing_signs": [],
+  "components": [
+    {
+      "code": "VISIBILITY",
+      "raw_score": 42,
+      "weight": 0.18,
+      "effective_weight": 0.18,
+      "weighted_score": 7.56
+    },
+    {
+      "code": "TRAFFIC",
+      "raw_score": 55,
+      "weight": 0.16,
+      "effective_weight": 0.16,
+      "weighted_score": 8.8
+    },
+    {
+      "code": "CTR_HEALTH",
+      "raw_score": 48,
+      "weight": 0.16,
+      "effective_weight": 0.16,
+      "weighted_score": 7.68
+    },
+    {
+      "code": "RANKING_STABILITY",
+      "raw_score": 60,
+      "weight": 0.16,
+      "effective_weight": 0.16,
+      "weighted_score": 9.6
+    },
+    {
+      "code": "FRESHNESS",
+      "raw_score": 82,
+      "weight": 0.12,
+      "effective_weight": 0.12,
+      "weighted_score": 9.84
+    },
+    {
+      "code": "COMPETITION_RESILIENCE",
+      "raw_score": 72,
+      "weight": 0.12,
+      "effective_weight": 0.12,
+      "weighted_score": 8.64
+    },
+    {
+      "code": "CONTENT_INTEGRITY",
+      "raw_score": 90,
+      "weight": 0.1,
+      "effective_weight": 0.1,
+      "weighted_score": 9.0
+    }
+  ],
+  "adjustments": {
+    "penalty": 6,
+    "bonus": 5,
+    "reasons": [
+      "SEVERE所見1件による減点です。",
+      "回復または改善確認による加点です。"
+    ]
+  },
+  "negative_factors": [
+    {
+      "type": "VITAL_SIGN",
+      "code": "VISIBILITY",
+      "impact": 10.44,
+      "message": "VISIBILITYが総合スコアを下げています。"
+    },
+    {
+      "type": "VITAL_SIGN",
+      "code": "CTR_HEALTH",
+      "impact": 8.32,
+      "message": "CTR_HEALTHが総合スコアを下げています。"
+    },
+    {
+      "type": "VITAL_SIGN",
+      "code": "TRAFFIC",
+      "impact": 7.2,
+      "message": "TRAFFICが総合スコアを下げています。"
+    }
+  ],
+  "positive_factors": [
+    {
+      "type": "VITAL_SIGN",
+      "code": "FRESHNESS",
+      "impact": 9.84,
+      "message": "FRESHNESSは良好です。"
+    },
+    {
+      "type": "VITAL_SIGN",
+      "code": "CONTENT_INTEGRITY",
+      "impact": 9.0,
+      "message": "CONTENT_INTEGRITYは良好です。"
+    },
+    {
+      "type": "FINDING",
+      "code": "RECOVERY_TREND",
+      "impact": 5,
+      "message": "回復傾向が確認されています。"
+    }
+  ],
+  "trace": {
+    "vital_profile_id": "VPR-1",
+    "finding_ids": [
+      "FND-1",
+      "FND-2"
+    ],
+    "observation_ids": [
+      "OBS-1"
+    ]
+  }
+}

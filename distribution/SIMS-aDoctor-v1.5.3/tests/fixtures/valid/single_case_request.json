@@ -1,0 +1,22 @@
+{
+  "contract_name": "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1",
+  "contract_version": "1.0",
+  "requested_at": "2026-08-04T19:00:00+09:00",
+  "request_source": "SIMS_BLOG_MANAGER",
+  "request_type": "SINGLE_CASE_DIAGNOSIS",
+  "site": {
+    "site_id": "sample-site",
+    "site_name": "サンプルブログ",
+    "blog_url": "https://example.invalid/"
+  },
+  "article": {
+    "article_id": "A000001",
+    "url": "https://example.invalid/entry/example",
+    "title": "テスト記事",
+    "main_query": "テスト クエリ"
+  },
+  "trigger": {
+    "source_screen": "ARTICLE_LIST",
+    "reason": "MANUAL_DIAGNOSIS_REQUEST"
+  }
+}

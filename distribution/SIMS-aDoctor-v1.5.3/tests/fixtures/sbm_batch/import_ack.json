@@ -1,0 +1,11 @@
+{
+  "contract_name": "SIMS_SBM_DOCTOR_BATCH_IMPORT_ACK_V1",
+  "contract_version": "1.0",
+  "site_id": "site",
+  "batch_request_id": "SBM-BATCH-20260804-001",
+  "result_fingerprint": "d9d37d9fe38527cb613cdee374363f5dd681f82d38593c465e012e6cb55273ad",
+  "status": "IMPORTED",
+  "imported_at": "2026-08-04T00:12:44.239060+00:00",
+  "imported_items": 2,
+  "failed_items": 0
+}

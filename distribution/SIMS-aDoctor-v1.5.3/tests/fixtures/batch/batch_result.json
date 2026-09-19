@@ -1,0 +1,54 @@
+{
+  "contract_name": "SIMS_DOCTOR_BATCH_RESULT_V1",
+  "contract_version": "1.0",
+  "batch_run_id": "BRUN-20260804-000035-4568D2",
+  "batch_request_id": "BATCH-20260804-001",
+  "status": "COMPLETED",
+  "started_at": "2026-08-04T00:00:35.626347+00:00",
+  "completed_at": "2026-08-04T00:00:35.626613+00:00",
+  "summary": {
+    "total": 2,
+    "completed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "writer_referrals": 1,
+    "creator_referrals": 0,
+    "merge_referrals": 0,
+    "follow_up": 0
+  },
+  "items": [
+    {
+      "item_id": "ITEM-1",
+      "article_id": "A1",
+      "priority_score": 91.1,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "case_id": "BCASE-BC3BDA5D",
+      "result": {
+        "contract_name": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
+        "result_status": "DIAGNOSED",
+        "referral": {
+          "target": "WRITER"
+        }
+      },
+      "error": null
+    },
+    {
+      "item_id": "ITEM-2",
+      "article_id": "A2",
+      "priority_score": 11.5,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "case_id": "BCASE-2D46FAE7",
+      "result": {
+        "contract_name": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
+        "result_status": "DIAGNOSED",
+        "referral": {
+          "target": "OBSERVATION"
+        }
+      },
+      "error": null
+    }
+  ],
+  "errors": []
+}

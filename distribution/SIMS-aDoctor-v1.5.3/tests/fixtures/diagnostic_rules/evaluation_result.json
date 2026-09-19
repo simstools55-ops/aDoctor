@@ -1,0 +1,108 @@
+{
+  "contract_name": "SIMS_DOCTOR_RULE_EVALUATION_RESULT_V1",
+  "contract_version": "1.0",
+  "evaluation_id": "RUL-20260804-002418-694143",
+  "case_id": "CASE-1",
+  "evaluated_at": "2026-08-04T00:24:18.792388+00:00",
+  "matched_rules": [
+    {
+      "rule_id": "DR-RECOVERY-001",
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "priority": 85,
+      "specificity": 85,
+      "confidence": 74,
+      "severity": "MILD",
+      "mutual_exclusion_group": "LONG_TERM_STATE",
+      "explanation": "直近データに回復傾向が確認されました。",
+      "evidence_ids": [],
+      "finding_ids": [
+        "FND-2"
+      ],
+      "condition_results": [
+        {
+          "source": "FINDING",
+          "code": "RECOVERY_TREND",
+          "field": "finding_code",
+          "operator": "EQ",
+          "expected": "RECOVERY_TREND",
+          "matched": true,
+          "matched_count": 1,
+          "evidence_ids": [],
+          "finding_ids": [
+            "FND-2"
+          ],
+          "low_sample": false
+        }
+      ]
+    },
+    {
+      "rule_id": "DR-CTR-001",
+      "diagnosis_code": "CTR_PROBLEM",
+      "priority": 80,
+      "specificity": 80,
+      "confidence": 69,
+      "severity": "MODERATE",
+      "mutual_exclusion_group": null,
+      "explanation": "CTR関連所見とCTR Health低下が一致しました。",
+      "evidence_ids": [],
+      "finding_ids": [
+        "FND-1"
+      ],
+      "condition_results": [
+        {
+          "source": "FINDING",
+          "code": "CTR_UNDERPERFORMING",
+          "field": "finding_code",
+          "operator": "EQ",
+          "expected": "CTR_UNDERPERFORMING",
+          "matched": true,
+          "matched_count": 1,
+          "evidence_ids": [],
+          "finding_ids": [
+            "FND-1"
+          ],
+          "low_sample": false
+        },
+        {
+          "source": "VITAL_SIGN",
+          "code": "CTR_HEALTH",
+          "field": "score",
+          "operator": "LT",
+          "expected": 50,
+          "matched": true,
+          "matched_count": 1,
+          "evidence_ids": [],
+          "finding_ids": [],
+          "low_sample": false
+        }
+      ]
+    }
+  ],
+  "diagnosis_candidates": [
+    {
+      "diagnosis_code": "RECOVERY_IN_PROGRESS",
+      "confidence": 74,
+      "severity": "MILD",
+      "priority": 85,
+      "rule_id": "DR-RECOVERY-001",
+      "explanation": "直近データに回復傾向が確認されました。",
+      "evidence_ids": [],
+      "finding_ids": [
+        "FND-2"
+      ]
+    },
+    {
+      "diagnosis_code": "CTR_PROBLEM",
+      "confidence": 69,
+      "severity": "MODERATE",
+      "priority": 80,
+      "rule_id": "DR-CTR-001",
+      "explanation": "CTR関連所見とCTR Health低下が一致しました。",
+      "evidence_ids": [],
+      "finding_ids": [
+        "FND-1"
+      ]
+    }
+  ],
+  "unmatched_rule_count": 1
+}

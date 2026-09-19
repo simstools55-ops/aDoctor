@@ -1,0 +1,45 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "patient": {
+    "site_id": "site",
+    "article_id": "A1",
+    "article_url": "https://example.com/a1",
+    "article_title": "Example Article"
+  },
+  "events": [],
+  "composite_diagnoses": [
+    {
+      "composite_diagnosis_id": "CDX-1",
+      "final_diagnosis": "LOCAL_OPTIMIZATION",
+      "confidence": 91,
+      "priority": 78,
+      "severity": "MODERATE",
+      "reasons": [
+        "CTR改善機会があります。",
+        "順位改善機会があります。"
+      ],
+      "safety": {
+        "winner_query_protected": false,
+        "recent_change_or_update": false,
+        "low_sample_or_insufficient": false,
+        "merge_required": false,
+        "new_article_allowed": false,
+        "full_rewrite_allowed": true
+      },
+      "supporting_assessments": [
+        {
+          "assessment_type": "ctr_opportunity_assessments",
+          "assessment_id": "CTA-1",
+          "classification": "HIGH_CTR_OPPORTUNITY",
+          "confidence": 94,
+          "severity": "SEVERE"
+        }
+      ]
+    }
+  ],
+  "treatment_recommendations": [],
+  "counters": {
+    "treatment_recommendation_count": 0
+  }
+}

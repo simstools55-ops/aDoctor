@@ -1,0 +1,47 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-TRT-1",
+      "observation_type": "TREATMENT_HISTORY",
+      "facts": {
+        "assessment": {
+          "classification": "WORSENED",
+          "effect_score": -0.28,
+          "selected_checkpoint_days": 28,
+          "low_sample": false,
+          "metric_changes": {
+            "clicks": -0.35,
+            "impressions": -0.25,
+            "ctr": -0.18,
+            "position": -0.22
+          }
+        }
+      }
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FND-1",
+      "finding_code": "POST_TREATMENT_WORSENING",
+      "severity": "SEVERE"
+    }
+  ],
+  "final_diagnoses": [],
+  "vital_scores": [
+    {
+      "score_id": "VSC-OLD",
+      "overall_score": 68
+    },
+    {
+      "score_id": "VSC-NEW",
+      "overall_score": 55
+    }
+  ],
+  "improvement_failure_assessments": [],
+  "counters": {
+    "improvement_failure_assessment_count": 0
+  }
+}

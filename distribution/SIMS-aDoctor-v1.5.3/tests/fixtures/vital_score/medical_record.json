@@ -1,0 +1,69 @@
+{
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "events": [],
+  "observations": [
+    {
+      "observation_id": "OBS-1",
+      "observation_type": "SEARCH_CONSOLE"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FND-1",
+      "finding_code": "LONG_TERM_VISIBILITY_DECAY",
+      "severity": "SEVERE"
+    },
+    {
+      "finding_id": "FND-2",
+      "finding_code": "RECOVERY_TREND",
+      "severity": "INFO"
+    }
+  ],
+  "vital_profiles": [
+    {
+      "profile_id": "VPR-1",
+      "signs": [
+        {
+          "code": "VISIBILITY",
+          "score": 42,
+          "low_sample": false
+        },
+        {
+          "code": "TRAFFIC",
+          "score": 55,
+          "low_sample": false
+        },
+        {
+          "code": "CTR_HEALTH",
+          "score": 48,
+          "low_sample": false
+        },
+        {
+          "code": "RANKING_STABILITY",
+          "score": 60,
+          "low_sample": false
+        },
+        {
+          "code": "FRESHNESS",
+          "score": 82,
+          "low_sample": false
+        },
+        {
+          "code": "COMPETITION_RESILIENCE",
+          "score": 72,
+          "low_sample": false
+        },
+        {
+          "code": "CONTENT_INTEGRITY",
+          "score": 90,
+          "low_sample": false
+        }
+      ]
+    }
+  ],
+  "vital_scores": [],
+  "counters": {
+    "vital_score_count": 0
+  }
+}

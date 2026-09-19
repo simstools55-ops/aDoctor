@@ -1,0 +1,109 @@
+{
+  "contract_name": "SIMS_DOCTOR_TREATMENT_RECOMMENDATION_V1",
+  "contract_version": "1.0",
+  "recommendation_id": "TRX-20260804-061255-35DBE9",
+  "case_id": "CASE-1",
+  "medical_record_id": "MR-1",
+  "created_at": "2026-08-04T06:12:55.511040+00:00",
+  "source_composite_diagnosis_id": "CDX-1",
+  "referral_target": "SIMS_WRITER",
+  "treatment_mode": "LOCAL_OPTIMIZATION",
+  "priority": 78,
+  "recommended_scope": [
+    "SEO_TITLE",
+    "META_DESCRIPTION",
+    "INTRODUCTION",
+    "HEADINGS",
+    "FAQ",
+    "INTERNAL_LINKS"
+  ],
+  "prohibited_actions": [
+    "AUTOMATIC_DELETE",
+    "AUTOMATIC_NOINDEX",
+    "AUTOMATIC_PUBLICATION",
+    "AUTOMATIC_REDIRECT",
+    "MERGE_EXECUTION",
+    "NEW_ARTICLE_CREATION"
+  ],
+  "reasons": [
+    "Composite DiagnosisのLOCAL_OPTIMIZATIONをSIMS_WRITER向け紹介へ変換しました。",
+    "CTR改善機会があります。",
+    "順位改善機会があります。"
+  ],
+  "monitoring": {
+    "required": true,
+    "recommended_days": 28,
+    "metrics": [
+      "CLICKS",
+      "IMPRESSIONS",
+      "CTR",
+      "POSITION",
+      "VITAL_SCORE"
+    ]
+  },
+  "safety": {
+    "doctor_executes_treatment": false,
+    "winner_query_protected": false,
+    "new_article_allowed": false,
+    "full_rewrite_allowed": true,
+    "merge_required": false
+  },
+  "trace": {
+    "composite_diagnosis_id": "CDX-1",
+    "supporting_assessment_ids": [
+      "CTA-1"
+    ]
+  },
+  "referral_request": {
+    "contract_name": "SIMS_DOCTOR_WRITER_REQUEST_V1",
+    "contract_version": "1.0",
+    "request_id": "REF-20260804-061255-6C2A22",
+    "case_id": "CASE-1",
+    "article": {
+      "site_id": "site",
+      "article_id": "A1",
+      "url": "https://example.com/a1",
+      "title": "Example Article"
+    },
+    "diagnosis": {
+      "composite_diagnosis_id": "CDX-1",
+      "final_diagnosis": "LOCAL_OPTIMIZATION",
+      "confidence": 91,
+      "priority": 78,
+      "reasons": [
+        "CTR改善機会があります。",
+        "順位改善機会があります。"
+      ]
+    },
+    "treatment": {
+      "mode": "LOCAL_OPTIMIZATION",
+      "scope": [
+        "SEO_TITLE",
+        "META_DESCRIPTION",
+        "INTRODUCTION",
+        "HEADINGS",
+        "FAQ",
+        "INTERNAL_LINKS"
+      ],
+      "prohibited_actions": [
+        "AUTOMATIC_DELETE",
+        "AUTOMATIC_NOINDEX",
+        "AUTOMATIC_PUBLICATION",
+        "AUTOMATIC_REDIRECT",
+        "MERGE_EXECUTION",
+        "NEW_ARTICLE_CREATION"
+      ],
+      "monitoring": {
+        "required": true,
+        "recommended_days": 28,
+        "metrics": [
+          "CLICKS",
+          "IMPRESSIONS",
+          "CTR",
+          "POSITION",
+          "VITAL_SCORE"
+        ]
+      }
+    }
+  }
+}

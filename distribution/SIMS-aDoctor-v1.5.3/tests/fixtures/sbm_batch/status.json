@@ -1,0 +1,35 @@
+{
+  "contract_name": "SIMS_SBM_DOCTOR_BATCH_STATUS_V1",
+  "contract_version": "1.0",
+  "batch_request_id": "SBM-BATCH-20260804-001",
+  "queue_record_id": "BQ-A7F4D132081C",
+  "status": "QUEUED",
+  "progress": {
+    "total": 2,
+    "completed": 0,
+    "failed": 0,
+    "pending": 2,
+    "running": 0,
+    "skipped": 0
+  },
+  "items": [
+    {
+      "item_id": "SBM-ITEM-1",
+      "article_id": "A000001",
+      "status": "PENDING",
+      "attempts": 0,
+      "case_id": null,
+      "error_code": null
+    },
+    {
+      "item_id": "SBM-ITEM-2",
+      "article_id": "A000002",
+      "status": "PENDING",
+      "attempts": 0,
+      "case_id": null,
+      "error_code": null
+    }
+  ],
+  "updated_at": "2026-08-04T00:12:44.224242+00:00",
+  "result_ready": false
+}

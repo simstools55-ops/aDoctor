@@ -1,0 +1,6 @@
+SIMS aDoctor v1.5.3 RELEASE AUDIT
+PASS
+- Manager request gate aligned to SIMS_DOCTOR_SINGLE_CASE_REQUEST_V2
+- Obsolete SIMS-A/1 wrapper requirement removed
+- Shared version 3.5.0 preserved
+- pytest: 257 passed
