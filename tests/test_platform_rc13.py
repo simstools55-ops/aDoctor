@@ -3,7 +3,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 def test_identity_and_versions():
-    assert (ROOT/'VERSION').read_text().strip() == '1.4.0'
+    assert (ROOT/'VERSION').read_text().strip() == '1.5.2'
     assert (ROOT/'SHARED_VERSION').read_text().strip() == '3.5.0'
     identity=json.loads((ROOT/'PRODUCT_IDENTITY.json').read_text())
     assert identity['product_code']=='DOCTOR'

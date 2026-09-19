@@ -1,0 +1,7 @@
+SIMS aDoctor v1.5.2 release audit
+- Base: v1.5.1-dev
+- SIMS Request Protocol v1 specification added: PASS
+- Diagnostic algorithms/contracts unchanged: PASS
+- Shared version remains 3.5.0: PASS
+- Root/distribution version metadata synchronized: PASS
+- JSON/UTF-8/transient-file audit: PASS

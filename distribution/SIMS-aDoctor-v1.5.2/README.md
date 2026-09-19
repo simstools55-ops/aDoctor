@@ -1,8 +1,15 @@
-# aDoctor v1.5.1
+# aDoctor v1.5.2
 
 ## Current release
 
-`1.5.1`
+`1.5.2`
+
+### v1.5.2
+
+- Added SIMS Request Protocol v1 for Manager-issued aDoctor requests.
+- FULL-edition Manager envelope is required for normal diagnostic execution in Claude Project deployments.
+- Direct/free-form diagnostic requests are rejected before diagnostic work begins.
+- This is an operational gate, not License Center or cryptographic authentication.
 
 ### v1.5.1
 
