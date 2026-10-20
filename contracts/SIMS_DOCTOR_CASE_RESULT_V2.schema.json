@@ -132,30 +132,6 @@
       },
       "additionalProperties": true
     },
-    "request_id": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "site_diagnosis_case_id": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "site_diagnosis_batch_id": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "article_url": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
     "personal_knowledge_site_id": {
       "type": [
         "string",
@@ -179,7 +155,8 @@
         "statement",
         "confidence",
         "source_product",
-        "source_type"
+        "source_type",
+        "confirmation_event_id"
       ],
       "properties": {
         "candidate_id": {
@@ -202,7 +179,14 @@
           ]
         },
         "knowledge_type": {
-          "type": "string"
+          "enum": [
+            "ARTICLE_ROLE",
+            "ARTICLE_RELATIONSHIP",
+            "INTENT_BOUNDARY",
+            "CANNIBALIZATION_BOUNDARY",
+            "SITE_SPECIFIC_TREATMENT_LEARNING",
+            "CONTENT_FRESHNESS_RISK"
+          ]
         },
         "statement": {
           "type": "string",
@@ -214,10 +198,10 @@
           "maximum": 1
         },
         "source_product": {
-          "type": "string"
+          "const": "SIMS Article Doctor"
         },
         "source_type": {
-          "type": "string"
+          "const": "DIAGNOSIS_INFERENCE"
         },
         "evidence_refs": {
           "type": "array",
@@ -226,10 +210,8 @@
           }
         },
         "confirmation_event_id": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string",
+          "minLength": 1
         },
         "explicit_user_confirmation": {
           "type": "boolean"

@@ -1,0 +1,57 @@
+{
+  "scenario": "OFFICIAL_UPDATE_WITH_SITE_WIDE_DECLINE_AND_NO_SEVERE_CONTENT_DEFECT",
+  "evidence_summary": {
+    "official_update": true,
+    "rollout_status": "IN_PROGRESS",
+    "temporal_correlation": "HIGH",
+    "site_wide_correlation": "HIGH",
+    "serp_correlation": "MEDIUM",
+    "severe_content_integrity_problem": false
+  },
+  "algorithm_assessment": {
+    "contract_name": "SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1",
+    "contract_version": "1.0",
+    "assessment_id": "ALG-EX-WAIT",
+    "status": "HIGH",
+    "confidence": "HIGH",
+    "role": "CONTRIBUTING_FACTOR",
+    "impact_score": 86,
+    "update": {
+      "source_status": "OFFICIAL_CONFIRMED",
+      "update_type": "CORE",
+      "rollout_status": "IN_PROGRESS"
+    },
+    "correlation": {
+      "temporal": "HIGH",
+      "site_wide": "HIGH",
+      "segment": "UNKNOWN",
+      "article": "HIGH",
+      "serp": "MEDIUM"
+    },
+    "reason_codes": [
+      "OFFICIAL_UPDATE_OVERLAP",
+      "SITE_WIDE_SHIFT_DURING_UPDATE"
+    ],
+    "evidence_refs": [
+      "GSC_180D",
+      "SITE_IMPACT",
+      "SERP"
+    ]
+  },
+  "treatment_strategy": "WAIT",
+  "wait_plan": {
+    "minimum_wait_days": 7,
+    "recommended_review_days": 14,
+    "observe": [
+      "clicks",
+      "impressions",
+      "position",
+      "query_distribution",
+      "serp_composition"
+    ],
+    "avoid": [
+      "FULL_REWRITE"
+    ]
+  },
+  "user_guidance": "記事固有の重大問題が確認されていないため、ロールアウト中の全面リライトを避け、終了後のデータで再診する。"
+}

@@ -1,0 +1,117 @@
+{
+  "format": "SIMS_DOCTOR_CASE_RESULT_V2",
+  "contract_name": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1",
+  "contract_version": "2.0",
+  "case_id": "CASE-EXAMPLE-A900024-RC3",
+  "request_id": "REQ-EXAMPLE-A900024-RC3",
+  "site_id": "example-site",
+  "article_id": "A900024",
+  "article_url": "https://example.com/1238",
+  "diagnosis_summary": {
+    "headline": "主要クエリ群の表示がコアアップデート完了直後に急減。記事固有の重大問題は確認されず、外部評価変動が有力。",
+    "article_rank": "NURTURE"
+  },
+  "algorithm_impact_assessment": {
+    "level": "LIKELY",
+    "confidence_percent": 80,
+    "article_specific_quality_issue_found": false
+  },
+  "treatment_plan": {
+    "strategy": "LIGHT_FIX",
+    "secondary_posture": "WAIT_AND_MONITOR",
+    "actions_permitted": [
+      {
+        "type": "INTERNAL_LINK_ADD",
+        "target_urls": [
+          "https://example.com/819",
+          "https://example.com/730"
+        ],
+        "scope_note": "関連内部リンク2件のみ追加"
+      }
+    ],
+    "actions_prohibited": [
+      "FULL_REWRITE",
+      "TITLE_CHANGE",
+      "H1_CHANGE",
+      "URL_CHANGE",
+      "LARGE_SCALE_CONTENT_ADDITION"
+    ],
+    "rationale": "記事固有の重大な品質問題がないため、低リスク処置のみ行い経過観察する。",
+    "internal_link_recommendations": [
+      {
+        "url": "https://example.invalid/article-a",
+        "title": "【解決】iPhoneのキーボード位置がおかしい時の直し方",
+        "reason": "同じiPhoneキーボードのトラブル群で、入力音以外の症状へ自然に案内できるため",
+        "relationship": "同一デバイス・同一入力UIの隣接トラブル",
+        "suggested_context": "キーボード設定またはトラブル対処の説明後",
+        "suggested_anchor_hint": "iPhoneのキーボード位置がおかしい時の直し方",
+        "writer_must_finalize_anchor": true
+      },
+      {
+        "url": "https://example.invalid/article-b",
+        "title": "スマホのキーボード位置がおかしい時の直し方",
+        "reason": "キーボード位置の不具合を広く扱う関連記事として補完できるため",
+        "relationship": "キーボード操作の隣接トラブル",
+        "suggested_context": "関連記事案内またはキーボード設定の補足文脈",
+        "suggested_anchor_hint": "スマホのキーボード位置がおかしい時の直し方",
+        "writer_must_finalize_anchor": true
+      }
+    ]
+  },
+  "presentation": {
+    "standard": "SIMS_PRESENTATION_STANDARD_V1",
+    "summary": "大きなリライトは不要です。Googleアップデート後の評価変動が有力なため、低リスクな内部リンク追加だけ行います。",
+    "do_now": [
+      "関連性の高い内部リンクを2件だけ追加します。",
+      "処置結果はSBMへ登録します。"
+    ],
+    "do_not": [
+      "タイトル・H1・URLは変更しません。",
+      "全面リライトや大規模追記は行いません。"
+    ],
+    "next_step": "約28日後に主要クエリの表示回復を再診します。",
+    "review_after_days": 28,
+    "note": "Before/Afterの具体的な修正文はWriterが生成します。"
+  },
+  "workflow": {
+    "return_to": "SIMS_BLOG_MANAGER"
+  },
+  "workflow_handoff": {
+    "next_action": "WRITER",
+    "handoff_mode": "RETURN_TO_SBM_FOR_REFERRAL",
+    "doctor_json_usage": "REQUIRED_SBM_REGISTRATION",
+    "writer_request_text": null,
+    "creator_request_text": null,
+    "merge_request_text": null,
+    "allowed_scope": [
+      "INTERNAL_LINK_ADDITION_MAX_2"
+    ],
+    "blocked_scope": [
+      "FULL_REWRITE",
+      "TITLE_CHANGE",
+      "META_DESCRIPTION_CHANGE",
+      "URL_CHANGE",
+      "DELETION"
+    ],
+    "internal_link_recommendations": [
+      {
+        "url": "https://example.invalid/article-a",
+        "title": "【解決】iPhoneのキーボード位置がおかしい時の直し方",
+        "reason": "同じiPhoneキーボードのトラブル群で、入力音以外の症状へ自然に案内できるため",
+        "relationship": "同一デバイス・同一入力UIの隣接トラブル",
+        "suggested_context": "キーボード設定またはトラブル対処の説明後",
+        "suggested_anchor_hint": "iPhoneのキーボード位置がおかしい時の直し方",
+        "writer_must_finalize_anchor": true
+      },
+      {
+        "url": "https://example.invalid/article-b",
+        "title": "スマホのキーボード位置がおかしい時の直し方",
+        "reason": "キーボード位置の不具合を広く扱う関連記事として補完できるため",
+        "relationship": "キーボード操作の隣接トラブル",
+        "suggested_context": "関連記事案内またはキーボード設定の補足文脈",
+        "suggested_anchor_hint": "スマホのキーボード位置がおかしい時の直し方",
+        "writer_must_finalize_anchor": true
+      }
+    ]
+  }
+}

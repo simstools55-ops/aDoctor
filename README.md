@@ -1,15 +1,18 @@
-# aDoctor v1.5.3
+# aDoctor Claude v2.0.0
+
+aDoctorのClaude Project版です。SIMS Managerから受け取った1記事のEvidence Packageを精密診断し、`SIMS_DOCTOR_CASE_RESULT_V2` をSBMへ返します。Writer / Creator / Mergeへの最終紹介状生成はSBMが担当します。
 
 ## Current release
 
-`1.5.3`
+`1.5.2`
+
 
 ### v1.5.3
 
-- Added SIMS Request Protocol v1 for Manager-issued aDoctor requests.
-- FULL-edition Manager envelope is required for normal diagnostic execution in Claude Project deployments.
-- Direct/free-form diagnostic requests are rejected before diagnostic work begins.
-- This is an operational gate, not License Center or cryptographic authentication.
+- Added SIMS Request Protocol Gate v1.
+- Requires FULL SIMS Manager request envelope before aDoctor diagnostic execution.
+- Direct/free-form diagnostic requests are blocked with a fixed warning.
+- Gate is explicitly an operational control, not cryptographic authentication.
 
 ### v1.5.1
 
@@ -18,35 +21,30 @@
 - New articles must have independent search intent/user value and pass cannibalization/SERP checks; thin link-only satellites are prohibited.
 - Enforced workflow consistency: normal-close outcomes cannot simultaneously request WAIT/MONITOR.
 
-## v1.0.4
-- Workflow handoff: treatment class, prioritized checklist, and specialist request texts.
 
-# aDoctor
+### v1.4.3
 
-Current user workflow: SIMS Manager → aDoctor → SIMS Manager → aWriter / aCreator / aMerge → SIMS Manager. Doctor JSON is internal and is not displayed to normal users; copy-ready specialist requests are shown instead. v1.0
+- Windows Explorer 展開時の長いパス問題を配布ZIP構造で解消。
+- 配布ZIPの余分な最上位ディレクトリを廃止し、ZIP展開先との二重長名を防止。
+- `.pytest_cache` / `__pycache__` / `.pyc` を配布物から除外。
+- リリース前検査に Windows 配布パス長ガードを追加。
+- 診断ロジック、JSON契約、v1.4.2で導入した対象サイト境界は変更なし。
 
-aDoctor is the single-article precision diagnosis product in the SIMS Editorial Platform.
-It receives a case request from SIMS Manager, maintains the medical record as the diagnostic SSOT, and later produces diagnosis and referral contracts. It does not rewrite articles.
+### v1.4.2
 
-## Current release
+- Claude Project Instructions の先頭バージョン表記を v1.4.2 に同期。
+- v1.4.0 の Personal Knowledge candidate 機能内容は変更なし。
 
-`1.1.3`
-
-Sprint2-2 implements the reception foundation:
-
-1. Receive `SIMS_DOCTOR_SINGLE_CASE_REQUEST_V1`
-2. Validate and normalize the request
-3. Generate Request ID
-4. Create or reuse an active Case
-5. Create or update `SIMS_DOCTOR_MEDICAL_RECORD_V1`
-6. Return `SIMS_DOCTOR_SINGLE_CASE_RESULT_V1`
-
-365-day data collection, SERP comparison, diagnosis, and referral generation remain outside this release.
-
+### v1.4.0
+- 診断結果へ再利用可能な `knowledge_candidates` を追加。
+- SITE候補はSBMの `personal_knowledge_site_id` に束縛。
+- 同一Caseの再貼付を独立確認として重複カウントしないため `confirmation_event_id=case_id` を使用。
+- 現在順位・クリック・表示・CTR・SERPスナップショット等の一時情報はPersonal Knowledge候補にしない。
+- 手動コピー＆ペースト運用を維持し、Claude API連携は追加しない。
 
 ## RC13 Platform Contract adaptation
 
-RC13 synchronizes with SIMS Shared Editorial Knowledge 3.3.0 and adds the canonical Platform contracts `SIMS_DOCTOR_DIAGNOSIS_REQUEST_V1` and `SIMS_DOCTOR_DIAGNOSIS_RESULT_V1`. The existing `SIMS_DOCTOR_CASE_RESULT_V2` path remains supported as a legacy compatibility route. Doctor returns treatment referrals to SBM and never invokes Writer, Creator, or Merge directly.
+Uses Shared 3.5.0 and the canonical Doctor diagnosis request/result contracts. All referrals return to SBM; direct treatment-product invocation is prohibited.
 
 ## RC12 SBM orchestration
 
@@ -433,6 +431,10 @@ Doctor now records a user-facing decision path and a separate system audit trail
 ## v1.0.0-RC1
 
 The complete Doctor workflow is frozen as a release candidate for end-to-end acceptance testing.
+
+## Claude Projectへの投入
+
+`Claude-Upload/`フォルダーの**中身だけ**をClaude Projectへアップロードしてください。旧ファイルは先にすべて削除します。詳細は`CLAUDE_UPDATE_GUIDE.md`を参照してください。
 
 
 ## v1.0.1 行動優先型出力

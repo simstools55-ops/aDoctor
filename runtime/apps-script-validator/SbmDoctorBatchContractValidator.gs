@@ -1,5 +1,5 @@
 /**
- * Lightweight SBM-side validation helpers for SIMS Article Doctor batch contracts.
+ * Lightweight SBM-side validation helpers for SIMS Doctor batch contracts.
  * This is not a replacement for JSON Schema validation on the Doctor side.
  */
 function validateSbmDoctorBatchAcceptedV1_(value) {

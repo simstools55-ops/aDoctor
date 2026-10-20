@@ -1,1 +1,0 @@
-fix(aDoctor): align Manager request gate with V2 contract v1.5.3

@@ -1,5 +1,5 @@
 /**
- * SIMS Article Doctor Contract Validator v0.1.0
+ * SIMS Doctor Contract Validator v0.1.0
  * Apps Script compatible lightweight envelope validator.
  */
 const SIMS_DOCTOR_SUPPORTED_CONTRACTS = Object.freeze({

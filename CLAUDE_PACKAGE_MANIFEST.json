@@ -1,0 +1,25 @@
+{
+  "package_name": "SIMS-Article-Doctor-Claude",
+  "package_version": "2.0.0",
+  "product_code": "DOCTOR",
+  "compatible_product_versions": [
+    "2.0.0"
+  ],
+  "platform_compatibility": "1.x",
+  "shared_version": "3.5.0",
+  "supported_contracts": [
+    "SIMS_DOCTOR_DIAGNOSIS_REQUEST_V1",
+    "SIMS_DOCTOR_DIAGNOSIS_RESULT_V1",
+    "SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1",
+    "SIMS_DOCTOR_SINGLE_CASE_REQUEST_V2",
+    "SIMS_EMERGENCY_DOCTOR_REQUEST_V1",
+    "SIMS_EMERGENCY_DOCTOR_RESULT_V1",
+    "SIMS_INFO_CHANGE_DOCTOR_RESPONSE_V1"
+  ],
+  "legacy_compatibility": [
+    "SIMS_DOCTOR_CASE_RESULT_V2"
+  ],
+  "deployment_method": "Claude-Upload",
+  "generated_at": "2026-10-19",
+  "package_variant": "SBM9 Info Change UAT baseline; pending runtime acceptance"
+}

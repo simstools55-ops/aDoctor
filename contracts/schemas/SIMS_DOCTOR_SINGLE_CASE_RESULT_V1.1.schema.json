@@ -150,18 +150,6 @@
         },
         "dependencies": {
           "type": "array"
-        },
-        "handoff_mode": {
-          "type": "string"
-        },
-        "doctor_json_usage": {
-          "type": "string"
-        },
-        "specialist_result_destination": {
-          "type": [
-            "string",
-            "null"
-          ]
         }
       },
       "additionalProperties": true,

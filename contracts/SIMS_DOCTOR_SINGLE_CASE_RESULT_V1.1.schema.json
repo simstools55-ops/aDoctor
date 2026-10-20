@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SIMS Article Doctor Single Case Result v1.1 Claude Extension",
+  "type": "object",
+  "properties": {
+    "contract_name": {"const": "SIMS_DOCTOR_SINGLE_CASE_RESULT_V1"},
+    "contract_version": {"enum": ["1.0", "1.1"]},
+    "clinical_review": {"type": "object"},
+    "evidence_quality": {"type": "array", "items": {"type": "object"}},
+    "external_factors": {"type": "array", "items": {"type": "object"}},
+    "confidence_factors": {"type": "object"},
+    "treatment_tracks": {"type": "object"}
+  },
+  "additionalProperties": true
+}

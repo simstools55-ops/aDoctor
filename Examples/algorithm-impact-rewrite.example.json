@@ -1,0 +1,43 @@
+{
+  "scenario": "UPDATE_OVERLAP_BUT_ARTICLE_SPECIFIC_PROBLEM_DOMINATES",
+  "evidence_summary": {
+    "official_update": true,
+    "rollout_status": "COMPLETED",
+    "temporal_correlation": "HIGH",
+    "site_wide_correlation": "LOW",
+    "serp_correlation": "HIGH",
+    "severe_content_integrity_problem": true
+  },
+  "algorithm_assessment": {
+    "contract_name": "SIMS_DOCTOR_ALGORITHM_IMPACT_ASSESSMENT_V1",
+    "contract_version": "1.0",
+    "assessment_id": "ALG-EX-REWRITE",
+    "status": "POSSIBLE",
+    "confidence": "MEDIUM",
+    "role": "POSSIBLE_FACTOR",
+    "impact_score": 48,
+    "update": {
+      "source_status": "OFFICIAL_CONFIRMED",
+      "update_type": "CORE",
+      "rollout_status": "COMPLETED"
+    },
+    "correlation": {
+      "temporal": "HIGH",
+      "site_wide": "LOW",
+      "segment": "UNKNOWN",
+      "article": "HIGH",
+      "serp": "HIGH"
+    },
+    "reason_codes": [
+      "ALGORITHM_UPDATE_OVERLAP",
+      "ARTICLE_ONLY_SHIFT_DURING_UPDATE"
+    ],
+    "evidence_refs": [
+      "GSC_180D",
+      "ARTICLE",
+      "SERP"
+    ]
+  },
+  "treatment_strategy": "NORMAL_REWRITE",
+  "user_guidance": "アップデート期間とは重なるが、サイト全体の同時低下が弱く、記事固有の問題が確認されるため通常リライトを優先する。"
+}

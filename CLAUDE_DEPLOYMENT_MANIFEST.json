@@ -1,0 +1,26 @@
+{
+  "deployment_manifest_version": "1.1",
+  "package_name": "SIMS-Article-Doctor-Claude",
+  "package_version": "2.0.0",
+  "shared_version": "3.5.0",
+  "package_variant": "SBM9 Info Change UAT baseline; pending runtime acceptance",
+  "upload_method": "SET_PROJECT_INSTRUCTIONS_AND_UPLOAD_KNOWLEDGE_FILES",
+  "required_files": [
+    "CLAUDE_PROJECT_INSTRUCTIONS.md",
+    "PRODUCT_IDENTITY.json",
+    "VERSION",
+    "SHARED_VERSION",
+    "CLAUDE_PACKAGE_MANIFEST.json",
+    "CLAUDE_DEPLOYMENT_MANIFEST.json",
+    "contracts/SIMS_INFO_CHANGE_DOCTOR_RESPONSE_V1.schema.json"
+  ],
+  "project_instructions_file": "CLAUDE_PROJECT_INSTRUCTIONS.md",
+  "knowledge_directories": [
+    "Knowledge/",
+    "Runtime/",
+    "contracts/",
+    "shared/",
+    "Examples/"
+  ],
+  "generated_at": "2026-10-19"
+}
