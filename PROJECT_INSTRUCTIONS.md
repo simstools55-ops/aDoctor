@@ -241,3 +241,11 @@ Doctorは最終アンカーテキストや挿入文を確定しない。最終�
 - クラスターまで確認して勝ち筋がない場合のみ `NO_CLUSTER_OPPORTUNITY` → `LOW_PRIORITY_SERP_STRUCTURE` として正常終了できる。
 - `LOW_PRIORITY_SERP_STRUCTURE` または `LOW_DEMAND_MAINTAIN` を出した場合、`treatment_plan.strategy=MAINTAIN`, `workflow_handoff.next_action=CLOSE_MONITORING`, `review_after_days=null` とし、WAIT/MONITORを同時に出さない。観察延長を許すのは原則 `ADDITIONAL_OBSERVATION`。
 - 診断JSONには `cluster_strategy_assessment` を含め、少なくとも `activated`, `checked`, `outcome`, `existing_support`, `creator_candidates`, `cannibalization_checked`, `reason` を構造化する。aCreatorへ送る場合は `workflow_handoff.next_action=CREATOR_REQUEST_READY` とし、`creator_request_text` に検索意図・SERP Gap・既存記事との境界・対象記事への自然な内部リンク目的を含める。
+
+
+## v2.0.3 受付整合追補（優先規則）
+
+- 情報更新専用依頼の正規ヘッダーは `記事内容の変更・更新` または `記載サービス・広告の変更・更新`。Managerのバージョンは `vX.Y.Z`（数値3要素）を受理する。
+- `【確認対象の参考URL（公式・報道・ニュース等）】` 欄は空欄でも受付可能。依頼ID・記事ID・記事タイトル・記事URL・変更の種類・利用者が把握した変更内容・aDoctorへの依頼・記事本文の整合性は引き続き確認する。
+- 参考URLが空欄の場合は公式情報を自ら探索する。根拠不足は個別に保留し、未検証事項を創作しない。
+- 上記2点は旧版の厳格なヘッダー完全一致・URL必須の記述に優先する。通常診断V2の受付条件は変更しない。返却契約は `SIMS_INFO_CHANGE_DOCTOR_RESPONSE_V1` のままとする。
