@@ -4,14 +4,15 @@
   "repository_name": "SIMS-Article-Doctor-Claude",
   "repository_type": "CLAUDE_PACKAGE",
   "runtime": "CLAUDE_PROJECT",
-  "package_version": "2.0.0",
-  "product_compatibility": "2.0.0",
+  "package_version": "2.0.5",
+  "product_compatibility": "2.0.5",
   "platform_compatibility": "1.x",
   "shared_version": "3.5.0",
   "compatible_product_versions": [
-    "2.0.0"
+    "2.0.4",
+    "2.0.3"
   ],
   "role": "Single-article precision diagnosis and return to SBM for specialist referral generation; no treatment execution",
   "notes": "Manager request gate aligned to existing SIMS_DOCTOR_SINGLE_CASE_REQUEST_V2; obsolete standalone SIMS-A/1 envelope requirement removed. Shared v3.5.0 preserved.",
-  "package_variant": "SBM9 Info Change UAT baseline; pending runtime acceptance"
+  "package_variant": "Keyword Strategy Reassessment UAT candidate"
 }

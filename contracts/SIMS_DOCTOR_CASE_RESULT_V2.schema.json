@@ -143,6 +143,70 @@
       "items": {
         "$ref": "#/$defs/knowledge_candidate"
       }
+    },
+    "keyword_strategy_assessment": {
+      "type": "object",
+      "required": [
+        "decision",
+        "original_target_query",
+        "observed_main_query",
+        "improvement_target_query",
+        "article_role",
+        "reason",
+        "confidence"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "MAINTAIN",
+            "RETARGET",
+            "ROLE_SEPARATION",
+            "DEFER"
+          ]
+        },
+        "original_target_query": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observed_main_query": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "improvement_target_query": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "article_role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "enum": [
+            "CONFIRMED",
+            "PROVISIONAL",
+            "INSUFFICIENT"
+          ]
+        },
+        "evidence_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": true,

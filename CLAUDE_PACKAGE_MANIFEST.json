@@ -1,9 +1,10 @@
 {
   "package_name": "SIMS-Article-Doctor-Claude",
-  "package_version": "2.0.0",
+  "package_version": "2.0.4",
   "product_code": "DOCTOR",
   "compatible_product_versions": [
-    "2.0.0"
+    "2.0.4",
+    "2.0.3"
   ],
   "platform_compatibility": "1.x",
   "shared_version": "3.5.0",
@@ -21,5 +22,5 @@
   ],
   "deployment_method": "Claude-Upload",
   "generated_at": "2026-10-19",
-  "package_variant": "SBM9 Info Change UAT baseline; pending runtime acceptance"
+  "package_variant": "Keyword Strategy Reassessment UAT candidate"
 }
