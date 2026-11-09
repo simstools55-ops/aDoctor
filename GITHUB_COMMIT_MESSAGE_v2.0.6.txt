@@ -1,0 +1,1 @@
+feat(adoctor): accept SBM strategy navigator requests as third diagnosis route

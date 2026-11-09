@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SIMS_STRATEGY_DOCTOR_V1",
+  "type": "object",
+  "required": [
+    "format",
+    "case_id",
+    "primary_article_id",
+    "related_article_url",
+    "decision",
+    "reason",
+    "writer_instructions",
+    "requires_change"
+  ],
+  "properties": {
+    "format": {
+      "const": "SIMS_STRATEGY_DOCTOR_V1"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^STRATEGY-[A-Za-z0-9-]+$"
+    },
+    "primary_article_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "related_article_url": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "decision": {
+      "enum": [
+        "ROLE_SEPARATION",
+        "MERGE_REVIEW",
+        "KEEP_BOTH",
+        "FURTHER_EVIDENCE"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "writer_instructions": {
+      "type": "string"
+    },
+    "requires_change": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "requires_change": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "writer_instructions": {
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}
