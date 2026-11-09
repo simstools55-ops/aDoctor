@@ -1,3 +1,5 @@
+> Current UAT: aDoctor v2.0.7. Strategy policy: see CLAUDE_PROJECT_INSTRUCTIONS.md.
+
 # aDoctor Claude v2.0.0
 
 aDoctorのClaude Project版です。SIMS Managerから受け取った1記事のEvidence Packageを精密診断し、`SIMS_DOCTOR_CASE_RESULT_V2` をSBMへ返します。Writer / Creator / Mergeへの最終紹介状生成はSBMが担当します。
