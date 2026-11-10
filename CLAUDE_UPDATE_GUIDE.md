@@ -9,3 +9,6 @@
 5. 通常の`SIMS_DOCTOR_SINGLE_CASE_REQUEST_V2`が従来どおり受理されることを確認します。
 
 公式根拠が得られない場合は`NEEDS_EVIDENCE`とし、利用者に追加資料登録・再診を要求する標準手順を作りません。公開・更新操作は行いません。
+
+
+v2.0.8: Replace Claude project instructions using the v2.0.8 upload package only at UAT deployment time.

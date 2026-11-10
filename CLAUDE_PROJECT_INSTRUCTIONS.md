@@ -349,3 +349,14 @@ Manager v7.1.12 / aDoctor v2.0.0 / aWriter v4.0.0。aMerge対象外。通常改�
 **回答**：冒頭に1つの推奨戦略とその理由、2記事それぞれの役割、すぐに行う変更範囲、公開前に必要な確認、28日後の観測指標（原則、7/14/21/28日・両記事合計クリック/表示/主な検索意図）、改善が出なかった場合の次の一手を簡潔に示す。 `ROLE_SEPARATION` で修正を提案する場合は `requires_change:true` とし、`writer_instructions` に両記事の具体的な修正対象、残す内容、内部リンク、触れない部分を記す。変更不要なら `requires_change:false`。`MERGE_REVIEW` の場合も転送の承認は別ゲートであり、`writer_instructions` は検討対象と移行時の保護事項のみとする。
 
 **運用**：aDoctorは修正・公開・転送・SBM登録を行わない。利用者が承認し、SBM既存のaWriter/aMergeへの引き継ぎとモニタリングを利用する。28日後の測定は成功保証ではなく、検索需要変動を考慮して次の手を選ぶ。
+
+
+## v2.0.8 精密診断への統合：複数記事のaWriter指示（追加契約）
+
+これは既存の戦略診断受付 `SIMS_STRATEGY_DOCTOR_V1` の互換拡張であり、通常の単独記事V2診断、情報変更診断、従来の必須8フィールドを変更しない。既存の `STRATEGY-...` 案件IDを維持し、旧案件の履歴・承認を消さない。
+
+`decision: ROLE_SEPARATION` かつ `requires_change: true` の場合、末尾のJSONに **`actions` 配列を必ず2件** 追加する。各要素は `article_id`, `article_url`, `tool`, `instructions` の4項目を持つ。`tool` は両方とも `WRITER`。1件は `primary_article_id` と対象記事URL、もう1件は依頼文の関連記事IDと `related_article_url` に厳密一致させる。関連記事IDが依頼文にない場合は推測して生成せず、確認を求める。各 `instructions` はその記事だけの修正内容、残す内容、内部リンク、公開前の一次情報確認事項を具体的に記述する。両記事の指示を混在させない。
+
+`writer_instructions` は従来互換の概要として残すが、SBMが記事別依頼を生成するときは `actions` のみを正本とする。`actions` を `writer_instructions` の文字列から推測分割しない。`KEEP_BOTH`, `FURTHER_EVIDENCE` では `actions: []`。`MERGE_REVIEW` は統合を承認せず、`actions: []` として別の承認ゲートへ送る。
+
+`actions` を含む回答も、診断結果であって記事の完成原稿や公開指示ではない。利用者承認前にaWriter/aMergeへ実行を指示しない。各記事の公開・改善登録・7/14/21/28日測定はSBMの既存機能で個別管理する。

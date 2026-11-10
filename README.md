@@ -444,3 +444,7 @@ The complete Doctor workflow is frozen as a release candidate for end-to-end acc
 ## v1.5.1 LOW_SAMPLE SERP fallback
 When Search Console evidence is too sparse for a reliable outcome judgment, aDoctor now treats low sample as an evidence limitation rather than treatment failure. It can fall back to target-query SERP competitiveness review, distinguish actionable SERP gaps from sufficient competitiveness or low demand, and return low-demand/low-priority cases as normal close candidates instead of repeatedly rewriting them.
 
+
+
+## v2.0.8 UAT
+See CLAUDE_PROJECT_INSTRUCTIONS.md for per-article actions contract.

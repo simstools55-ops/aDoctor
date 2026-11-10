@@ -252,3 +252,6 @@ Doctorは最終アンカーテキストや挿入文を確定しない。最終�
 
 
 > 戦略ナビ専用受付は `CLAUDE_PROJECT_INSTRUCTIONS.md` v2.0.7を正本とし、旧記述に優先する。
+
+
+> v2.0.8: ROLE_SEPARATION actions contract is defined in CLAUDE_PROJECT_INSTRUCTIONS.md (authoritative).

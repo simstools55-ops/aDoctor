@@ -1,7 +1,7 @@
 {
   "deployment_manifest_version": "1.1",
   "package_name": "SIMS-Article-Doctor-Claude",
-  "package_version": "2.0.7",
+  "package_version": "2.0.8",
   "shared_version": "3.5.0",
   "package_variant": "One-pass Strategy Navigator UAT candidate",
   "upload_method": "SET_PROJECT_INSTRUCTIONS_AND_UPLOAD_KNOWLEDGE_FILES",
