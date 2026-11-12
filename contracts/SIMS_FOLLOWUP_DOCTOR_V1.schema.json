@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SIMS_FOLLOWUP_DOCTOR_V1",
+  "type": "object",
+  "required": [
+    "format",
+    "article_id",
+    "decision",
+    "reason",
+    "writer_instructions"
+  ],
+  "properties": {
+    "format": {
+      "const": "SIMS_FOLLOWUP_DOCTOR_V1"
+    },
+    "article_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "enum": [
+        "REVISION_REQUIRED",
+        "NO_REVISION"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "writer_instructions": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "REVISION_REQUIRED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "writer_instructions": {
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "NO_REVISION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "writer_instructions": {
+            "const": ""
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

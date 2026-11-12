@@ -1,4 +1,5 @@
-> Current UAT: aDoctor v2.0.7. Strategy policy: see CLAUDE_PROJECT_INSTRUCTIONS.md.
+# aDoctor v2.0.9 — 精密診断・追加診断受付互換
+> Current UAT: aDoctor v2.0.9. Strategy policy: see CLAUDE_PROJECT_INSTRUCTIONS.md.
 
 # aDoctor Claude v2.0.0
 
